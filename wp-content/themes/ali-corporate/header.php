@@ -89,6 +89,16 @@ function displaySideNav($type)
 		</ul>';
 		break;
 
+		case 'bank':
+		echo
+		'<ul>
+		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
+		</ul>';
+		break;
+
 		default:
 		# code...
 		break;
