@@ -139,7 +139,7 @@ $featured = get_field("featured_estates");
   <?php } ?>
 <?php
 get_footer();
-$check_ayala = get_field("show_ayala_popup");
+$check_ayala = $_SESSION['employer_type'] == 'ayala';
 if($check_ayala)
   { ?>
 
@@ -149,7 +149,7 @@ if($check_ayala)
       // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
       $.magnificPopup.open({
         items: {
-          src: 'images/home-reality-day.jpg'
+          src: '<?php echo get_template_directory_uri() ?>assets/images/home-reality-day.jpg'
         },
         type: 'image'
 
