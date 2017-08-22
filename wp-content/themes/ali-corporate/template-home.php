@@ -10,7 +10,7 @@ $promos = get_field("promos");
 $featured = get_field("featured_estates");
 ?>
 <section class="featured">
- <article class="featleft">                
+ <article class="featleft">
   <aside>
     <h2><?php echo $left_banner["header_text"]; ?></h2>
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/acentives.png" width="" height="" alt="Acentives Logo">
@@ -70,14 +70,14 @@ $featured = get_field("featured_estates");
    </div>
   <?php
   } ?>
-   
+
 
 </div>
 </article>
 <aside class="promos">
  <h3>Promos &amp; Events</h3>
  <div class="rslides" id="slider2">
- <?php 
+ <?php
  foreach ($promos as $promo) { ?>
   <div class="carousel-cell">
     <a href="<?php echo $promo["image"]; ?>" class="gallery-item">
@@ -90,13 +90,7 @@ $featured = get_field("featured_estates");
 </div>
 </aside>
 <div class="other-links">
- <ul>
-   <li><a href="inquire-now.html"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-   <li><a href="#download"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
-   <li><a href="#purchase"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-   <li><a href="#rewards"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-   <li><a href="#bankpartners"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
- </ul>
+  <?php displaySideNav('home'); # Find this in header.php ?>
 </div>
 </section>
 <?php foreach ($featured as $estate) { ?>
@@ -143,9 +137,9 @@ $featured = get_field("featured_estates");
   <!-- Project Details -->
 
   <?php } ?>
-<?php 
-get_footer(); 
-$check_ayala = get_field("show_ayala_popup");
+<?php
+get_footer();
+$check_ayala = $_SESSION['employer_type'] == 'ayala';
 if($check_ayala)
   { ?>
 
@@ -155,7 +149,7 @@ if($check_ayala)
       // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
       $.magnificPopup.open({
         items: {
-          src: 'images/home-reality-day.jpg'
+          src: '<?php echo get_template_directory_uri() ?>assets/images/home-reality-day.jpg'
         },
         type: 'image'
 
@@ -164,7 +158,7 @@ if($check_ayala)
       }, 0);
     });
   })(jQuery);
-</script>   
+</script>
 
 <?php
 }

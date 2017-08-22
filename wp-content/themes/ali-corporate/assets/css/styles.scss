@@ -1,0 +1,489 @@
+@charset "utf-8";
+/* FONTS */
+@font-face {
+    font-family: 'rajdhaniregular';
+    src: url('fonts/rajdhani-regular-webfont.woff2') format('woff2'),
+         url('fonts/rajdhani-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rajdhanisemibold';
+    src: url('fonts/rajdhani-semibold-webfont.woff2') format('woff2'),
+         url('fonts/rajdhani-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ralewaybold';
+    src: url('fonts/raleway-bold-webfont.woff2') format('woff2'),
+         url('fonts/raleway-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ralewaymedium';
+    src: url('fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('fonts/raleway-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('fonts/raleway-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ralewaysemibold';
+    src: url('fonts/raleway-semibold-webfont.woff2') format('woff2'),
+         url('fonts/raleway-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Common Styles */
+/** Fonts & Colors **/
+$fontheading: 'ralewaysemibold';
+$fonthead: 'ralewaybold';
+$welcome: 'ralewaymedium';
+$fontmain: 'robotoregular';
+$finderfont: 'rajdhanisemibold';
+$formtext: 'rajdhaniregular';
+$green: #007149;
+$lightgreen: #009e66;
+$lgreen: #e7f0ed;
+$lightgray: #dadada;
+$lgray: #f4f4f4;
+$white: #fff;
+$black: #000;
+$border: #e7f0ed;
+$darkgreen: #00502f;
+$darkgray: #919296;
+
+.reset {margin:0; padding:0; }
+.wrapper {width: 1200px/1440px * 100%; margin:0 auto;}
+.fleft {float:left;}
+.fright {float:right;}
+.w100 {width:100%; float:left;}
+.wid100 {width: 100%;}
+.defimg {width: 100%; height: auto; }
+.defimg2 {width: auto; height: 100%;}
+.coverimg {width: 100%; height:100%; object-fit: cover;}
+.containimg {width: 100%; height:100%; object-fit: contain;}
+.resetform {border:0; border-radius: 0; font: 16px/22px $fontmain; color: $black; appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; outline: 0; box-sizing: border-box;}
+.textshdw {text-shadow: 0 3px 5px rgba(0,0,0,0.5)}
+.inside {position: relative;}
+.margbot10 {margin-bottom: 10px!important;}
+.close1, .close2 {width: 28px; height: 28px; float: left; position: absolute; top: 20px; right: 20px; z-index: 1000; background: url(../images/close.png) no-repeat; @extend .resetform}
+.searchmobile {position: absolute; top: 13px; right: 20px; background: $darkgray url(../images/searchbtn.png) no-repeat center center; width: 32px; height: 32px; @extend .resetform; display: none;}
+
+
+/* RESET */
+body, html, h1, h2, h3, h4, h5, h6, p, ul, figure, figcaption {@extend .reset; color: $white}
+body, html {height: 100%}
+img {border: 0; outline:0}
+article, section, aside, div, header, footer, nav {position: relative;box-sizing: border-box;}
+a {color: $white; text-decoration: none;}
+.pagewrapper {@extend .wrapper}
+input, select, textarea {@extend .resetform}
+select {padding: 0 10px 0; box-sizing: border-box; background: #ebebeb url(../images/droparrow.jpg) no-repeat right center; border: solid 1px #959595}
+input[type="text"], input[type="email"], textarea {cursor: pointer; background: #ebebeb; color: $black; padding: 5px 10px; font: 16px/23px $fontmain;border: solid 1px #959595}
+.pagewrapper2 {width: 80%; margin: 0 auto;}
+
+
+
+header {@extend .wid100; height: 80px/900px * 100%; background:$white; z-index: 100; position: absolute; top: 0; left: 0; @extend .fleft;
+	img {@extend .fleft; height: 100%; width: auto;}
+	aside {width: auto; text-align: center; @extend .fright;  height: 100%; padding: 25px 30px 0 60px; background: $green url(../images/slantbg.jpg) no-repeat left top; background-size: auto 100%; box-sizing: border-box; 
+		h1 {font: 24px/30px $fonthead; text-transform: uppercase; }
+	}
+}
+.search-main {@extend .wid100;  background: #ececec; @extend .fleft; box-shadow: 1px 5px 5px rgba(0,0,0,0.5); box-sizing: border-box; padding: 8px 0;
+	.property-finder {width: 65%; max-width: 1280px; @extend .fleft; box-sizing: border-box;  z-index: 100;
+		label {@extend .wid100; @extend .fleft; text-transform: uppercase; position: relative; top: 0; font: 20px/26px $finderfont; color:$lightgreen; padding: 0 30px 0; box-sizing: border-box; }
+		ul {list-style: none; @extend .wid100; padding-left: 30px; padding-right: 30px; box-sizing: border-box; position: relative; height: 100%; @extend .fleft;
+			li {width: 33%; @extend .fleft; padding-right: 30px; box-sizing: border-box;
+				select {@extend .wid100; padding: 0 10px 0; box-sizing: border-box;  background: #2d2d2d url(../images/droparrow.png) no-repeat right center; border: solid 1px #959595; @extend .resetform; color: $white; height: 32px; font-size: 14px; border: 0; border-radius: 5px;}
+			}
+			li:last-child {width: 32px; position: absolute; right: 0; padding-right: 0;
+				input {width: 32px; height: 32px; cursor: pointer; background: $green url(../images/search.png) no-repeat center center; color: $white; padding-top: 5px; font: 18px/24px $finderfont;border-radius: 50%;}
+				input:hover {background: $darkgreen url(../images/search.png) no-repeat center center;}
+			}
+		}
+	}
+	aside {width: 33%; max-width: 450px;  @extend .fright;  border-left: solid 1px $darkgray; padding-right: 30px;
+		label {@extend .wid100; @extend .fleft; text-transform: uppercase; position: relative; top: 0; font: 20px/26px $finderfont; color:$lightgreen; padding: 0 30px 0; box-sizing: border-box; }
+		ul {list-style: none; @extend .wid100; padding-left: 30px; padding-right: 30px; box-sizing: border-box; position: relative; height: 100%; @extend .fleft;
+			li {width: 100%; @extend .fleft; padding-right: 30px; box-sizing: border-box;
+				input[type="text"] {@extend .wid100; padding: 0 10px 0; box-sizing: border-box;  background: #2d2d2d; border: solid 1px #959595; @extend .resetform; color: $white; height: 32px; font-size: 14px; border: 0; border-radius: 5px;}
+			}
+			li:last-child {width: 32px; height: 32px; padding-right: 0; position: absolute; right: 0;
+				input {width: 100%; cursor: pointer; background: $green url(../images/search.png) no-repeat center center; color: $white; padding-top: 5px; font: 18px/24px $finderfont; border-radius: 50%;}
+				input:hover {background: $darkgreen url(../images/search.png) no-repeat center center;}
+			}
+		}
+	}
+}
+.welcome {position: fixed; @extend .wid100; @extend .fleft; height: 100%; background: url(../images/welcomebg.jpg) no-repeat center center; background-size: cover; 
+	div {position: absolute; z-index: 10; background: rgba(0,0,0,0.5); top: 0; left: 0; right: 0; bottom: 0;}
+	section {z-index: 50; height: 100%; padding: 20% 0 0; @extend .wid100; @extend .fleft; box-sizing: border-box; @extend .wrapper; text-align: center;
+		h2 {font: 32px/38px $welcome; margin-bottom: 15px; @extend .textshdw;  }
+		h1 {font: 44px/50px $welcome; margin-bottom: 35px; @extend .textshdw}
+		p {font: 20px/26px $fontmain; margin-bottom: 10px; @extend .textshdw}
+		ul {list-style: none; width: 100%;  max-width: 1024px; margin: 0 auto;
+			li {text-align: center; display: inline-block; width: 33%; padding: 0 30px; @extend .fleft;  box-sizing: border-box;
+				a {font: 24px/30px $finderfont; color: $white; padding:20px 0; border: solid 3px $white; border-radius: 10px; width: 298px; @extend .fleft; box-sizing: border-box;  }
+				a:hover {background: $green; border-color: $green; box-shadow: 0 5px 0 $darkgreen; }
+			}
+		}
+		select {@extend .wid100; max-width:300px; padding: 10px; box-sizing: border-box; height: 100%; background: #ebebeb url(../images/droparrow.jpg) no-repeat right center; border: solid 1px #959595}
+		button {font: 16px/22px $finderfont; color: $white; padding: 10px 15px; background: $green; @extend .resetform; margin: 0 15px; text-transform: uppercase;}
+		button:hover {background: $darkgreen}
+	}
+}
+
+.featured {@extend .wid100; @extend .fleft; position: relative; height: 445px/900px *100%; background: $green;
+	h3 {font: 40px/46px $fontheading; margin-bottom: 15px}
+	p {font:18px/30px $fontmain; margin-bottom: 60px;}
+	ul {list-style: none; @extend .wid100; @extend .fleft;
+		li {display: inline-block; margin-right: 30px;
+			a {color: $white; font: 24px/30px $finderfont; padding: 10px 15px; border: solid 3px $white; text-transform: uppercase;}
+			a:hover {background: $darkgreen}
+		}
+		li:last-child {margin-right: 0;}
+	}
+	.featleft { width: 54.375%;cursor: pointer; -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%); float: left; position: absolute;z-index: 50; height: 100%; 
+		div {position: relative; z-index: 1; height: 100%; @extend .wid100; @extend .fleft;
+			img {@extend .coverimg}
+			div.overlay { position: absolute; z-index: 15; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); }
+		}
+		aside {position: absolute; @extend .wid100; @extend .fleft; bottom: 0; z-index: 10; background: $lightgreen; padding: 10px 14% 10px 20px; box-sizing: border-box;
+			h2 {font: 24px/36px $fontheading;padding-right: 40px; background: url(../images/arrow.png) no-repeat right center; letter-spacing: 2px; @extend .fleft}
+			img {height: 100%; width: auto; float: right;}
+		}
+	}
+	.featleft:hover aside {background: $darkgreen;}
+
+	.employee {display: none; top: 0; right: 0; position: absolute; z-index: 49; background: $green; height: 100%; @extend .fleft; width: 54.375%; box-sizing: border-box; padding: 35px 30px 35px 10%;}
+	.featright {width: 54.375%; @extend .fleft;cursor: pointer; right: 0; height: 100%; position: absolute; z-index: 49px; box-sizing: border-box; 
+		div {position: relative; z-index: 1; height: 100%; @extend .wid100; @extend .fleft;
+			img {@extend .coverimg}
+			div.overlay { position: absolute; z-index: 15; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); }
+		}
+		aside {position: absolute; @extend .wid100; @extend .fleft; bottom: 0; z-index: 10; background: $lightgreen; padding: 10px 20px 10px 90px; box-sizing: border-box;
+			h2 {font: 24px/36px $fontheading; padding-right: 40px; background: url(../images/arrow.png) no-repeat right center;letter-spacing: 2px; @extend .fleft}
+			img {height: 100%; width: auto; float: right;}
+		}
+	}
+	.reap {display: none; top: 0; left: 0; position: relative; z-index: 50; background: url(../images/greenbg.png) no-repeat left top; background-size: cover;-webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);  height: 100%; @extend .fleft; width: 54.375%; width: 54.375%; box-sizing: border-box; padding: 35px 90px 35px 60px; }
+	.featright:hover aside {background: $darkgreen;}
+	.featleft:hover div.overlay, .featright:hover div.overlay  {background: rgba(0,0,0,0.5);}
+}
+
+.featured-offers {@extend .wid100; @extend .fleft; height: 40%;box-shadow: 0px 3px 3px rgba(0,0,0,0.3); z-index: 90;
+	article {@extend .wid100; @extend .fleft; height: 100%;
+		div.overlay { position: absolute; z-index: 15; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); }
+		img {@extend .coverimg; position: absolute; top: 0; left: 0;}
+		div {width: 100%; padding: 5% 60px 0 33%; box-sizing: border-box; z-index: 50;
+			h2 {font: 40px/46px $fontheading; margin-bottom: 20px;@extend .textshdw}
+			p {font: 24px/30px $fontmain; @extend .textshdw}
+		}
+	}
+	aside {width: 30%; height: 100%; position: absolute; z-index: 20; @extend .fleft;  left: 0; background: $white; -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%); text-align:center; padding-top: 6%; padding-right: 30px; box-sizing: border-box;
+		img {max-width: 50%; height: auto;}
+	}
+}
+
+.bank-partners {@extend .wid100; @extend .fleft; height: 9.444%; min-height: 85px; padding: 10px 30px; box-sizing: border-box; background: #f3f3f3;
+	.carousel {height: 85px; padding: 0 30px; @extend .wid100; box-sizing: border-box;
+		.carousel-cell {height: 100%; margin: 0 30px; padding: 10px 0 15px; box-sizing: border-box; width: 10%;
+			img {@extend .containimg}
+		}
+	}
+}
+
+.projects-promos {@extend .wid100; @extend .fleft; height: 28.889%; padding: 8px 0; box-sizing: border-box; position: relative;
+	article.estates {width: 42%; @extend .fleft; height: 100%; background: $lightgray; 
+		.rslides {@extend .wid100; @extend .fleft; height: 100%;
+			.carousel-cell {@extend .wid100; @extend .fleft; height: 100%; position: relative;
+				img {@extend .coverimg}
+				aside {position: absolute; top: 50px; right: 0; z-index: 100; width: 180px; height: 65px; text-align: right; background: $white;
+					img {@extend .containimg}
+				}
+			}
+		}
+	.flickity-page-dots {bottom: 5px!important; }	
+	}
+	aside.promos {width: 26.042%; @extend .fleft; height: 100%; position: relative; margin: 0 1.389%; background: $lightgray;
+		.carousel {@extend .wid100; @extend .fleft; height: 250px;
+			.carousel-cell {@extend .wid100; background: $lightgray; text-align: center; @extend .fleft; height: 100%; position: relative;
+				img {@extend .containimg}
+			}
+		}
+	}
+	h3 {position: absolute; top: 10px; -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);left: 0; border-left: solid 13px $green; background: $white;  z-index: 100; font: 20px/26px $finderfont; color: $black; padding: 5px 40px 3px 10px; text-transform: uppercase;}
+	
+	.other-links {width: 29.167%; @extend .fright; color: $black; position: relative; height: 100%; box-sizing: border-box; padding-right: 30px;
+		ul {list-style: none; @extend .reset; @extend .wid100; height: 100%; @extend .fleft;
+			li {height: 17.033%; @extend .wid100; @extend .fleft;  margin-bottom: 1.7%; box-sizing:  border-box; border: solid 1px $lightgray; position: relative;
+				a {color: $black; cursor: pointer; @extend .fleft; @extend .wid100; height: 100%; font: 20px/26px $finderfont;
+					span {width: 75px; position: absolute; text-align: center; height: 100%; @extend .fleft; z-index: 10; left: 0; top: 0; text-align: center; border-right:  solid 1px $lightgray;
+						img {@extend .containimg}
+					}
+					label {@extend .wid100; @extend .fleft; position: relative; height: 100%; top: 0; z-index: 15; left: 0; padding: 10px 10px 0 90px; box-sizing: border-box;}
+				}
+				a:hover {background: $lightgray;cursor: pointer;}
+				
+			}
+			
+			li:last-child {margin: 0;}
+		}
+	}
+	.banklist {
+		li {height: 22%!important;
+			label {padding-top: 15px!important;}
+			.bonds {height: 100%; padding: 5px 0 5px 90px; box-sizing: border-box;}
+		}
+
+	}
+	
+}
+
+.projects {@extend .wid100; @extend .fleft; position: relative; padding: 40px 20px; box-sizing: border-box;
+	.banner {@extend .wid100; @extend .fleft; min-height: 100px; background: $lightgray; text-align: center;
+		img {@extend .defimg;}
+		span {margin: 20px; font: 20px/26px $fontmain; color: $darkgray; width: 100%; float: left;}
+	}
+	.overview {@extend .wid100; @extend .fleft; background: $green; padding: 30px; box-sizing: border-box;
+		figure {width: 40%; min-height: 200px; @extend .fleft; position: relative; top: 0; left: 0;
+			img {@extend .defimg}
+		}
+		figcaption {width: 53%; @extend .fright; padding: 0; box-sizing: border-box; min-height: 200px;
+			h4 {font: 24px/30px $fonthead; color: $lgreen; margin-bottom: 20px;}
+			p {font: 18px/24px $fontmain; color: $white;}
+		}
+	}
+
+	a {color: $black;}
+	.properties {width: 68.444%; @extend .fleft; 
+		aside {@extend .wid100; @extend .fleft; background: $lgray; z-index: 90; border-bottom: solid 1px $darkgray; margin-bottom:30px;
+			ul {@extend .wid100; @extend .fleft; text-align:center;
+				li {display: inline-block; margin-right: 15px; padding: 10px; vertical-align: middle; border-bottom: solid 3px $lgray;
+					img {-webkit-filter: grayscale(100%); filter: grayscale(100%);}
+				}
+				li.active {border-bottom: solid 3px $green;
+					img {-webkit-filter: none; filter: none;}
+				}
+
+				li:hover {border-bottom: solid 3px $green;
+					img {-webkit-filter: none; filter: none;}
+				}
+			}
+		}
+		div {@extend .wid100; @extend .fleft; 
+			
+			ul {@extend .wid100; @extend .fleft; list-style: none; @extend .reset; 
+				li {width: 30.333%; padding-left:15px; margin-bottom: 35px; display: inline-table; vertical-align: top; 
+					figure {@extend .wid100; @extend .fleft; height: 250px; box-sizing: border-box;
+						img {@extend .coverimg;}
+					}
+					figcaption {@extend .wid100; @extend .fleft; box-shadow: 0 1px 1px rgba(0,0,0,0.3); padding: 15px; box-sizing: border-box;
+						h4 {font: 18px/24px $fontheading; padding-bottom: 5px; border-bottom: solid 1px $lightgray; margin-bottom: 5px; color: $green;}
+						.price {width: 50%; @extend .fleft;}
+						.type-location {width: 46%; @extend .fright; text-align: right;}
+						h6 {font: 14px/20px $finderfont; color: $darkgray;}
+						h5 {font: 20px/26px $fonthead; color: $black;}
+						p {font: 13px/20px $fontmain; color: $black;}
+					}
+				}
+				li:hover figure {border: solid 3px $green;  
+					img {opacity: 0.8;}
+				}
+			}
+		}
+		section {@extend .wid100; @extend .fleft; padding: 15px; box-sizing: border-box; text-align: center;
+			ul {
+				li {display: inline-block; margin: 0 5px; font: 16px/22px $finderfont;
+					a {color: $black; background: $lightgray; padding: 3px 6px;}
+
+					a.active, a:hover  {background: $green; color: white;}
+				}
+			}
+		}
+	}
+
+	article.forms {width: 65%; @extend .fleft;
+		h3 {font: 30px/36px $fontheading; color: $white; margin: 20px;}
+		aside.tab {@extend .wid100; @extend .fleft; background: $lightgray; position: relative; 
+			ul {@extend .wid100; @extend .fleft; background: $lightgray; padding: 5px 5px 0; box-sizing: border-box;
+				li {display: inline-block!important; margin-right: 5px; float: left;
+					a {padding: 10px 15px; font: 18px/24px $finderfont; color: $black; @extend .fleft; border-radius: 10px 10px 0 0; border: solid 1px $darkgray; border-bottom: 0; background: $white;}
+				}
+				li.active a, li:hover a {background: #5c931d; color: $white; border-color: #5c931d;}
+			}
+		}
+		.forms-main {padding: 0; box-sizing: border-box; @extend .wid100; @extend .fleft; box-shadow: 0 3px 3px rgba(0,0,0,0.3); background: #6d9e37;
+			p, ul {color: $white; font: 16px/22px $fontmain; 
+			margin-bottom: 25px;}
+			p {padding: 15px 20px; background: #5c931d; @extend .wid100; @extend .fleft; box-sizing: border-box;}
+			ul {list-style: none; padding: 0 20%; 
+				li {@extend .wid100; @extend .fleft; margin-bottom: 15px;
+					ul {width: 60%; @extend .fright; margin-bottom: 5px; padding: 0!important;
+						li {display: inline-block; @extend .fleft; width: 100%; margin-bottom: 5px!important;
+							label {width: auto;}
+						}
+					}
+					label {width: 30%; @extend .fleft; padding-top: 4px; text-align: right;}
+					input[type="text"], input[type="email"], textarea, select {width:60%; @extend .fright; height: 40px; color: $white; font-size: 14px; border-radius: 10px; background: #2d2d2d; border: 0;}
+					input[type="radio"] {width: 20px; height: 20px; border: solid 1px #959595; border-radius: 50%; @extend .fleft; background: $white;}
+					input[type="radio"]+label {margin-left: 15px;}
+					input[type="radio"]:checked {background: url(../images/radio.jpg) no-repeat center center; }
+					input[type="submit"] {font: 18px/22px $finderfont; color: $white; background: $green; padding: 10px 25px; @expand .resetform; @extend .fright; text-transform: uppercase;}
+					textarea {height: 250px; margin-bottom: 15px;}
+					p {width: 68%; @extend .fright; margin-bottom: 5px; line-height: 30px;
+						input[type="checkbox"] {width: 20px; height: 20px; border: solid 1px #959595; margin-top: 5px; @extend .fleft; margin-right: 15px; background: white;}
+						input[type="checkbox"]:checked {background: url(../images/check.jpg) no-repeat center center;}
+					}
+					select {background: #2d2d2d url(../images/droparrow.png) no-repeat 97% center; margin-bottom: 10px}
+					a {font: 18px/22px $finderfont; color: $white; background: $green; padding: 10px 25px; @expand .resetform; @extend .fleft; text-transform: uppercase;  }
+					a:hover, input[type="submit"]:hover {background: $darkgreen}
+				}
+			}
+		}
+	}
+	.referralsec {background: #6d9e37;@extend .wid100; @extend .fleft;}
+	.refer {background: #83b151; @extend .wid100; @extend .fleft; padding: 0!important; box-sizing: border-box; margin-top: 0; 
+		h4 {background: #608439; padding: 10px; font: 20px/26px $fontheading; letter-spacing: 2px; text-transform: uppercase;}
+		
+			li {padding: 0 20%!important; box-sizing: border-box; color: 
+				
+					select { margin-bottom: 10px!important;}
+				
+			}
+		
+		li:first-child {padding: 0!important;}
+	}
+
+	.bonds {height: 100%; padding: 5px 0 5px 90px; box-sizing: border-box;}
+	.other-links {width: 29.167%; @extend .fright; color: $black; position: relative; height: 100%; box-sizing: border-box; right: 0; 
+		ul {list-style: none; @extend .reset; @extend .wid100; height: 100%; @extend .fleft;
+			li {height: 45px; @extend .wid100; @extend .fleft;  margin-bottom: 1.7%; box-sizing:  border-box; border: solid 1px $lightgray; position: relative;
+				a {color: $black; cursor: pointer; @extend .fleft; @extend .wid100; height: 100%; font: 20px/26px $finderfont;
+					span {width: 75px; position: absolute; text-align: center; height: 100%; @extend .fleft; z-index: 10; left: 0; top: 0; text-align: center; border-right:  solid 1px $lightgray;
+						img {@extend .containimg}
+					}
+					label {@extend .wid100; @extend .fleft; position: relative; height: 100%; top: 0; z-index: 15; left: 0; padding: 10px 10px 0 90px; box-sizing: border-box;}
+				}
+				a:hover {background: $lightgray;cursor: pointer;}
+				
+			}
+			
+			li:last-child {margin: 0;}
+		}
+	}
+}
+
+footer {@extend .wid100; @extend .fleft; position: relative;height: 6.444%; border-top: solid 1px $lightgray; background: $lgray;  position: relative; z-index: 100; padding:0 30px; box-sizing: border-box; text-align: right;
+	a {color: $darkgray; text-transform: uppercase;}
+	article {@extend .fleft; width: auto; text-align: left; padding: 10px 0 0; box-sizing: border-box; height: 100%;
+		ul {list-style: none; @extend .fleft;
+			li {display: inline-block; margin-right: 15px; height: 100%;
+				img {@extend .defimg2}
+			}
+		}
+		span {width: 150px; padding-right: 15px; font: 16px/22px $finderfont; @extend .fleft; color: $black;}
+	}
+	aside {@extend .fright; width: auto; padding: 10px 0 0; box-sizing: border-box;
+		ul {list-style: none; 
+			li {display: inline-block; border-left:  solid 1px $lightgray; padding-left: 15px; margin-left: 15px; 
+				a {color: $black; font: 14px/22px $fontmain; text-decoration: underline;}
+			}
+			li:first-child {border: 0;}
+		}
+	}
+	
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides div {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides div:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  
+  @extend .containimg;
+@extend .fleft;  
+  border: 0;
+  }
+ .white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: 50%;
+
+  max-width: 50%;
+  margin: 20px 25%;
+
+}
+#projdesc { float: left; 
+	h6 {font: 16px/22px $finderfont; color: $darkgray;}
+	p {color: $black; font: 16px/22px $fontmain; margin-bottom: 5px;}
+	h3 {font: 30px/36px $fontheading; color: $green; margin-bottom: 15px;}
+	ul {list-style: none; margin: 0 0 20px;; padding: 0;
+		li {border-bottom: solid 1px $lightgray; margin-bottom: 5px;
+			a {color: $white; background: $green; padding: 10px; text-align: center;font: 16px/22px $finderfont; text-transform: uppercase; @extend .wid100; @extend .fleft; box-sizing: border-box;}
+			a:hover {background: $darkgreen; }
+		}
+		li:last-child {border-bottom: 0; padding: 20px 0;}
+	}
+	div {width: 100%; float: left;
+	  	figure {width: 100%; padding-right: 300px; @extend .fleft; text-align: center; box-sizing: border-box; position: absolute; height: 300px;
+	  		img {@extend .coverimg;}
+	  	}
+	  	article {width: 280px; @extend .fright; min-height: 300px; position: relative; z-index: 50;
+
+	  	}
+	  	aside {@extend .wid100; @extend .fleft;  padding: 15px 10px 10px; box-sizing: border-box;
+	  			ul {margin: 0!important; @extend .wid100; @extend .fleft; text-align: center;
+	  				li {display: inline-block; width: 30%; margin: 0;
+	  					a {background: $white; border: solid 3px $black; color: $black;}
+	  					a:hover {background: $lightgray}
+	  				}
+	  				li:nth-child(2) {margin: 0 20px 0;}
+	  				li:last-child {margin: 0 !important; padding: 0;}
+	  			}
+	  		}
+  	}
+}
+
+

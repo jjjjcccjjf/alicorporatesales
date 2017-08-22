@@ -1,0 +1,1104 @@
+/* FONTS */
+@font-face {
+  font-family: 'rajdhaniregular';
+  src: url("fonts/rajdhani-regular-webfont.woff2") format("woff2"), url("fonts/rajdhani-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'rajdhanisemibold';
+  src: url("fonts/rajdhani-semibold-webfont.woff2") format("woff2"), url("fonts/rajdhani-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'robotoregular';
+  src: url("fonts/roboto-regular-webfont.woff2") format("woff2"), url("fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewaybold';
+  src: url("fonts/raleway-bold-webfont.woff2") format("woff2"), url("fonts/raleway-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewaymedium';
+  src: url("fonts/raleway-medium-webfont.woff2") format("woff2"), url("fonts/raleway-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewayregular';
+  src: url("fonts/raleway-regular-webfont.woff2") format("woff2"), url("fonts/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'ralewaysemibold';
+  src: url("fonts/raleway-semibold-webfont.woff2") format("woff2"), url("fonts/raleway-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+/* Common Styles */
+/** Fonts & Colors **/
+.reset, body, html, h1, h2, h3, h4, h5, h6, p, ul, figure, figcaption, .projects-promos .other-links ul, .projects .properties div ul, .projects .other-links ul {
+  margin: 0;
+  padding: 0; }
+
+.wrapper, .pagewrapper, .welcome section {
+  width: 83.33333%;
+  margin: 0 auto; }
+
+.fleft, header, header img, .search-main, .search-main .property-finder, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li, .search-main aside label, .search-main aside ul, .search-main aside ul li, .welcome, .welcome section, .welcome section ul li, .welcome section ul li a, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featleft aside h2, .featured .employee, .featured .featright, .featured .featright div, .featured .featright aside, .featured .featright aside h2, .featured .reap, .featured-offers, .featured-offers article, .featured-offers aside, .bank-partners, .projects-promos, .projects-promos article.estates, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a span, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .overview figure, .projects .properties, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties div ul li figcaption .price, .projects .properties section, .projects article.forms, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms aside.tab ul li a, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects article.forms .forms-main ul li ul li, .projects article.forms .forms-main ul li label, .projects article.forms .forms-main ul li input[type="radio"], .projects article.forms .forms-main ul li p input[type="checkbox"], .projects article.forms .forms-main ul li a, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a span, .projects .other-links ul li a label, footer, footer article, footer article ul, footer article span, .rslides img, .projdesc ul li a, .projdesc div figure, .projdesc div aside, .projdesc div aside ul {
+  float: left; }
+
+.fright, header aside, .search-main aside, .projects-promos .other-links, .projects .overview figcaption, .projects .properties div ul li figcaption .type-location, .projects article.forms .forms-main ul li ul, .projects article.forms .forms-main ul li input[type="text"], .projects article.forms .forms-main ul li input[type="email"], .projects article.forms .forms-main ul li textarea, .projects article.forms .forms-main ul li select, .projects article.forms .forms-main ul li input[type="submit"], .projects article.forms .forms-main ul li p, .projects .other-links, footer aside, .projdesc div article {
+  float: right; }
+
+.w100 {
+  width: 100%;
+  float: left; }
+
+.wid100, header, .search-main, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li select, .search-main aside label, .search-main aside ul, .search-main aside ul li input[type="text"], .welcome, .welcome section, .welcome section select, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featright div, .featured .featright aside, .featured-offers, .featured-offers article, .bank-partners, .bank-partners .carousel, .projects-promos, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties section, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a label, footer, .projdesc ul li a, .projdesc div aside, .projdesc div aside ul {
+  width: 100%; }
+
+.defimg, .projects .banner img, .projects .overview figure img {
+  width: 100%;
+  height: auto; }
+
+.defimg2, footer article ul li img {
+  width: auto;
+  height: 100%; }
+
+.coverimg, .featured .featleft div img, .featured .featright div img, .featured-offers article img, .projects-promos article.estates .rslides .carousel-cell img, .projects .properties div ul li figure img, .projdesc div figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+.containimg, .bank-partners .carousel .carousel-cell img, .projects-promos article.estates .rslides .carousel-cell aside img, .projects-promos aside.promos .carousel .carousel-cell img, .projects-promos .other-links ul li a span img, .projects .other-links ul li a span img, .rslides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
+
+.resetform, .close1, .close2, .searchmobile, input, select, textarea, .search-main .property-finder ul li select, .search-main aside ul li input[type="text"], .welcome section button {
+  border: 0;
+  border-radius: 0;
+  font: 16px/22px "robotoregular";
+  color: #000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  outline: 0;
+  box-sizing: border-box; }
+
+.textshdw, .welcome section h2, .welcome section h1, .welcome section p, .featured-offers article div h2, .featured-offers article div p {
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5); }
+
+.inside {
+  position: relative; }
+
+.margbot10 {
+  margin-bottom: 10px !important; }
+
+.close1, .close2 {
+  width: 28px;
+  height: 28px;
+  float: left;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: url(../images/close.png) no-repeat; }
+
+.searchmobile {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  background: #919296 url(../images/searchbtn.png) no-repeat center center;
+  width: 32px;
+  height: 32px;
+  display: none; }
+
+/* RESET */
+body, html, h1, h2, h3, h4, h5, h6, p, ul, figure, figcaption {
+  color: #fff; }
+
+body, html {
+  height: 100%; }
+
+img {
+  border: 0;
+  outline: 0; }
+
+article, section, aside, div, header, footer, nav {
+  position: relative;
+  box-sizing: border-box; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+select {
+  padding: 0 10px 0;
+  box-sizing: border-box;
+  background: #ebebeb url(../images/droparrow.jpg) no-repeat right center;
+  border: solid 1px #959595; }
+
+input[type="text"], input[type="email"], textarea {
+  cursor: pointer;
+  background: #ebebeb;
+  color: #000;
+  padding: 5px 10px;
+  font: 16px/23px "robotoregular";
+  border: solid 1px #959595; }
+
+.pagewrapper2 {
+  width: 80%;
+  margin: 0 auto; }
+
+header {
+  height: 8.88889%;
+  background: #fff;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  header img {
+    height: 100%;
+    width: auto; }
+  header aside {
+    width: auto;
+    text-align: center;
+    height: 100%;
+    padding: 25px 30px 0 60px;
+    background: #007149 url(../images/slantbg.jpg) no-repeat left top;
+    background-size: auto 100%;
+    box-sizing: border-box; }
+    header aside h1 {
+      font: 24px/30px "ralewaybold";
+      text-transform: uppercase; }
+
+.search-main {
+  background: #ececec;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 8px 0; }
+  .search-main .property-finder {
+    width: 65%;
+    max-width: 1280px;
+    box-sizing: border-box;
+    z-index: 100; }
+    .search-main .property-finder label {
+      text-transform: uppercase;
+      position: relative;
+      top: 0;
+      font: 20px/26px "rajdhanisemibold";
+      color: #009e66;
+      padding: 0 30px 0;
+      box-sizing: border-box; }
+    .search-main .property-finder ul {
+      list-style: none;
+      padding-left: 30px;
+      padding-right: 30px;
+      box-sizing: border-box;
+      position: relative;
+      height: 100%; }
+      .search-main .property-finder ul li {
+        width: 33%;
+        padding-right: 30px;
+        box-sizing: border-box; }
+        .search-main .property-finder ul li select {
+          padding: 0 10px 0;
+          box-sizing: border-box;
+          background: #2d2d2d url(../images/droparrow.png) no-repeat right center;
+          border: solid 1px #959595;
+          color: #fff;
+          height: 32px;
+          font-size: 14px;
+          border: 0;
+          border-radius: 5px; }
+      .search-main .property-finder ul li:last-child {
+        width: 32px;
+        position: absolute;
+        right: 0;
+        padding-right: 0; }
+        .search-main .property-finder ul li:last-child input {
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+          background: #007149 url(../images/search.png) no-repeat center center;
+          color: #fff;
+          padding-top: 5px;
+          font: 18px/24px "rajdhanisemibold";
+          border-radius: 50%; }
+        .search-main .property-finder ul li:last-child input:hover {
+          background: #00502f url(../images/search.png) no-repeat center center; }
+  .search-main aside {
+    width: 33%;
+    max-width: 450px;
+    border-left: solid 1px #919296;
+    padding-right: 30px; }
+    .search-main aside label {
+      text-transform: uppercase;
+      position: relative;
+      top: 0;
+      font: 20px/26px "rajdhanisemibold";
+      color: #009e66;
+      padding: 0 30px 0;
+      box-sizing: border-box; }
+    .search-main aside ul {
+      list-style: none;
+      padding-left: 30px;
+      padding-right: 30px;
+      box-sizing: border-box;
+      position: relative;
+      height: 100%; }
+      .search-main aside ul li {
+        width: 100%;
+        padding-right: 30px;
+        box-sizing: border-box; }
+        .search-main aside ul li input[type="text"] {
+          padding: 0 10px 0;
+          box-sizing: border-box;
+          background: #2d2d2d;
+          border: solid 1px #959595;
+          color: #fff;
+          height: 32px;
+          font-size: 14px;
+          border: 0;
+          border-radius: 5px; }
+      .search-main aside ul li:last-child {
+        width: 32px;
+        height: 32px;
+        padding-right: 0;
+        position: absolute;
+        right: 0; }
+        .search-main aside ul li:last-child input {
+          width: 100%;
+          cursor: pointer;
+          background: #007149 url(../images/search.png) no-repeat center center;
+          color: #fff;
+          padding-top: 5px;
+          font: 18px/24px "rajdhanisemibold";
+          border-radius: 50%; }
+        .search-main aside ul li:last-child input:hover {
+          background: #00502f url(../images/search.png) no-repeat center center; }
+
+.welcome {
+  position: fixed;
+  height: 100%;
+  background: url(../images/welcomebg.jpg) no-repeat center center;
+  background-size: cover; }
+  .welcome div {
+    position: absolute;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .welcome section {
+    z-index: 50;
+    height: 100%;
+    padding: 20% 0 0;
+    box-sizing: border-box;
+    text-align: center; }
+    .welcome section h2 {
+      font: 32px/38px "ralewaymedium";
+      margin-bottom: 15px; }
+    .welcome section h1 {
+      font: 44px/50px "ralewaymedium";
+      margin-bottom: 35px; }
+    .welcome section p {
+      font: 20px/26px "robotoregular";
+      margin-bottom: 10px; }
+    .welcome section ul {
+      list-style: none;
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto; }
+      .welcome section ul li {
+        text-align: center;
+        display: inline-block;
+        width: 33%;
+        padding: 0 30px;
+        box-sizing: border-box; }
+        .welcome section ul li a {
+          font: 24px/30px "rajdhanisemibold";
+          color: #fff;
+          padding: 20px 0;
+          border: solid 3px #fff;
+          border-radius: 10px;
+          width: 298px;
+          box-sizing: border-box; }
+        .welcome section ul li a:hover {
+          background: #007149;
+          border-color: #007149;
+          box-shadow: 0 5px 0 #00502f; }
+    .welcome section select {
+      max-width: 300px;
+      padding: 10px;
+      box-sizing: border-box;
+      height: 100%;
+      background: #ebebeb url(../images/droparrow.jpg) no-repeat right center;
+      border: solid 1px #959595; }
+    .welcome section button {
+      font: 16px/22px "rajdhanisemibold";
+      color: #fff;
+      padding: 10px 15px;
+      background: #007149;
+      margin: 0 15px;
+      text-transform: uppercase; }
+    .welcome section button:hover {
+      background: #00502f; }
+
+.featured {
+  position: relative;
+  height: 49.44444%;
+  background: #007149; }
+  .featured h3 {
+    font: 40px/46px "ralewaysemibold";
+    margin-bottom: 15px; }
+  .featured p {
+    font: 18px/30px "robotoregular";
+    margin-bottom: 60px; }
+  .featured ul {
+    list-style: none; }
+    .featured ul li {
+      display: inline-block;
+      margin-right: 30px; }
+      .featured ul li a {
+        color: #fff;
+        font: 24px/30px "rajdhanisemibold";
+        padding: 10px 15px;
+        border: solid 3px #fff;
+        text-transform: uppercase; }
+      .featured ul li a:hover {
+        background: #00502f; }
+    .featured ul li:last-child {
+      margin-right: 0; }
+  .featured .featleft {
+    width: 54.375%;
+    cursor: pointer;
+    -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    float: left;
+    position: absolute;
+    z-index: 50;
+    height: 100%; }
+    .featured .featleft div {
+      position: relative;
+      z-index: 1;
+      height: 100%; }
+      .featured .featleft div div.overlay {
+        position: absolute;
+        z-index: 15;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3); }
+    .featured .featleft aside {
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+      background: #009e66;
+      padding: 10px 14% 10px 20px;
+      box-sizing: border-box; }
+      .featured .featleft aside h2 {
+        font: 24px/36px "ralewaysemibold";
+        padding-right: 40px;
+        background: url(../images/arrow.png) no-repeat right center;
+        letter-spacing: 2px; }
+      .featured .featleft aside img {
+        height: 100%;
+        width: auto;
+        float: right; }
+  .featured .featleft:hover aside {
+    background: #00502f; }
+  .featured .employee {
+    display: none;
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 49;
+    background: #007149;
+    height: 100%;
+    width: 54.375%;
+    box-sizing: border-box;
+    padding: 35px 30px 35px 10%; }
+  .featured .featright {
+    width: 54.375%;
+    cursor: pointer;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 49px;
+    box-sizing: border-box; }
+    .featured .featright div {
+      position: relative;
+      z-index: 1;
+      height: 100%; }
+      .featured .featright div div.overlay {
+        position: absolute;
+        z-index: 15;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3); }
+    .featured .featright aside {
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+      background: #009e66;
+      padding: 10px 20px 10px 90px;
+      box-sizing: border-box; }
+      .featured .featright aside h2 {
+        font: 24px/36px "ralewaysemibold";
+        padding-right: 40px;
+        background: url(../images/arrow.png) no-repeat right center;
+        letter-spacing: 2px; }
+      .featured .featright aside img {
+        height: 100%;
+        width: auto;
+        float: right; }
+  .featured .reap {
+    display: none;
+    top: 0;
+    left: 0;
+    position: relative;
+    z-index: 50;
+    background: url(../images/greenbg.png) no-repeat left top;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    height: 100%;
+    width: 54.375%;
+    width: 54.375%;
+    box-sizing: border-box;
+    padding: 35px 90px 35px 60px; }
+  .featured .featright:hover aside {
+    background: #00502f; }
+  .featured .featleft:hover div.overlay, .featured .featright:hover div.overlay {
+    background: rgba(0, 0, 0, 0.5); }
+
+.featured-offers {
+  height: 40%;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+  z-index: 90; }
+  .featured-offers article {
+    height: 100%; }
+    .featured-offers article div.overlay {
+      position: absolute;
+      z-index: 15;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); }
+    .featured-offers article img {
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .featured-offers article div {
+      width: 100%;
+      padding: 5% 60px 0 33%;
+      box-sizing: border-box;
+      z-index: 50; }
+      .featured-offers article div h2 {
+        font: 40px/46px "ralewaysemibold";
+        margin-bottom: 20px; }
+      .featured-offers article div p {
+        font: 24px/30px "robotoregular"; }
+  .featured-offers aside {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    background: #fff;
+    -webkit-clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+    text-align: center;
+    padding-top: 6%;
+    padding-right: 30px;
+    box-sizing: border-box; }
+    .featured-offers aside img {
+      max-width: 50%;
+      height: auto; }
+
+.bank-partners {
+  height: 9.444%;
+  min-height: 85px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  background: #f3f3f3; }
+  .bank-partners .carousel {
+    height: 85px;
+    padding: 0 30px;
+    box-sizing: border-box; }
+    .bank-partners .carousel .carousel-cell {
+      height: 100%;
+      margin: 0 30px;
+      padding: 10px 0 15px;
+      box-sizing: border-box;
+      width: 10%; }
+
+.projects-promos {
+  height: 28.889%;
+  padding: 8px 0;
+  box-sizing: border-box;
+  position: relative; }
+  .projects-promos article.estates {
+    width: 42%;
+    height: 100%;
+    background: #dadada; }
+    .projects-promos article.estates .rslides {
+      height: 100%; }
+      .projects-promos article.estates .rslides .carousel-cell {
+        height: 100%;
+        position: relative; }
+        .projects-promos article.estates .rslides .carousel-cell aside {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          z-index: 100;
+          width: 180px;
+          height: 65px;
+          text-align: right;
+          background: #fff; }
+    .projects-promos article.estates .flickity-page-dots {
+      bottom: 5px !important; }
+  .projects-promos aside.promos {
+    width: 26.042%;
+    height: 100%;
+    position: relative;
+    margin: 0 1.389%;
+    background: #dadada; }
+    .projects-promos aside.promos .carousel {
+      height: 250px; }
+      .projects-promos aside.promos .carousel .carousel-cell {
+        background: #dadada;
+        text-align: center;
+        height: 100%;
+        position: relative; }
+  .projects-promos h3 {
+    position: absolute;
+    top: 10px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    left: 0;
+    border-left: solid 13px #007149;
+    background: #fff;
+    z-index: 100;
+    font: 20px/26px "rajdhanisemibold";
+    color: #000;
+    padding: 5px 40px 3px 10px;
+    text-transform: uppercase; }
+  .projects-promos .other-links {
+    width: 29.167%;
+    color: #000;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    padding-right: 30px; }
+    .projects-promos .other-links ul {
+      list-style: none;
+      height: 100%; }
+      .projects-promos .other-links ul li {
+        height: 17.033%;
+        margin-bottom: 1.7%;
+        box-sizing: border-box;
+        border: solid 1px #dadada;
+        position: relative; }
+        .projects-promos .other-links ul li a {
+          color: #000;
+          cursor: pointer;
+          height: 100%;
+          font: 20px/26px "rajdhanisemibold"; }
+          .projects-promos .other-links ul li a span {
+            width: 75px;
+            position: absolute;
+            text-align: center;
+            height: 100%;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            text-align: center;
+            border-right: solid 1px #dadada; }
+          .projects-promos .other-links ul li a label {
+            position: relative;
+            height: 100%;
+            top: 0;
+            z-index: 15;
+            left: 0;
+            padding: 10px 10px 0 90px;
+            box-sizing: border-box; }
+        .projects-promos .other-links ul li a:hover {
+          background: #dadada;
+          cursor: pointer; }
+      .projects-promos .other-links ul li:last-child {
+        margin: 0; }
+  .projects-promos .banklist li {
+    height: 22% !important; }
+    .projects-promos .banklist li label {
+      padding-top: 15px !important; }
+    .projects-promos .banklist li .bonds {
+      height: 100%;
+      padding: 5px 0 5px 90px;
+      box-sizing: border-box; }
+
+.projects {
+  position: relative;
+  padding: 40px 20px;
+  box-sizing: border-box; }
+  .projects .banner {
+    min-height: 100px;
+    background: #dadada;
+    text-align: center; }
+    .projects .banner span {
+      margin: 20px;
+      font: 20px/26px "robotoregular";
+      color: #919296;
+      width: 100%;
+      float: left; }
+  .projects .overview {
+    background: #007149;
+    padding: 30px;
+    box-sizing: border-box; }
+    .projects .overview figure {
+      width: 40%;
+      min-height: 200px;
+      position: relative;
+      top: 0;
+      left: 0; }
+    .projects .overview figcaption {
+      width: 53%;
+      padding: 0;
+      box-sizing: border-box;
+      min-height: 200px; }
+      .projects .overview figcaption h4 {
+        font: 24px/30px "ralewaybold";
+        color: #e7f0ed;
+        margin-bottom: 20px; }
+      .projects .overview figcaption p {
+        font: 18px/24px "robotoregular";
+        color: #fff; }
+  .projects a {
+    color: #000; }
+  .projects .properties {
+    width: 68.444%; }
+    .projects .properties aside {
+      background: #f4f4f4;
+      z-index: 90;
+      border-bottom: solid 1px #919296;
+      margin-bottom: 30px; }
+      .projects .properties aside ul {
+        text-align: center; }
+        .projects .properties aside ul li {
+          display: inline-block;
+          margin-right: 15px;
+          padding: 10px;
+          vertical-align: middle;
+          border-bottom: solid 3px #f4f4f4; }
+          .projects .properties aside ul li img {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%); }
+        .projects .properties aside ul li.current {
+          border-bottom: solid 3px #007149; }
+          .projects .properties aside ul li.current img {
+            -webkit-filter: none;
+            filter: none; }
+        .projects .properties aside ul li:hover {
+          border-bottom: solid 3px #007149; }
+          .projects .properties aside ul li:hover img {
+            -webkit-filter: none;
+            filter: none; }
+    .projects .properties div ul {
+      list-style: none; }
+      .projects .properties div ul li {
+        width: 30.333%;
+        padding-left: 15px;
+        margin-bottom: 35px;
+        display: inline-table;
+        vertical-align: top; }
+        .projects .properties div ul li figure {
+          height: 250px;
+          box-sizing: border-box; }
+        .projects .properties div ul li figcaption {
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+          padding: 15px;
+          box-sizing: border-box; }
+          .projects .properties div ul li figcaption h4 {
+            font: 18px/24px "ralewaysemibold";
+            padding-bottom: 5px;
+            border-bottom: solid 1px #dadada;
+            margin-bottom: 5px;
+            color: #007149; }
+          .projects .properties div ul li figcaption .price {
+            width: 50%; }
+          .projects .properties div ul li figcaption .type-location {
+            width: 46%;
+            text-align: right; }
+          .projects .properties div ul li figcaption h6 {
+            font: 14px/20px "rajdhanisemibold";
+            color: #919296; }
+          .projects .properties div ul li figcaption h5 {
+            font: 20px/26px "ralewaybold";
+            color: #000; }
+          .projects .properties div ul li figcaption p {
+            font: 13px/20px "robotoregular";
+            color: #000; }
+      .projects .properties div ul li:hover figure {
+        border: solid 3px #007149; }
+        .projects .properties div ul li:hover figure img {
+          opacity: 0.8; }
+    .projects .properties section {
+      padding: 15px;
+      box-sizing: border-box;
+      text-align: center; }
+      .projects .properties section ul li {
+        display: inline-block;
+        margin: 0 5px;
+        font: 16px/22px "rajdhanisemibold"; }
+        .projects .properties section ul li a {
+          color: #000;
+          background: #dadada;
+          padding: 3px 6px; }
+        .projects .properties section ul li a.current, .projects .properties section ul li a:hover {
+          background: #007149;
+          color: white; }
+  .projects article.forms {
+    width: 65%; }
+    .projects article.forms h3 {
+      font: 30px/36px "ralewaysemibold";
+      color: #fff;
+      margin: 20px; }
+    .projects article.forms aside.tab {
+      background: #dadada;
+      position: relative; }
+      .projects article.forms aside.tab ul {
+        background: #dadada;
+        padding: 5px 5px 0;
+        box-sizing: border-box; }
+        .projects article.forms aside.tab ul li {
+          display: inline-block !important;
+          margin-right: 5px;
+          float: left; }
+          .projects article.forms aside.tab ul li a {
+            padding: 10px 15px;
+            font: 18px/24px "rajdhanisemibold";
+            color: #000;
+            border-radius: 10px 10px 0 0;
+            border: solid 1px #919296;
+            border-bottom: 0;
+            background: #fff; }
+        .projects article.forms aside.tab ul li.current a, .projects article.forms aside.tab ul li:hover a {
+          background: #5c931d;
+          color: #fff;
+          border-color: #5c931d; }
+    .projects article.forms .forms-main {
+      padding: 0;
+      box-sizing: border-box;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+      background: #6d9e37; }
+      .projects article.forms .forms-main p, .projects article.forms .forms-main ul {
+        color: #fff;
+        font: 16px/22px "robotoregular";
+        margin-bottom: 25px; }
+      .projects article.forms .forms-main p {
+        padding: 15px 20px;
+        background: #5c931d;
+        box-sizing: border-box; }
+      .projects article.forms .forms-main ul {
+        list-style: none;
+        padding: 0 20%; }
+        .projects article.forms .forms-main ul li {
+          margin-bottom: 15px; }
+          .projects article.forms .forms-main ul li ul {
+            width: 60%;
+            margin-bottom: 5px;
+            padding: 0 !important; }
+            .projects article.forms .forms-main ul li ul li {
+              display: inline-block;
+              width: 100%;
+              margin-bottom: 5px !important; }
+              .projects article.forms .forms-main ul li ul li label {
+                width: auto; }
+          .projects article.forms .forms-main ul li label {
+            width: 30%;
+            padding-top: 4px;
+            text-align: right; }
+          .projects article.forms .forms-main ul li input[type="text"], .projects article.forms .forms-main ul li input[type="email"], .projects article.forms .forms-main ul li textarea, .projects article.forms .forms-main ul li select {
+            width: 60%;
+            height: 40px;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 10px;
+            background: #2d2d2d;
+            border: 0; }
+          .projects article.forms .forms-main ul li input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            border: solid 1px #959595;
+            border-radius: 50%;
+            background: #fff; }
+          .projects article.forms .forms-main ul li input[type="radio"] + label {
+            margin-left: 15px; }
+          .projects article.forms .forms-main ul li input[type="radio"]:checked {
+            background: url(../images/radio.jpg) no-repeat center center; }
+          .projects article.forms .forms-main ul li input[type="submit"] {
+            font: 18px/22px "rajdhanisemibold";
+            color: #fff;
+            background: #007149;
+            padding: 10px 25px;
+            @expand .resetform;
+            text-transform: uppercase; }
+          .projects article.forms .forms-main ul li textarea {
+            height: 250px;
+            margin-bottom: 15px; }
+          .projects article.forms .forms-main ul li p {
+            width: 68%;
+            margin-bottom: 5px;
+            line-height: 30px; }
+            .projects article.forms .forms-main ul li p input[type="checkbox"] {
+              width: 20px;
+              height: 20px;
+              border: solid 1px #959595;
+              margin-top: 5px;
+              margin-right: 15px;
+              background: white; }
+            .projects article.forms .forms-main ul li p input[type="checkbox"]:checked {
+              background: url(../images/check.jpg) no-repeat center center; }
+          .projects article.forms .forms-main ul li select {
+            background: #2d2d2d url(../images/droparrow.png) no-repeat 97% center;
+            margin-bottom: 10px; }
+          .projects article.forms .forms-main ul li a {
+            font: 18px/22px "rajdhanisemibold";
+            color: #fff;
+            background: #007149;
+            padding: 10px 25px;
+            @expand .resetform;
+            text-transform: uppercase; }
+          .projects article.forms .forms-main ul li a:hover, .projects article.forms .forms-main ul li input[type="submit"]:hover {
+            background: #00502f; }
+  .projects .referralsec {
+    background: #6d9e37; }
+  .projects .refer {
+    background: #83b151;
+    padding: 0 !important;
+    box-sizing: border-box;
+    margin-top: 0; }
+    .projects .refer h4 {
+      background: #608439;
+      padding: 10px;
+      font: 20px/26px "ralewaysemibold";
+      letter-spacing: 2px;
+      text-transform: uppercase; }
+    .projects .refer li {
+      padding: 0 20% !important;
+      box-sizing: border-box;
+      color: select;
+        color-margin-bottom: 10px !important; }
+    .projects .refer li:first-child {
+      padding: 0 !important; }
+  .projects .bonds {
+    height: 100%;
+    padding: 5px 0 5px 90px;
+    box-sizing: border-box; }
+  .projects .other-links {
+    width: 29.167%;
+    color: #000;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    right: 0; }
+    .projects .other-links ul {
+      list-style: none;
+      height: 100%; }
+      .projects .other-links ul li {
+        height: 45px;
+        margin-bottom: 1.7%;
+        box-sizing: border-box;
+        border: solid 1px #dadada;
+        position: relative; }
+        .projects .other-links ul li a {
+          color: #000;
+          cursor: pointer;
+          height: 100%;
+          font: 20px/26px "rajdhanisemibold"; }
+          .projects .other-links ul li a span {
+            width: 75px;
+            position: absolute;
+            text-align: center;
+            height: 100%;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            text-align: center;
+            border-right: solid 1px #dadada; }
+          .projects .other-links ul li a label {
+            position: relative;
+            height: 100%;
+            top: 0;
+            z-index: 15;
+            left: 0;
+            padding: 10px 10px 0 90px;
+            box-sizing: border-box; }
+        .projects .other-links ul li a:hover {
+          background: #dadada;
+          cursor: pointer; }
+      .projects .other-links ul li:last-child {
+        margin: 0; }
+
+footer {
+  position: relative;
+  height: 6.444%;
+  border-top: solid 1px #dadada;
+  background: #f4f4f4;
+  position: relative;
+  z-index: 100;
+  padding: 0 30px;
+  box-sizing: border-box;
+  text-align: right; }
+  footer a {
+    color: #919296;
+    text-transform: uppercase; }
+  footer article {
+    width: auto;
+    text-align: left;
+    padding: 10px 0 0;
+    box-sizing: border-box;
+    height: 100%; }
+    footer article ul {
+      list-style: none; }
+      footer article ul li {
+        display: inline-block;
+        margin-right: 15px;
+        height: 100%; }
+    footer article span {
+      width: 150px;
+      padding-right: 15px;
+      font: 16px/22px "rajdhanisemibold";
+      color: #000; }
+  footer aside {
+    width: auto;
+    padding: 10px 0 0;
+    box-sizing: border-box; }
+    footer aside ul {
+      list-style: none; }
+      footer aside ul li {
+        display: inline-block;
+        border-left: solid 1px #dadada;
+        padding-left: 15px;
+        margin-left: 15px; }
+        footer aside ul li a {
+          color: #000;
+          font: 14px/22px "robotoregular";
+          text-decoration: underline; }
+      footer aside ul li:first-child {
+        border: 0; }
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+.rslides div {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0; }
+
+.rslides div:first-child {
+  position: relative;
+  display: block;
+  float: left; }
+
+.rslides img {
+  display: block;
+  border: 0; }
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: 50%;
+  max-width: 50%;
+  margin: 20px 25%; }
+
+.projdesc {
+  float: left; }
+  .projdesc h6 {
+    font: 16px/22px "rajdhanisemibold";
+    color: #919296; }
+  .projdesc p {
+    color: #000;
+    font: 16px/22px "robotoregular";
+    margin-bottom: 5px; }
+  .projdesc h3 {
+    font: 30px/36px "ralewaysemibold";
+    color: #007149;
+    margin-bottom: 15px; }
+  .projdesc ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0; }
+    .projdesc ul li {
+      border-bottom: solid 1px #dadada;
+      margin-bottom: 5px; }
+      .projdesc ul li a {
+        color: #fff;
+        background: #007149;
+        padding: 10px;
+        text-align: center;
+        font: 16px/22px "rajdhanisemibold";
+        text-transform: uppercase;
+        box-sizing: border-box; }
+      .projdesc ul li a:hover {
+        background: #00502f; }
+    .projdesc ul li:last-child {
+      border-bottom: 0;
+      padding: 20px 0; }
+  .projdesc div {
+    width: 100%;
+    float: left; }
+    .projdesc div figure {
+      width: 100%;
+      padding-right: 300px;
+      text-align: center;
+      box-sizing: border-box;
+      position: absolute;
+      height: 300px; }
+    .projdesc div article {
+      width: 280px;
+      min-height: 300px;
+      position: relative;
+      z-index: 50; }
+    .projdesc div aside {
+      padding: 15px 10px 10px;
+      box-sizing: border-box; }
+      .projdesc div aside ul {
+        margin: 0 !important;
+        text-align: center; }
+        .projdesc div aside ul li {
+          display: inline-block;
+          width: 30%;
+          margin: 0; }
+          .projdesc div aside ul li a {
+            background: #fff;
+            border: solid 3px #000;
+            color: #000; }
+          .projdesc div aside ul li a:hover {
+            background: #dadada; }
+        .projdesc div aside ul li:nth-child(2) {
+          margin: 0 20px 0; }
+        .projdesc div aside ul li:last-child {
+          margin: 0 !important;
+          padding: 0; }
+
+/*# sourceMappingURL=styles.css.map */
