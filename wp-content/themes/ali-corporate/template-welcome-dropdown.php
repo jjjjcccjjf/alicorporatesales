@@ -42,7 +42,7 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
     <p>Please Select Your Employer</p>
     <p class="margbot10">
       <select name="employer" id="employer">
-        <option value="">List of Employer</option>
+        <option selected disabled>List of Employer</option>
         <?php
         $employers = get_field("employers_list");
         foreach ($employers as $emp) { ?>
@@ -72,6 +72,7 @@ $(document).ready(function() {
       type: "POST",
       data: {
         'employer_type': '<?php echo get_field('page_type') ?>',
+        'employer_name': $("#employer option:selected").text()
       },
       success:function(data){
         if(data == 1){

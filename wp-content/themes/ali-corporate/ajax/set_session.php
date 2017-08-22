@@ -1,6 +1,6 @@
 <?php
 /**
- * accepts   `outside_partner`, `ayala_group`, or `bank`
+ * accepts   `outside`, `ayala`, or `bank`
  * @param [type] $employer_type [description]
  */
 session_start();
@@ -22,6 +22,8 @@ function setSession($employer_type)
 		break;
 	}
 }
+
+$_SESSION['employer_name'] = $_POST['employer_name'];
 
 setSession($_POST['employer_type']);
 echo 1;
