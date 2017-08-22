@@ -11,7 +11,7 @@
 * @since 1.0
 * @version 1.0
 */
-
+session_start();
 /**
 * Returns the price rounded up with English shortcut
 * such as K, M, B
@@ -61,10 +61,10 @@ unset($GLOBALS['price_range'][1]);
 
 
 /**
- * Display the recurring side navigation
- * @param  string    $type    [description]
- * @return [type]             [description]
- */
+* Display the recurring side navigation
+* @param  string    $type    [description]
+* @return [type]             [description]
+*/
 function displaySideNav($type)
 {
 	switch ($type) {
@@ -82,10 +82,10 @@ function displaySideNav($type)
 		echo
 		'<ul>
 		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-    <li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
-    <li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-    <li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-    <li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
+		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
 		</ul>';
 		break;
 
@@ -122,7 +122,7 @@ function displaySideNav($type)
 	<header class="inside">
 		<a href="<?php echo site_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ayalaland-logo.jpg" width="240" height="80" alt="Ayala Land logo"></a>
 		<aside>
-			<h1>AYALA GROUP EMPLOYEE</h1>
+			<h1><?php echo @$_SESSION['employer_type'] ?></h1>
 		</aside>
 		<button class="searchmobile"></button>
 	</header>
