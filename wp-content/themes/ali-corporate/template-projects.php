@@ -3,7 +3,8 @@
 
 $brands = isset($_GET['brand']); # Check to see if brands are set
 
-$location_obj = get_page_by_title( $_GET['location'], OBJECT, 'location');
+$location_obj = get_page_by_title( $_GET['property_location'], OBJECT, 'location');
+
 $location_ID = @$location_obj->ID;
 
 //////////////////////////
@@ -22,11 +23,11 @@ if($_GET['property_type'] != null){
   $property_type_filter = [];
 }
 
-if($_GET['location'] != null){
+if($_GET['property_location'] != null){
   $location_filter = array(
     'key' => 'location',
     'value' => $location_ID, # should be the ID of locaton
-    'compare' => 'LIKE'
+    'compare' => '='
     );
 }else{
   $location_filter = [];
@@ -180,8 +181,8 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
               </article>
               <aside>
                 <ul>
-                  <li><a href="inquire-now.html">Inquire Now</a></li>
-                  <li><a href="#">Refer Now</a></li>
+                  <li><a href="<?php echo get_permalink(925) ?>">Inquire Now</a></li>
+                  <li><a href="<?php echo get_permalink(996) ?>">Refer Now</a></li>
                   <li><a href="#">Download Forms</a></li>
                 </ul>
               </aside>

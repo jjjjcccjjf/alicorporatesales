@@ -139,7 +139,7 @@ function displaySideNav($type)
 	<div class="search-main">
 		<section class="property-finder">
 			<form action="<?php echo get_permalink(47) ?>" method="get">
-				<label>FIND WHAT YOU ARE LOOKING FOR</label>
+				<label style="display:none">FIND WHAT YOU ARE LOOKING FOR</label>
 				<ul>
 					<li>
 						<select name="property_type">
@@ -164,13 +164,13 @@ function displaySideNav($type)
 						</select>
 					</li>
 					<li>
-						<select name="location">
+						<select name="property_location">
 							<option value="">Location</option>
 							<?php
 							$args = array('post_type' => 'location', 'posts_per_page' => -1, 'order' => 'ASC');
 							$the_query = new WP_Query($args);
 							if ( $the_query->have_posts() ) {  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-								<option <?php echo (@$_GET['location'] == get_the_title()) ? 'selected' : '' ;?> ><?php the_title(); ?></option>
+								<option <?php echo (@$_GET['property_location'] == get_the_title()) ? 'selected' : '' ;?> ><?php the_title(); ?></option>
 							<?php endwhile; wp_reset_postdata(); } else { /** no posts found **/ } ?>
 						</select>
 					</li>
@@ -181,9 +181,9 @@ function displaySideNav($type)
 			</form>
 		</section>
 		<aside>
-			<label>Search</label>
+			<label style="display:none">Search</label>
 			<ul>
-				<li><input type="text" name="" value="Enter Keywords"></li>
+				<li><input type="text" name="" value="Search Keywords"></li>
 				<li><input type="submit" name="" value=" "></li>
 			</ul>
 		</aside>
