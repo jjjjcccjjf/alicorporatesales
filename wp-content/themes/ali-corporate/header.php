@@ -183,8 +183,10 @@ function displaySideNav($type)
 		<aside>
 			<label style="display:none">Search</label>
 			<ul>
-				<li><input type="text" name="" value="Search Keywords"></li>
-				<li><input type="submit" name="" value=" "></li>
+				<form action="<?php echo get_permalink(1154) ?>" method="get">
+					<li><input type="text" name="q" value="" placeholder="Search Keywords"></li>
+					<li><input type="submit" value=""></li>
+				</form>
 			</ul>
 		</aside>
 	</div>
