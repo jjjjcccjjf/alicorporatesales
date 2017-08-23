@@ -68,6 +68,8 @@ unset($GLOBALS['price_range'][1]);
 function displaySideNav($type)
 {
 	switch ($type) {
+
+		case 'BANK/INSTITUTIONAL OFFERS':
 		case 'generic':
 		echo
 		'<ul>
@@ -78,6 +80,8 @@ function displaySideNav($type)
 		</ul>';
 		break;
 
+		case 'Outside partners':
+		case 'Ayala Group Employee':
 		case 'home':
 		echo
 		'<ul>
@@ -86,16 +90,6 @@ function displaySideNav($type)
 		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
 		<li><a href="' . get_permalink(1163) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		<li><a href="' . get_permalink(1167) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
-		</ul>';
-		break;
-
-		case 'bank':
-		echo
-		'<ul>
-		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-		<li><a href="' . get_permalink(1159) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
-		<li><a href="' . get_permalink(1163) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		</ul>';
 		break;
 

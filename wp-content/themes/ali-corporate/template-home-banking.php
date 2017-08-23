@@ -70,7 +70,7 @@ $featured = get_field("featured_estates");
     </div>
   </aside>
   <div class="other-links banklist">
-    <?php displaySideNav('bank'); # Find this in header.php ?>
+    <?php displaySideNav($_SESSION['employer_type']); # Find this in header.php ?>
   </div>
 </section>
 
@@ -108,9 +108,9 @@ $featured = get_field("featured_estates");
       </article>
       <aside>
         <ul>
-          <li><a href="inquire-now.html">Inquire Now</a></li>
-          <li><a href="#">Refer Now</a></li>
-          <li><a href="#">Download Forms</a></li>
+          <li><a href="<?php echo get_permalink(925) ?>">Inquire Now</a></li>
+          <li><a href="<?php echo get_permalink(996) ?>">Refer Now</a></li>
+          <li><a href="<?php echo get_permalink(1161) ?>">Download Forms</a></li>
         </ul>
       </aside>
     </div>

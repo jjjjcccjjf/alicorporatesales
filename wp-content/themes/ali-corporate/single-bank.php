@@ -18,7 +18,7 @@ while(have_posts()): the_post();
     </article>
 
     <div class="other-links">
-      <?php displaySideNav('generic'); # Find this in header.php ?>
+      <?php displaySideNav($_SESSION['employer_type']); # Find this in header.php ?>
     </div>
   </section>
 
