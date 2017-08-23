@@ -7,6 +7,14 @@ if(isset($_SESSION['employer_type']) && $_SESSION['employer_type'] == "Outside p
   $page_id = 885; # Page ID: Welcome - Outside Partners
 }
 $employers = get_field("employers_list", $page_id);
+$projects_query = new WP_Query(array("post_type" => "project", "posts_per_page" => "-1"));
+$projects = array();
+if ( $projects_query->have_posts() ) {  while ( $projects_query->have_posts() ): $projects_query->the_post();
+  $title = get_the_title();
+  $brand = str_replace(" ", "_", get_field("brand"));
+  $projects[$title] = $brand;
+endwhile; wp_reset_postdata(); }
+
 while(have_posts()): the_post();
 ?>
 <section class="projects">
