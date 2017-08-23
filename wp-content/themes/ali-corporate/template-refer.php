@@ -109,13 +109,7 @@ while(have_posts()): the_post();
     </article>
 
     <div class="other-links">
-      <ul>
-        <li><a href="inquire-now.html"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-        <li><a href="#purchase"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-        <li><a href="#homestarter"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bond.png"></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/homestarterbond.png" class="bonds"></a></li>
-        <li><a href="#rewards"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-
-      </ul>
+      <?php displaySideNav('generic'); # Find this in header.php ?>
     </div>
   </div>
 </section>
