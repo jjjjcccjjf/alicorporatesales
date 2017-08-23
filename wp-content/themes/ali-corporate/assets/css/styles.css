@@ -850,7 +850,8 @@ header {
             background: #007149;
             padding: 10px 25px;
             @expand .resetform;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            cursor: pointer; }
           .projects article.forms .forms-main ul li textarea {
             height: 250px;
             margin-bottom: 15px; }
@@ -876,7 +877,8 @@ header {
             background: #007149;
             padding: 10px 25px;
             @expand .resetform;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            cursor: pointer; }
           .projects article.forms .forms-main ul li a:hover, .projects article.forms .forms-main ul li input[type="submit"]:hover {
             background: #00502f; }
   .projects .referralsec {
