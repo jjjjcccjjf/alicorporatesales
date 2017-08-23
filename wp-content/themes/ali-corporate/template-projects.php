@@ -3,7 +3,8 @@
 
 $brands = isset($_GET['brand']); # Check to see if brands are set
 
-$location_obj = get_page_by_title( $_GET['location'], OBJECT, 'location');
+$location_obj = get_page_by_title( $_GET['property_location'], OBJECT, 'location');
+
 $location_ID = @$location_obj->ID;
 
 //////////////////////////
@@ -22,11 +23,11 @@ if($_GET['property_type'] != null){
   $property_type_filter = [];
 }
 
-if($_GET['location'] != null){
+if($_GET['property_location'] != null){
   $location_filter = array(
     'key' => 'location',
     'value' => $location_ID, # should be the ID of locaton
-    'compare' => 'LIKE'
+    'compare' => '='
     );
 }else{
   $location_filter = [];
@@ -99,11 +100,11 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
     <?php if($brands): ?>
       <aside>
         <ul>
-          <li class="<?php echo ($_GET['brand'] == 'alp') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alp" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'alveo') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alveo" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alveo.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'avida') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=avida" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/avida.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'amaia') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=amaia" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/amaia.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'bellavita') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=bellavita" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bellavita.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'alp') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alp" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'alveo') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alveo" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alveo.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'avida') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=avida" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/avida.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'amaia') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=amaia" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/amaia.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'bellavita') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=bellavita" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bellavita.jpg"></a></li>
         </ul>
       </aside>
     <?php endif; ?>
@@ -179,10 +180,14 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
               </article>
               <aside>
+                <?php
+                $project_title = get_the_title();
+                $project_brand = str_replace(" ", "_", get_field("brand"));
+                ?>
                 <ul>
-                  <li><a href="inquire-now.html">Inquire Now</a></li>
-                  <li><a href="#">Refer Now</a></li>
-                  <li><a href="#">Download Forms</a></li>
+                  <li><a href="<?php echo get_permalink(925) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Inquire Now</a></li>
+                  <li><a href="<?php echo get_permalink(996) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Refer Now</a></li>
+                  <li><a href="<?php echo get_permalink(1161) ?>">Download Forms</a></li>
                 </ul>
               </aside>
             </div>
