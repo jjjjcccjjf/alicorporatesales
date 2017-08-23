@@ -69,16 +69,24 @@ while(have_posts()): the_post();
               </li>
               <li>
                 <label>Preferred Project</label>
-                <select name="referral_brand_1" id="referral_brand_1">
-                  <option>Select Brand</option>
-                  <option>Ayala Land Premier</option>
-                  <option>Alveo Land</option>
-                  <option>Avida Land</option>
-                  <option>Amaia Land</option>
-                  <option>Bellavita</option>
+                <select name="referral_brand_1" id="referral_brand_1" onchange="set_projects($(this).val());">
+                  <option value="">Select Brand</option>
+                  <?php
+                  $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
+                	$field = get_field_object($field_key);
+                	if($field){
+                		foreach( $field['choices'] as $choice ) { ?>
+                	<option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
+                	<?php
+                    }
+                	}
+                  ?>
                 </select>
                 <select name="referral_project_1" id="referral_project_1">
                   <option>Select Project</option>
+                  <?php foreach ($projects as $title => $brand) { ?>
+                  <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
+                  <?php } ?>
                 </select>
 
               </li>
@@ -117,13 +125,7 @@ while(have_posts()): the_post();
     </article>
 
     <div class="other-links">
-      <ul>
-        <li><a href="inquire-now.html"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-        <li><a href="#purchase"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-        <li><a href="#homestarter"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bond.png"></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/homestarterbond.png" class="bonds"></a></li>
-        <li><a href="#rewards"><span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-
-      </ul>
+      <?php displaySideNav('generic'); # Find this in header.php ?>
     </div>
   </div>
 </section>
@@ -171,13 +173,15 @@ $("#add_refer_anchor").click(function(e) {
 
 $("#submit_referral").click(function(e) {
   e.preventDefault();
-  alert("Hello");
   $.ajax({
 	    url:"<?php echo get_template_directory_uri(); ?>/ajax/sendReferral.php",
 	    type: "POST",
 	    data: $("#referral_form").serialize(),
 	    success:function(data){
-        alert(data);
+        if(data == "true")
+        {
+          window.location.href = '<?php echo get_permalink(1141); ?>?type=referral';
+        }
 	    },
 	    error: function(e){
 	      console.log(e);
@@ -185,5 +189,19 @@ $("#submit_referral").click(function(e) {
 	  });
   return false;
 });
+
+function set_projects(brand)
+{
+  if(brand != "")
+  {
+    brand = brand.replace(" ", "_");
+    $(".option_project").attr("style", "display:none");
+    $("."+brand).attr("style", "display:block");
+  }
+  else
+  {
+    $(".option_project").attr("style", "display:block");
+  }
+}
 
 </script>
