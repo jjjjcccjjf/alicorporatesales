@@ -100,11 +100,11 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
     <?php if($brands): ?>
       <aside>
         <ul>
-          <li class="<?php echo ($_GET['brand'] == 'alp') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alp" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'alveo') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alveo" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alveo.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'avida') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=avida" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/avida.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'amaia') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=amaia" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/amaia.jpg"></a></li>
-          <li class="<?php echo ($_GET['brand'] == 'bellavita') ? 'active' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=bellavita" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bellavita.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'alp') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alp" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'alveo') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alveo" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alveo.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'avida') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=avida" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/avida.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'amaia') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=amaia" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/amaia.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'bellavita') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=bellavita" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bellavita.jpg"></a></li>
         </ul>
       </aside>
     <?php endif; ?>
@@ -183,7 +183,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 <ul>
                   <li><a href="<?php echo get_permalink(925) ?>">Inquire Now</a></li>
                   <li><a href="<?php echo get_permalink(996) ?>">Refer Now</a></li>
-                  <li><a href="#">Download Forms</a></li>
+                  <li><a href="<?php echo get_permalink(1161) ?>">Download Forms</a></li>
                 </ul>
               </aside>
             </div>

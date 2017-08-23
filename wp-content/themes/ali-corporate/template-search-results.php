@@ -23,7 +23,11 @@ while(have_posts()): the_post();
         $the_query = new WP_Query($args);
         if ( $the_query->have_posts() ) {  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
           <li><a href="<?php echo get_permalink() ?>"> <?php the_title() ?></a></li>
-        <?php endwhile; wp_reset_postdata(); } else { /** no posts found **/ } ?>
+        <?php endwhile; wp_reset_postdata(); } else {
+          ?>
+          <li>No results found</li>
+          <?php
+         } ?>
       </ul>
     </article>
 
