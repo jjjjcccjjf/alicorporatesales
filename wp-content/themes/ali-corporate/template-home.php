@@ -10,91 +10,91 @@ $promos = get_field("promos");
 $featured = get_field("featured_estates");
 ?>
 <section class="featured">
- <article class="featleft">
-  <aside>
-    <h2><?php echo $left_banner["header_text"]; ?></h2>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/acentives.png" width="" height="" alt="Acentives Logo">
+  <article class="featleft">
+    <aside>
+      <h2><?php echo $left_banner["header_text"]; ?></h2>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/acentives.png" width="" height="" alt="Acentives Logo">
+    </aside>
+    <div>
+      <div class="overlay"></div>
+      <img src="<?php echo $left_banner["background"]; ?>" width="783" height="520" alt="Employee Discount">
+    </div>
+  </article>
+
+  <aside class="employee">
+    <h3><?php echo $left_banner["header_text"]; ?></h3>
+    <p><?php echo $left_banner["description"]; ?></p>
+    <ul>
+      <li><a href="<?php echo get_permalink(925)?>">Inquire Now</a></li>
+      <li><a href="<?php echo get_permalink(907)?>">Terms &amp; Conditions</a></li>
+    </ul>
+    <button class="close1"></button>
   </aside>
-  <div>
-    <div class="overlay"></div>
-    <img src="<?php echo $left_banner["background"]; ?>" width="783" height="520" alt="Employee Discount">
-  </div>
-</article>
 
-<aside class="employee">
- <h3><?php echo $left_banner["header_text"]; ?></h3>
- <p><?php echo $left_banner["description"]; ?></p>
-  <ul>
-   <li><a href="<?php echo get_permalink(925)?>">Inquire Now</a></li>
-   <li><a href="<?php echo get_permalink(907)?>">Terms &amp; Conditions</a></li>
- </ul>
- <button class="close1"></button>
-</aside>
+  <article class="featright">
+    <aside>
+      <h2><?php echo $right_banner["header_text"]; ?></h2>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/reap-logo.png" width="" height="" alt="Refer and Earn Program">
+    </aside>
+    <div>
+      <div class="overlay"></div>
+      <img src="<?php echo $right_banner["background"]; ?>" width="783" height="520" alt="Refer and Earn Program logo">
+    </div>
+  </article>
 
-<article class="featright">
-  <aside>
-    <h2><?php echo $right_banner["header_text"]; ?></h2>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/reap-logo.png" width="" height="" alt="Refer and Earn Program">
+  <aside class="reap">
+    <h3><?php echo $right_banner["header_text"]; ?></h3>
+    <p><?php echo $right_banner["description"]; ?></p>
+    <ul>
+      <li><a href="<?php echo get_permalink(996)?>">Refer Now</a></li>
+      <li><a href="<?php echo get_permalink(996)?>">View Details</a></li>
+    </ul>
+    <button class="close2"></button>
   </aside>
-  <div>
-   <div class="overlay"></div>
-   <img src="<?php echo $right_banner["background"]; ?>" width="783" height="520" alt="Refer and Earn Program logo">
- </div>
-</article>
-
-<aside class="reap">
- <h3><?php echo $right_banner["header_text"]; ?></h3>
- <p><?php echo $right_banner["description"]; ?></p>
- <ul>
-   <li><a href="<?php echo get_permalink(996)?>">Refer Now</a></li>
-   <li><a href="<?php echo get_permalink(996)?>">View Details</a></li>
- </ul>
- <button class="close2"></button>
-</aside>
 </section>
 
 <section class="projects-promos">
- <article class="estates">
-  <h3>Featured Estates</h3>
-  <div class="rslides" id="slider1">
-  <?php foreach ($featured as $estate) { ?>
-   <div class="carousel-cell">
-    <a href="#projdesc_<?php echo $estate->ID; ?>" class="desc">
-      <aside>
-        <img src="<?php echo get_field("logo", $estate->ID); ?>" width="" height="" alt="Clover Leaf logo">
-      </aside>
-      <figure>
-        <img src="<?php echo get_field("featured_photo", $estate->ID); ?>" width="" height="" alt="Clover Leaf">
-      </figure>
-    </a>
-   </div>
-  <?php
-  } ?>
+  <article class="estates">
+    <h3>Featured Estates</h3>
+    <div class="rslides" id="slider1">
+      <?php foreach ($featured as $estate) { ?>
+        <div class="carousel-cell">
+          <a href="#projdesc_<?php echo $estate->ID; ?>" class="desc">
+            <aside>
+              <img src="<?php echo get_field("logo", $estate->ID); ?>" width="" height="" alt="Clover Leaf logo">
+            </aside>
+            <figure>
+              <img src="<?php echo get_field("featured_photo", $estate->ID); ?>" width="" height="" alt="Clover Leaf">
+            </figure>
+          </a>
+        </div>
+        <?php
+      } ?>
 
 
-</div>
-</article>
-<aside class="promos">
- <h3>Promos &amp; Events</h3>
- <div class="rslides" id="slider2">
- <?php
- foreach ($promos as $promo) { ?>
-  <div class="carousel-cell">
-    <a href="<?php echo $promo["image"]; ?>" class="gallery-item">
-      <img src="<?php echo $promo["image"]; ?>" width="" height="" alt="Promo Poster">
-    </a>
+    </div>
+  </article>
+  <aside class="promos">
+    <h3>Promos &amp; Events</h3>
+    <div class="rslides" id="slider2">
+      <?php
+      foreach ($promos as $promo) { ?>
+        <div class="carousel-cell">
+          <a href="<?php echo $promo["image"]; ?>" class="gallery-item">
+            <img src="<?php echo $promo["image"]; ?>" width="" height="" alt="Promo Poster">
+          </a>
+        </div>
+        <?php
+      }
+      ?>
+    </div>
+  </aside>
+  <div class="other-links">
+    <?php displaySideNav('home'); # Find this in header.php ?>
   </div>
- <?php
- }
- ?>
-</div>
-</aside>
-<div class="other-links">
-  <?php displaySideNav('home'); # Find this in header.php ?>
-</div>
 </section>
 <?php foreach ($featured as $estate) { ?>
-<!-- Project Details -->
+  <!-- Project Details -->
   <div id="projdesc_<?php echo $estate->ID; ?>" class="white-popup mfp-hide projdesc">
     <h3><?php echo get_the_title($estate->ID); ?></h3>
     <div>
@@ -106,7 +106,7 @@ $featured = get_field("featured_estates");
           <li>
             <h6>Price:</h6>
             <p><?php echo formatPrice(get_field('min_price', $estate->ID)); ?>
-             - <?php echo formatPrice(get_field('max_price', $estate->ID)); ?>
+              - <?php echo formatPrice(get_field('max_price', $estate->ID)); ?>
             </p>
           </li>
           <li>
@@ -136,20 +136,20 @@ $featured = get_field("featured_estates");
   </div>
   <!-- Project Details -->
 
-  <?php } ?>
+<?php } ?>
 <?php
 get_footer();
-$check_ayala = $_SESSION['employer_type'] == 'ayala';
-if($check_ayala)
-  { ?>
+$check_ayala = $_SESSION['employer_type'] == 'Ayala Group Employee';
+if($check_ayala && get_field('image_popup') != '')
+{ ?>
 
-<script>
+  <script>
   (function($) {
     $(window).load(function () {
       // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
       $.magnificPopup.open({
         items: {
-          src: '<?php echo get_template_directory_uri() ?>assets/images/home-reality-day.jpg'
+          src: '<?php echo get_field('image_popup') ?>'
         },
         type: 'image'
 
@@ -158,8 +158,8 @@ if($check_ayala)
       }, 0);
     });
   })(jQuery);
-</script>
+  </script>
 
-<?php
+  <?php
 }
 ?>
