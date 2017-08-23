@@ -25,8 +25,8 @@ $featured = get_field("featured_estates");
  <h3><?php echo $left_banner["header_text"]; ?></h3>
  <p><?php echo $left_banner["description"]; ?></p>
   <ul>
-   <li><a href="inquire-now.html">Inquire Now</a></li>
-   <li><a href="#">Terms &amp; Conditions</a></li>
+   <li><a href="<?php echo get_permalink(925)?>">Inquire Now</a></li>
+   <li><a href="<?php echo get_permalink(907)?>">Terms &amp; Conditions</a></li>
  </ul>
  <button class="close1"></button>
 </aside>
@@ -46,8 +46,8 @@ $featured = get_field("featured_estates");
  <h3><?php echo $right_banner["header_text"]; ?></h3>
  <p><?php echo $right_banner["description"]; ?></p>
  <ul>
-   <li><a href="refer-and-earn.html">Refer Now</a></li>
-   <li><a href="refer-and-earn.html">View Details</a></li>
+   <li><a href="<?php echo get_permalink(996)?>">Refer Now</a></li>
+   <li><a href="<?php echo get_permalink(996)?>">View Details</a></li>
  </ul>
  <button class="close2"></button>
 </aside>
