@@ -99,7 +99,7 @@ while(have_posts()): the_post();
               <li>
                 <a id="add_refer_anchor">Refer another and win more</a>
                 <input type="hidden" name="refer_count" id="refer_count" value="1">
-                <input type="submit" name="submit_referral">
+                <input type="submit" name="submit_referral" id="submit_referral">
               </li>
             </ul>
           </div>
@@ -159,6 +159,23 @@ $("#add_refer_anchor").click(function(e) {
     $("#refer_count").val(count_next_referral);
     $("#div_refer_"+count_current_referral).after(html_new_refer);
     return false;
+});
+
+$("#submit_referral").click(function(e) {
+  e.preventDefault();
+  alert("Hello");
+  $.ajax({
+	    url:"<?php echo get_template_directory_uri(); ?>/ajax/sendReferral.php",
+	    type: "POST",
+	    data: $("#referral_form").serialize(),
+	    success:function(data){
+        alert(data);
+	    },
+	    error: function(e){
+	      console.log(e);
+	    }
+	  });
+  return false;
 });
 
 </script>
