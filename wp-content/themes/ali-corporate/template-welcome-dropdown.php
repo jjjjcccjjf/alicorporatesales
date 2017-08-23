@@ -42,7 +42,6 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
     <p>Please Select Your Employer</p>
     <p class="margbot10">
       <select name="employer" id="employer">
-        <option selected disabled>List of Employer</option>
         <?php
         $employers = get_field("employers_list");
         foreach ($employers as $emp) { ?>

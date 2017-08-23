@@ -1,5 +1,4 @@
 <?php
-/* Template Name: Generic Template */
 get_header();
 while(have_posts()): the_post();
 ?>
@@ -7,9 +6,9 @@ while(have_posts()): the_post();
 <section class="projects">
 
   <article class="forms">
-    <?php if(get_field('image_banner') != ''): ?>
+    <?php if(has_post_thumbnail()): ?>
       <section class="banner">
-        <img src="<?php the_field('image_banner') ?>" alt="">
+        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       </section>
     <?php endif; ?>
 

@@ -76,7 +76,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 
   $pagination_args = array(
 
-    'base'            => get_pagenum_link(1) . '%_%',
+    // 'base'            => get_pagenum_link(4) . '%_%',
+    'base'            => get_permalink(47) . '%_%',
 
     'format'          => 'page/%#%',
 
@@ -125,4 +126,3 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 }
 
 ?>
-

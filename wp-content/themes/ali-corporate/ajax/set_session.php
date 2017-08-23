@@ -14,7 +14,7 @@ function setSession($employer_type)
 		$_SESSION['employer_type'] = 'Ayala Group Employee';
 		break;
 		case 'bank':
-		$_SESSION['employer_type'] = 'Bank Partners';
+		$_SESSION['employer_type'] = 'BANK/INSTITUTIONAL OFFERS';
 		break;
 
 		default:

@@ -30,12 +30,35 @@
 			<ul>
 				<li><a href="<?php echo get_permalink(884); ?>">Ayala Group Employee</a></li>
 				<li><a href="<?php echo get_permalink(885); ?>">Outside Partners</a></li>
-				<li><a href="bank-institutional-offers.html">Bank/Institutional Offers</a></li>
+				<li><a href="javascript:void(0)" id="_bank">Bank/Institutional Offers</a></li>
 			</ul>
 		</section>
 		<div class="overlay"></div>
 	</article>
+	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("#_bank").on('click', function(e){
+			$.ajax({
+				url:"<?php echo get_template_directory_uri(); ?>/ajax/set_session.php",
+				type: "POST",
+				data: {
+					'employer_type': 'bank',
+				},
+				success:function(data){
+					if(data == 1){
+						window.location.href = '<?php echo get_permalink(936); ?>';
+					}
+				}, // success end
+				error: function(e){
+					console.log(e);
+				}
+			}); // ajax end
+		});
+	});
+	</script>
+
 	<?php wp_footer(); ?>
-	
+
 </body>
 </html>

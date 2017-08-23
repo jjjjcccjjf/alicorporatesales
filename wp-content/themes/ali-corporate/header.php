@@ -68,24 +68,28 @@ unset($GLOBALS['price_range'][1]);
 function displaySideNav($type)
 {
 	switch ($type) {
+
+		case 'BANK/INSTITUTIONAL OFFERS':
 		case 'generic':
 		echo
 		'<ul>
 		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
+		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1159) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
+		<li><a href="' . get_permalink(1163) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		</ul>';
 		break;
 
+		case 'Outside partners':
+		case 'Ayala Group Employee':
 		case 'home':
 		echo
 		'<ul>
 		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-		<li><a href="' . get_permalink() . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
+		<li><a href="' . get_permalink(1161) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
+		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1163) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
+		<li><a href="' . get_permalink(1167) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
 		</ul>';
 		break;
 
@@ -129,7 +133,7 @@ function displaySideNav($type)
 	<div class="search-main">
 		<section class="property-finder">
 			<form action="<?php echo get_permalink(47) ?>" method="get">
-				<label>FIND WHAT YOU ARE LOOKING FOR</label>
+				<label style="display:none">FIND WHAT YOU ARE LOOKING FOR</label>
 				<ul>
 					<li>
 						<select name="property_type">
@@ -154,13 +158,13 @@ function displaySideNav($type)
 						</select>
 					</li>
 					<li>
-						<select name="location">
+						<select name="property_location">
 							<option value="">Location</option>
 							<?php
 							$args = array('post_type' => 'location', 'posts_per_page' => -1, 'order' => 'ASC');
 							$the_query = new WP_Query($args);
 							if ( $the_query->have_posts() ) {  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-								<option <?php echo (@$_GET['location'] == get_the_title()) ? 'selected' : '' ;?> ><?php the_title(); ?></option>
+								<option <?php echo (@$_GET['property_location'] == get_the_title()) ? 'selected' : '' ;?> ><?php the_title(); ?></option>
 							<?php endwhile; wp_reset_postdata(); } else { /** no posts found **/ } ?>
 						</select>
 					</li>
@@ -171,10 +175,12 @@ function displaySideNav($type)
 			</form>
 		</section>
 		<aside>
-			<label>Search</label>
+			<label style="display:none">Search</label>
 			<ul>
-				<li><input type="text" name="" value="Enter Keywords"></li>
-				<li><input type="submit" name="" value=" "></li>
+				<form action="<?php echo get_permalink(1154) ?>" method="get">
+					<li><input type="text" name="q" value="" placeholder="Search Keywords"></li>
+					<li><input type="submit" value=""></li>
+				</form>
 			</ul>
 		</aside>
 	</div>
