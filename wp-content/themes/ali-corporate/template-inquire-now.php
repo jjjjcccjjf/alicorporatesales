@@ -6,12 +6,11 @@ while(have_posts()): the_post();
 <section class="projects">
 
   <article class="forms">
-    <h3>Inquire Now</h3>
+    <h3 style="color:#000">Inquire Now</h3>
     <aside class="tab">
       <ul>
-        <li ><a href="inquire-now.html">Am I qualified for Acentives Discount?</a></li>
-        <li class="active"><a href="send-inquiry.html">Send Inquiry</a></li>
-
+        <li class="current"><a href="<?php echo get_permalink(925); ?>">Am I qualified for Acentives Discount?</a></li>
+        <li><a href="<?php echo get_permalink(943); ?>">Send Inquiry</a></li>
       </ul>
     </aside>
     <form method="post" id="_form">
