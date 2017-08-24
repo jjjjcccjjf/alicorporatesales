@@ -138,6 +138,7 @@ function displaySideNav($type)
 					<li>
 						<select name="property_type">
 							<option value="">Project Type</option>
+							<option value="">Any</option>
 							<?php
 							$field_key = "field_59914624f4ae2";
 							$field = get_field_object($field_key);
@@ -152,6 +153,7 @@ function displaySideNav($type)
 					<li>
 						<select name="price_range">
 							<option value="">Price Range</option>
+							<option value="">Any</option>
 							<?php foreach($GLOBALS['price_range'] as $key => $val): ?>
 								<option <?php echo (@$_GET['price_range'] == $val) ? 'selected' : '' ;?> value="<?php echo $val ?>"><?php echo $key ?></option>
 							<?php endforeach; ?>
@@ -160,6 +162,7 @@ function displaySideNav($type)
 					<li>
 						<select name="property_location">
 							<option value="">Location</option>
+							<option value="">Any</option>
 							<?php
 							$args = array('post_type' => 'location', 'posts_per_page' => -1, 'order' => 'ASC');
 							$the_query = new WP_Query($args);

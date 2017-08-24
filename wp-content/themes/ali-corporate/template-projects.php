@@ -100,7 +100,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
     <?php if($brands): ?>
       <aside>
         <ul>
-          <li class="<?php echo ($_GET['brand'] == 'alp') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alp" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
+          <li class="<?php echo ($_GET['brand'] == 'ayalaland premier') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=ayalaland+premier" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alp.jpg"></a></li>
           <li class="<?php echo ($_GET['brand'] == 'alveo') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=alveo" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/alveo.jpg"></a></li>
           <li class="<?php echo ($_GET['brand'] == 'avida') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=avida" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/avida.jpg"></a></li>
           <li class="<?php echo ($_GET['brand'] == 'amaia') ? 'current' : '' ;?>"><a href="<?php echo get_permalink(47) . "?brand=amaia" ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/amaia.jpg"></a></li>
@@ -138,8 +138,9 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
             <figcaption>
               <h4><?php the_title();?></h4>
               <span class="price">
-                <h6>Starting at</h6>
-                <h5><?php echo formatPrice(get_field('min_price')); ?></h5>
+                <h6>Price range</h6>
+                <h5><?php echo formatPrice(get_field('min_price')); ?> -
+                  <?php echo formatPrice(get_field('max_price')); ?></h5>
               </span>
               <span class="type-location">
                 <p><?php echo implode(", ", get_field('project_type')); ?></p>
