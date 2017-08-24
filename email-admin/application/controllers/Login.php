@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 			$this->session->userdata['email'] = $admin_user->email;
 			$this->session->userdata['name'] = $admin_user->name;
 			$this->session->userdata['alicorporate_logged_in'] = ALI_SESSION_KEY;
-			redirect(base_url("Emails/Manage"));
+			redirect(base_url("Emails/Inquiry"));
 		}
 		else
 		{
