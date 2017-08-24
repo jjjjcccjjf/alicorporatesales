@@ -32,11 +32,11 @@ while(have_posts()): the_post();
             </li>
             <li>
               <label>Your Name</label>
-              <input type="text" name="name">
+              <input type="text" name="name" required>
             </li>
             <li>
               <label>Your Email</label>
-              <input type="email" name="email">
+              <input type="email" name="email" required>
             </li>
             <li>
               <label>Your Telephone at Work</label>
