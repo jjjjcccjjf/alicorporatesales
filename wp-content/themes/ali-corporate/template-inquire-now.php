@@ -23,10 +23,23 @@ while(have_posts()): the_post();
             <select name="employer">
 
               <?php
-              $employers = get_field("employers_list", 884);
-              foreach ($employers as $emp) { ?>
-                <option <?php echo ($emp["employee_name"] == $_SESSION['employer_name']) ? 'selected' :'' ; ?>>
-                  <?php echo $emp["employee_name"]; ?></option>
+              if($_SESSION['employer_type'] == 'Ayala Group Employee'){
+                $employers = get_field("employers_list", 884);
+              }else if($_SESSION['employer_type'] == 'Outside partners'){
+                $employers = get_field("employers_list", 885);
+              }else{
+                $employers = array_merge(get_field("employers_list", 884), get_field("employers_list", 885));
+              }
+
+              $emp_formatted = [];
+              foreach ($employers as $emp) {
+                $emp_formatted[] = $emp['employee_name'];
+              }
+              sort($emp_formatted);
+
+              foreach ($emp_formatted as $emp) { ?>
+                <option <?php echo ($emp == $_SESSION['employer_name']) ? 'selected' :'' ; ?>>
+                  <?php echo $emp ?></option>
                   <?php
                 }
                 ?>
