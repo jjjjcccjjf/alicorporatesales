@@ -9,8 +9,8 @@ while(have_posts()): the_post();
     <h3 style="color:#000">Inquire Now</h3>
     <aside class="tab">
       <ul>
-        <li class="current"><a href="<?php echo get_permalink(925); ?>">Am I qualified for Acentives Discount?</a></li>
-        <li><a href="<?php echo get_permalink(943); ?>">Send Inquiry</a></li>
+        <!-- <li class="current"><a href="<?php #echo get_permalink(925); ?>">Am I qualified for Acentives Discount?</a></li> -->
+        <!-- <li><a href="<?php #echo get_permalink(943); ?>">Send Inquiry</a></li> -->
       </ul>
     </aside>
     <form method="post" id="_form">
@@ -56,8 +56,8 @@ while(have_posts()): the_post();
             </li>
             <li>
               <label>Years of Service</label>
-              <select name="service_years">
-                <option>Select years of service</option>
+              <select name="service_years" required>
+                <option disabled >Select years of service</option>
                 <option>1 - 2 years</option>
                 <option>3 - 4 years</option>
                 <option>5 - 6 years</option>
@@ -65,19 +65,25 @@ while(have_posts()): the_post();
             </li>
             <li>
               <label>Name of Project/Unit</label>
-              <select name="project">
-                <option value="">Select Brand</option>
+              <select name="project" required>
+                <option disabled >Select Brand</option>
                 <?php
                 $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
-              	$field = get_field_object($field_key);
-              	if($field){
-              		foreach( $field['choices'] as $choice ) { ?>
-              	<option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
-              	<?php
+                $field = get_field_object($field_key);
+                if($field){
+                  foreach( $field['choices'] as $choice ) { ?>
+                    <option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
+                    <?php
                   }
-              	}
+                }
                 ?>
               </select>
+            </li>
+
+
+            <li>
+              <label>Your Message</label>
+              <textarea name="message"></textarea>
             </li>
             <li>
               <label class="hide">&nbsp;</label>
@@ -86,6 +92,13 @@ while(have_posts()): the_post();
                 <li><label><input type="radio" name="employee_type" value="Contractual Employee">Contractual Employee</label></li>
               </ul>
             </li>
+            <li>
+              <p>
+                <input type="checkbox" value="1" id="agree_terms"> I agree to the
+                <a href="<?php echo get_permalink(917) ?>">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>">Terms and Conditions</a>
+              </p>
+            </li>
+
             <li>
               <input type="submit">
             </li>
@@ -107,22 +120,27 @@ get_footer();
 $(document).ready(function() {
   $("#_form").on('submit', function(e){
     e.preventDefault();
+    if($('#agree_terms:checked').length > 0){
 
-    $.ajax({
-      url:"<?php echo get_template_directory_uri(); ?>/ajax/acentives_discount_inquiry.php",
-      type: "POST",
-      data: $(this).serialize(),
-      success:function(data){
 
-        if(data == 1){
-          window.location.href = '<?php echo get_permalink(1141); ?>?type=acentives_discount_inquiry';
+      $.ajax({
+        url:"<?php echo get_template_directory_uri(); ?>/ajax/acentives_discount_inquiry.php",
+        type: "POST",
+        data: $(this).serialize(),
+        success:function(data){
+
+          if(data == 1){
+            window.location.href = '<?php echo get_permalink(1141); ?>?type=acentives_discount_inquiry';
+          }
+        }, // success end
+        error: function(e){
+          console.log(e);
         }
-      }, // success end
-      error: function(e){
-        console.log(e);
-      }
-    }); // ajax end
+      }); // ajax end
 
+    }else{
+      alert('You must agree to the privacy policy and terms and conditions to proceed.');
+    }
 
   });
 });

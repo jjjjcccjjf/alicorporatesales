@@ -16,6 +16,7 @@ if(jp_add($item)){
   Years of service: ".$_POST['service_years']." \n
   Name of Project/Unit: ".$_POST['project']." \n
   Employee Type: ".$_POST['employee_type']." \n
+  Message: ".$_POST['message']." \n
   ";
   $headers = "From: noreply@betaprojex.com \r\n";
   $to = "lsalamante@myoptimind.com";
