@@ -13,7 +13,9 @@ $featured = get_field("featured_estates");
   <article class="featleft">
     <aside>
       <h2><?php echo $left_banner["header_text"]; ?></h2>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/acentives.png" width="" height="" alt="Acentives Logo">
+      <?php if($left_banner["show_acentives"]): ?>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/acentives.png" width="" height="" alt="Acentives Logo">
+      <?php endif; ?>
     </aside>
     <div>
       <div class="overlay"></div>
@@ -26,7 +28,7 @@ $featured = get_field("featured_estates");
     <p><?php echo $left_banner["description"]; ?></p>
     <ul>
       <li><a href="<?php echo get_permalink(925)?>">Inquire Now</a></li>
-      <li><a href="<?php echo get_permalink(907)?>">Terms &amp; Conditions</a></li>
+      <li><a href="<?php echo $left_banner["terms_link"]; ?>">Terms &amp; Conditions</a></li>
     </ul>
     <button class="close1"></button>
   </aside>
@@ -47,7 +49,7 @@ $featured = get_field("featured_estates");
     <p><?php echo $right_banner["description"]; ?></p>
     <ul>
       <li><a href="<?php echo get_permalink(996)?>">Refer Now</a></li>
-      <li><a href="<?php echo get_permalink(996)?>">View Details</a></li>
+      <li><a href="<?php echo get_permalink(907)?>#terms2">View Details</a></li>
     </ul>
     <button class="close2"></button>
   </aside>
