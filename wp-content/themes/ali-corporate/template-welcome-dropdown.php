@@ -122,6 +122,22 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
     endwhile;
     ?>
     <p>Please Select Your Employer</p>
+    <?php if($_GET['t'] == 1): ?>
+    <div class="select">
+      <span class="placeholder">Select your Employer</span>
+      <ul>
+        <li data-value="es">España- Español</li>
+        <?php
+        $employers = get_field("employers_list");
+        foreach ($employers as $emp) { ?>
+          <li data-value="<?php echo $emp["employee_name"]; ?>"><?php echo $emp["employee_name"]; ?></li>
+          <?php
+        }
+        ?>
+      </ul>
+      <input type="hidden" name="changeme"/>
+    </div>
+  <?php endif; ?>
     <p class="margbot10">
       <select name="employer" id="employer">
         <?php
@@ -133,24 +149,7 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
         ?>
       </select>
     </p>
-    <?php if($_GET['t'] == 1): ?>
-    <div class="select">
-      <span class="placeholder">Select your language</span>
-      <ul>
-        <li data-value="es">España- Español</li>
-        <li data-value="en">United States - English</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="fr">France - Français</li>
-        <li data-value="de">Deutschland - Deutsch</li>
-      </ul>
-      <input type="hidden" name="changeme"/>
-    </div>
-  <?php endif; ?>
+
     <p class="margbot10">
       <a href="<?php echo get_home_url(); ?>">
         <button>&laquo; Back</button>
@@ -172,6 +171,7 @@ $(document).ready(function() {
       data: {
         'employer_type': '<?php echo get_field('page_type') ?>',
         'employer_name': $("#employer option:selected").text()
+        // 'employer_name': $(".placeholder").text() // Value pag gamitin na yung official shit
       },
       success:function(data){
         if(data == 1){
@@ -198,6 +198,8 @@ $('.select').on('click','.placeholder',function(){
   parent.removeClass('is-open').find('.placeholder').text( $(this).text() );
   parent.find('input[type=hidden]').attr('value', $(this).attr('data-value') );
 });
+
+
 </script>
 </body>
 
