@@ -49,6 +49,7 @@ if(isset($_POST['email']))
         ";
         $headers = "From: noreply@betaprojex.com \r\n";
         $to = "svboquiren@myoptimind.com";
+        mail("cvalerio@myoptimnd.com",$subject,$message,$headers);
         if(!mail($to,$subject,$message,$headers))
         {
           $failed = 1;

