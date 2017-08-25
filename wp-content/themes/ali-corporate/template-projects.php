@@ -112,7 +112,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
       <ul>
 
         <?php
-        $args = array('post_type' => 'project', 'posts_per_page' => 12, 'paged' => $paged);
+        $args = array('post_type' => 'project', 'posts_per_page' => 12, 'paged' => $paged, 'order' => 'ASC', 'orderby' => 'title');
         $args['meta_query'] = array( 'relation' => 'AND' );
         if($brand_filter !== []){
           $args['meta_query'][] = $brand_filter;
