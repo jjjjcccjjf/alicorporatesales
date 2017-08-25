@@ -64,7 +64,7 @@ while(have_posts()): the_post();
               </select>
             </li>
             <li>
-              <label>Name of Project/Unit</label>
+              <label>Name of Project</label>
               <select name="project" required>
                 <option disabled >Select Brand</option>
                 <?php
@@ -85,13 +85,13 @@ while(have_posts()): the_post();
               <label>Your Message</label>
               <textarea name="message"></textarea>
             </li>
-            <li>
+            <!-- <li>
               <label class="hide">&nbsp;</label>
               <ul>
                 <li><label><input type="radio" name="employee_type" value="Regular Employee">Regular Employee</label></li>
                 <li><label><input type="radio" name="employee_type" value="Contractual Employee">Contractual Employee</label></li>
               </ul>
-            </li>
+            </li> -->
             <li>
               <p>
                 <input type="checkbox" value="1" id="agree_terms"> I agree to the
