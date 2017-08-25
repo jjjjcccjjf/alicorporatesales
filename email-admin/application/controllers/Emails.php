@@ -41,7 +41,7 @@ class Emails extends CI_Controller {
 		$page_data["csv_export_link"] = base_url("Emails/inquiryExportCSV").concat_existing_get();
 
 		# Get Pagination
-		$pag_conf['base_url'] = base_url()."Emails/Inquiry";
+		$pag_conf['base_url'] = base_url("Emails/Inquiry");
 		$pag_conf['reuse_query_string'] = TRUE;	# maintain get varibles if any
 		$pag_conf['total_rows'] = $this->email_model->getTotalEmails("emails_inquiry");
 		$pag_conf['per_page'] = TABLE_DATA_PER_PAGE;
@@ -75,7 +75,7 @@ class Emails extends CI_Controller {
 		$page_data["csv_export_link"] = base_url("Emails/accentiveExportCSV").concat_existing_get();
 
 		# Get Pagination
-		$pag_conf['base_url'] = base_url()."Emails/Acentives";
+		$pag_conf['base_url'] = base_url("Emails/Acentives");
 		$pag_conf['reuse_query_string'] = TRUE;	# maintain get varibles if any
 		$pag_conf['total_rows'] = $this->email_model->getTotalEmails("emails_acentives_discount");
 		$pag_conf['per_page'] = TABLE_DATA_PER_PAGE;
@@ -109,7 +109,7 @@ class Emails extends CI_Controller {
 		$page_data["csv_export_link"] = base_url("Emails/referralExportCSV").concat_existing_get();
 
 		# Get Pagination
-		$pag_conf['base_url'] = base_url()."Emails/Acentives";
+		$pag_conf['base_url'] = base_url("Emails/Referrals");
 		$pag_conf['reuse_query_string'] = TRUE;	# maintain get varibles if any
 		$pag_conf['total_rows'] = $this->email_model->getTotalEmails("emails_referrals");
 		$pag_conf['per_page'] = TABLE_DATA_PER_PAGE;
@@ -155,7 +155,7 @@ class Emails extends CI_Controller {
 				$export_arr->employer,
 				$export_arr->employee_type,
 				$export_arr->project,
-				$export_arr->service_type,
+				$export_arr->service_years,
 				date("m/d/Y", strtotime($export_arr->date_sent))
 			);
 			fputcsv($fp, $final_row);

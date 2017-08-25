@@ -69,23 +69,23 @@ while(have_posts()): the_post();
               </li>
               <li>
                 <label>Preferred Project</label>
-                <select name="referral_brand_1" id="referral_brand_1" onchange="set_projects($(this).val());">
+                <select name="referral_brand_1" id="referral_brand_1" onchange="set_projects($(this).val(), 'referral_project_1');">
                   <option value="">Select Brand</option>
                   <?php
                   $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
-                	$field = get_field_object($field_key);
-                	if($field){
-                		foreach( $field['choices'] as $choice ) { ?>
-                	<option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
-                	<?php
+                  $field = get_field_object($field_key);
+                  if($field){
+                    foreach( $field['choices'] as $choice ) { ?>
+                      <option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
+                      <?php
                     }
-                	}
+                  }
                   ?>
                 </select>
                 <select name="referral_project_1" id="referral_project_1">
                   <option>Select Project</option>
                   <?php foreach ($projects as $title => $brand) { ?>
-                  <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
+                    <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
                   <?php } ?>
                 </select>
 
@@ -113,6 +113,12 @@ while(have_posts()): the_post();
 
             <ul>
               <li>
+                <p>
+                  <input type="checkbox" value="1" id="agree_terms"> I agree to the
+                  <a href="<?php echo get_permalink(917) ?>">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>">Terms and Conditions</a>
+                </p>
+              </li>
+              <li>
                 <a id="add_refer_anchor">Refer another and win more</a>
                 <input type="hidden" name="refer_count" id="refer_count" value="1">
                 <input type="submit" name="submit_referral" id="submit_referral">
@@ -135,71 +141,77 @@ get_footer();
 ?>
 <script>
 $("#add_refer_anchor").click(function(e) {
-    e.preventDefault();
-    var count_current_referral = $("#refer_count").val();
-    var count_next_referral = parseInt(count_current_referral) + 1;
-    var html_new_refer = '<ul class="refer" id="div_refer_'+count_next_referral+'">';
-        html_new_refer += '<li><h4>Referral '+count_next_referral+'</h4></li><li>';
-        html_new_refer += '<label>Name of Referral <span>(Interested Buyer)</span></label>';
-        html_new_refer += '<input type="text" name="referral_name_'+count_next_referral+'">';
-        html_new_refer += '</li><li>';
-        html_new_refer += '<label>Preferred Project</label>';
-        html_new_refer += '<select name="referral_brand_'+count_next_referral+'" id="brand_'+count_next_referral+'">';
-        html_new_refer += '<option>Select Brand</option>';
-        html_new_refer += $("#referral_brand_"+count_current_referral).html();
-        html_new_refer += '</select>';
-        html_new_refer += '<select name="referral_project_'+count_next_referral+'" id="project_'+count_next_referral+'">';
-        html_new_refer += '<option>Select Project</option>';
-        html_new_refer += $("#referral_project_"+count_current_referral).html();
-        html_new_refer += '</select>';
-        html_new_refer += '</li><li>';
-        html_new_refer += '<label>Budget</label>';
-        html_new_refer += '<select name="referral_budget_'+count_next_referral+'" id="referral_budget_'+count_next_referral+'">';
-        html_new_refer += '<option>Select Budget</option>';
-        html_new_refer += $("#referral_budget_"+count_current_referral).html();
-        html_new_refer += '</select>';
-        html_new_refer += '</li><li>';
-        html_new_refer += '<label>Contact Number</label>';
-        html_new_refer += '<input type="text" name="referral_contact_'+count_next_referral+'" id="referral_contact_'+count_next_referral+'">';
-        html_new_refer += '</li><li>';
-        html_new_refer += '<label>Email Address</label>';
-        html_new_refer += '<input type="email" name="referral_email_'+count_next_referral+'" id="referral_email_'+count_next_referral+'">';
-        html_new_refer += '</li></ul>';
+  e.preventDefault();
+  var count_current_referral = $("#refer_count").val();
+  var count_next_referral = parseInt(count_current_referral) + 1;
+  var html_new_refer = '<ul class="refer" id="div_refer_'+count_next_referral+'">';
+  html_new_refer += '<li><h4>Referral '+count_next_referral+'</h4></li><li>';
+  html_new_refer += '<label>Name of Referral <span>(Interested Buyer)</span></label>';
+  html_new_refer += '<input type="text" name="referral_name_'+count_next_referral+'">';
+  html_new_refer += '</li><li>';
+  html_new_refer += '<label>Preferred Project</label>';
+  html_new_refer += '<select name="referral_brand_'+count_next_referral+'" id="referral_brand_'+count_next_referral+'" onchange="set_projects($(this).val(), \'referral_project_'+count_next_referral+'\');">';
+  html_new_refer += $("#referral_brand_"+count_current_referral).html();
+  html_new_refer += '</select>';
+  html_new_refer += '<select name="referral_project_'+count_next_referral+'" id="referral_project_'+count_next_referral+'">';
+  html_new_refer += $("#referral_project_"+count_current_referral).html();
+  html_new_refer += '</select>';
+  html_new_refer += '</li><li>';
+  html_new_refer += '<label>Budget</label>';
+  html_new_refer += '<select name="referral_budget_'+count_next_referral+'" id="referral_budget_'+count_next_referral+'">';
+  html_new_refer += $("#referral_budget_"+count_current_referral).html();
+  html_new_refer += '</select>';
+  html_new_refer += '</li><li>';
+  html_new_refer += '<label>Contact Number</label>';
+  html_new_refer += '<input type="text" name="referral_contact_'+count_next_referral+'" id="referral_contact_'+count_next_referral+'">';
+  html_new_refer += '</li><li>';
+  html_new_refer += '<label>Email Address</label>';
+  html_new_refer += '<input type="email" name="referral_email_'+count_next_referral+'" id="referral_email_'+count_next_referral+'">';
+  html_new_refer += '</li></ul>';
 
-    $("#refer_count").val(count_next_referral);
-    $("#div_refer_"+count_current_referral).after(html_new_refer);
-    return false;
+  $("#refer_count").val(count_next_referral);
+  $("#div_refer_"+count_current_referral).after(html_new_refer);
+  return false;
 });
 
 $("#submit_referral").click(function(e) {
+
   e.preventDefault();
-  $.ajax({
-	    url:"<?php echo get_template_directory_uri(); ?>/ajax/sendReferral.php",
-	    type: "POST",
-	    data: $("#referral_form").serialize(),
-	    success:function(data){
+
+  if($('#agree_terms:checked').length > 0){
+    $.ajax({
+      url:"<?php echo get_template_directory_uri(); ?>/ajax/sendReferral.php",
+      type: "POST",
+      data: $("#referral_form").serialize(),
+      success:function(data){
         if(data == "true")
         {
           window.location.href = '<?php echo get_permalink(1141); ?>?type=referral';
         }
-	    },
-	    error: function(e){
-	      console.log(e);
-	    }
-	  });
+      },
+      error: function(e){
+        console.log(e);
+      }
+    });
+  }else{
+    alert('You must agree to the privacy policy and terms and conditions to proceed.');
+  }
+
   return false;
 });
 
-function set_projects(brand)
+function set_projects(brand, project_id)
 {
   if(brand != "")
   {
     brand = brand.replace(" ", "_");
+    $('#'+project_id).val("");
     $(".option_project").attr("style", "display:none");
     $("."+brand).attr("style", "display:block");
   }
   else
   {
+    $('#'+project_id).val("");
     $(".option_project").attr("style", "display:block");
   }
 }
