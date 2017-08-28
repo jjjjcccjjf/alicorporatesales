@@ -55,10 +55,44 @@ class Emails extends CI_Controller {
 		$page_data['td_colspan'] = 8;
 
 		# Set link for clearing page
-		$page_data['clear_url'] = "Emails/Acentives";
+		$page_data['clear_url'] = "Emails/Inquiry";
 
 		# Get All Emails for Inquiry
 		$page_data["all_emails"] = $this->email_model->getAllEmails("emails_inquiry");
+
+
+		$this->wrapper("email_management", $page_data);
+
+
+	}
+
+	public function Arc()
+	{
+		# Ready css/js
+		$this->include["responsive_table"] = true;
+
+		# Set Export links
+		$page_data["csv_export_link"] = base_url("Emails/inquiryExportCSV").concat_existing_get(); # TODO
+
+		# Get Pagination
+		$pag_conf['base_url'] = base_url("Emails/Arc");
+		$pag_conf['reuse_query_string'] = TRUE;	# maintain get varibles if any
+		$pag_conf['total_rows'] = $this->email_model->getTotalEmails("emails_arc");
+		$pag_conf['per_page'] = TABLE_DATA_PER_PAGE;
+		$this->pagination->initialize($pag_conf);
+		$page_data['pagination'] = $this->pagination->create_links();
+
+		# Set Table name in email_tables
+		$page_data["table_name"] = "arc.php";
+
+		# Set if super admin
+		$page_data['td_colspan'] = 8;
+
+		# Set link for clearing page
+		$page_data['clear_url'] = "Emails/Arc";
+
+		# Get All Emails for Inquiry
+		$page_data["all_emails"] = $this->email_model->getAllEmails("emails_arc");
 
 
 		$this->wrapper("email_management", $page_data);
