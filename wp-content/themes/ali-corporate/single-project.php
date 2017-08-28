@@ -10,7 +10,7 @@ while(have_posts()): the_post();
   <article class="forms">
     <?php if(get_field('details_photo') != ''): ?>
       <section class="banner">
-        <img src="<?php the_field('details_photo') ?>" alt="">
+        <img src="<?php echo checkPhoto(get_field('details_photo')); # Find in header.php. Checks for blank photo, gives placeholder photo if true?>" alt="">
       </section>
     <?php endif; ?>
 
