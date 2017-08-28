@@ -98,6 +98,20 @@ function displaySideNav($type)
 		break;
 	}
 }
+
+/**
+ * returns placeholder image when no image is available
+ * @param  string    $image_url    link of image to check
+ * @return string                  link of placeholder image
+ */
+function checkPhoto($image_url)
+{
+	if ($image_url == '') {
+		return get_template_directory_uri() . '/assets/images/temp.jpg';
+	}else{
+		return $image_url;
+	}
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -110,7 +124,7 @@ function displaySideNav($type)
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/themes.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/flickity.css">
-
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/easy-responsive-tabs.css " />
 	<!--[if lt IE 9]>
 	<script src="js/html5.js"></script>
 	<![endif]-->
@@ -133,7 +147,7 @@ function displaySideNav($type)
 	<div class="search-main">
 		<section class="property-finder">
 			<form action="<?php echo get_permalink(47) ?>" method="get">
-				<label style="display:none">FIND WHAT YOU ARE LOOKING FOR</label>
+				<label>FIND WHAT YOU ARE LOOKING FOR</label>
 				<ul>
 					<li>
 						<select name="property_type">
@@ -178,7 +192,7 @@ function displaySideNav($type)
 			</form>
 		</section>
 		<aside>
-			<label style="display:none">Search</label>
+			<label>Search</label>
 			<ul>
 				<form action="<?php echo get_permalink(1154) ?>" method="get">
 					<li><input type="text" name="q" value="" placeholder="Search Keywords"></li>

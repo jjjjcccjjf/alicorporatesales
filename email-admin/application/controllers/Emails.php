@@ -72,7 +72,7 @@ class Emails extends CI_Controller {
 		$this->include["responsive_table"] = true;
 
 		# Set Export links
-		$page_data["csv_export_link"] = base_url("Emails/inquiryExportCSV").concat_existing_get(); # TODO
+		$page_data["csv_export_link"] = base_url("Emails/arcExportCSV").concat_existing_get(); 
 
 		# Get Pagination
 		$pag_conf['base_url'] = base_url("Emails/Arc");
@@ -217,6 +217,30 @@ class Emails extends CI_Controller {
 				$export_arr->phone,
 				$export_arr->message,
 				$export_arr->send_me_more == 1 ? "Yes" : "No",
+				date("m/d/Y", strtotime($export_arr->date_sent))
+			);
+			fputcsv($fp, $final_row);
+		}
+	}
+
+	public function arcExportCSV()
+	{
+		# Set Column Headers of CSV
+		$column_headers = array("Name", "Email", "Property Purchased", "Price", "Inquiry Date");
+
+		$fp = fopen('php://output', 'w');
+		header('Content-type: application/csv');
+		header('Content-Disposition: attachment; filename=arc_inquiry_report.csv');
+		fputcsv($fp, $column_headers);
+
+		# Get All Store Summary
+		$export_data = $this->email_model->getAllEmails("emails_arc", true);
+		foreach ($export_data as $export_arr) {
+			$final_row = array(
+				$export_arr->name,
+				$export_arr->email,
+				$export_arr->property_purchased,
+				$export_arr->price,
 				date("m/d/Y", strtotime($export_arr->date_sent))
 			);
 			fputcsv($fp, $final_row);

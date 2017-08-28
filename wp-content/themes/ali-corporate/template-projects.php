@@ -1,6 +1,5 @@
 <?php
 /* Template Name: Projects */
-
 $brands = isset($_GET['brand']); # Check to see if brands are set
 
 $location_obj = get_page_by_title( $_GET['property_location'], OBJECT, 'location');
@@ -133,7 +132,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
         <li>
           <a href="#projdesc<?php echo get_the_ID(); ?>" class="desc">
             <figure>
-              <img src="<?php the_post_thumbnail_url(); ?>">
+              <img src="<?php echo checkPhoto(get_the_post_thumbnail_url()); # Find in header.php. Checks for blank photo, gives placeholder photo if true ?>">
             </figure>
             <figcaption>
               <h4><?php the_title();?></h4>
@@ -155,7 +154,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
           <h3><?php the_title();?></h3>
           <div>
             <figure>
-              <img src="<?php the_field('details_photo'); ?>">
+              <img src="<?php echo checkPhoto(get_field('details_photo')); # Find in header.php. Checks for blank photo, gives placeholder photo if true?>">
             </figure>
             <article>
               <ul>
@@ -188,7 +187,6 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 <ul>
                   <li><a href="<?php echo get_permalink(925) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Inquire Now</a></li>
                   <li><a href="<?php echo get_permalink(996) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Refer Now</a></li>
-                  <li><a href="<?php echo get_permalink(1161) ?>">Download Forms</a></li>
                 </ul>
               </aside>
             </div>
