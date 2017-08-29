@@ -3,7 +3,8 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Property Purchased</th>
+      <th>Brand</th>
+      <th>Project Name</th>
       <th>Price</th>
       <th>Inquiry Date</th>
     </tr>
@@ -14,7 +15,8 @@
         <tr>
           <td><?php echo $email->name; ?></td>
           <td><?php echo $email->email; ?></td>
-          <td><?php echo $email->property_purchased; ?></td>
+          <td><?php echo $email->brand; ?></td>
+          <td><?php echo $email->project_name; ?></td>
           <td><?php echo $email->price; ?></td>
           <td><?php echo $email->date_sent != "" ? date("m/d/Y H:i:s", strtotime($email->date_sent)) : "N/A"; ?></td>
         </tr>
@@ -29,7 +31,8 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Property Purchased</th>
+      <th>Brand</th>
+      <th>Project Name</th>
       <th>Price</th>
       <th>Inquiry Date</th>
     </tr>

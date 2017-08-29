@@ -72,7 +72,7 @@ class Emails extends CI_Controller {
 		$this->include["responsive_table"] = true;
 
 		# Set Export links
-		$page_data["csv_export_link"] = base_url("Emails/arcExportCSV").concat_existing_get(); 
+		$page_data["csv_export_link"] = base_url("Emails/arcExportCSV").concat_existing_get();
 
 		# Get Pagination
 		$pag_conf['base_url'] = base_url("Emails/Arc");
@@ -176,7 +176,7 @@ class Emails extends CI_Controller {
 
 		$fp = fopen('php://output', 'w');
 		header('Content-type: application/csv');
-		header('Content-Disposition: attachment; filename=email_acentive_report.csv');
+		header('Content-Disposition: attachment; filename=email_acentive_report.csv'); # Don't forget to change filename!
 		fputcsv($fp, $column_headers);
 
 
@@ -203,7 +203,7 @@ class Emails extends CI_Controller {
 
 		$fp = fopen('php://output', 'w');
 		header('Content-type: application/csv');
-		header('Content-Disposition: attachment; filename=email_inquiry_report.csv');
+		header('Content-Disposition: attachment; filename=email_inquiry_report.csv'); # Don't forget to change filename!
 		fputcsv($fp, $column_headers);
 
 		# Get All Store Summary
@@ -226,11 +226,11 @@ class Emails extends CI_Controller {
 	public function arcExportCSV()
 	{
 		# Set Column Headers of CSV
-		$column_headers = array("Name", "Email", "Property Purchased", "Price", "Inquiry Date");
+		$column_headers = array("Name", "Email", "Brand", "Project Name", "Price", "Inquiry Date");
 
 		$fp = fopen('php://output', 'w');
 		header('Content-type: application/csv');
-		header('Content-Disposition: attachment; filename=arc_inquiry_report.csv');
+		header('Content-Disposition: attachment; filename=arc_inquiry_report.csv'); # Don't forget to change filename!
 		fputcsv($fp, $column_headers);
 
 		# Get All Store Summary
@@ -254,7 +254,7 @@ class Emails extends CI_Controller {
 
 		$fp = fopen('php://output', 'w');
 		header('Content-type: application/csv');
-		header('Content-Disposition: attachment; filename=email_referral_report.csv');
+		header('Content-Disposition: attachment; filename=email_referral_report.csv'); # Don't forget to change filename!
 		fputcsv($fp, $column_headers);
 
 		# Get All Store Summary

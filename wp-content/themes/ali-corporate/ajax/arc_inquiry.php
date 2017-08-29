@@ -12,7 +12,8 @@ if(jp_add($item)){
   $message = "INQUIRY BODY: \n
   Name: ".$_POST['name']." \n
   Email: ".$_POST['email']." \n
-  Property Purchased: ".$_POST['property_purchased']." \n
+  Brand: ".$_POST['brand']." \n
+  Project Name: ".$_POST['project_name']." \n
   Price: ".$_POST['price']." \n
   ";
   $headers = "From: noreply@betaprojex.com \r\n";
