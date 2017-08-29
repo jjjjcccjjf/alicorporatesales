@@ -7,7 +7,8 @@ get_header();
 $left_banner = get_field("left_banner");
 $right_banner = get_field("right_banner");
 $promos = get_field("promos");
-$featured = get_field("featured_estates");
+// $featured = get_field("featured_estates");
+
 ?>
 <section class="featured">
   <article class="featleft">
@@ -49,7 +50,7 @@ $featured = get_field("featured_estates");
     <p><?php echo $right_banner["description"]; ?></p>
     <ul>
       <li><a href="<?php echo get_permalink(996)?>">Refer Now</a></li>
-      <li><a href="<?php echo get_permalink(907)?>#terms2">View Details</a></li>
+      <li><a href="<?php echo get_permalink(1270)?>">View Details</a></li>
     </ul>
     <button class="close2"></button>
   </aside>
@@ -57,23 +58,24 @@ $featured = get_field("featured_estates");
 
 <section class="projects-promos">
   <article class="estates">
-    <h3>Featured Estates</h3>
+    <h3>Estates</h3><span><a href="<?php echo get_permalink("1228"); ?>">Other Estates&raquo;</a></span>
     <div class="rslides" id="slider1">
-      <?php foreach ($featured as $estate) { ?>
+      <?php
+      $args = array('post_type' => 'estate', 'posts_per_page' => 9);
+      $args['meta_query'] = array( 'relation' => 'AND', array('key' => 'display_in_featured_estates', 'value' => '1', 'compare' => '='));
+      $the_query = new WP_Query($args);
+      if ( $the_query->have_posts() ) {  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
         <div class="carousel-cell">
-          <a href="#projdesc_<?php echo $estate->ID; ?>" class="desc">
+          <a href="<?php echo get_permalink(); ?>">
             <aside>
-              <img src="<?php echo get_field("logo", $estate->ID); ?>" width="" height="" alt="Clover Leaf logo">
+              <img src="<?php echo get_field("logo"); ?>" width="" height="" alt="<?php the_title(); ?>">
             </aside>
             <figure>
-              <img src="<?php echo get_field("featured_photo", $estate->ID); ?>" width="" height="" alt="Clover Leaf">
+              <img src="<?php echo get_field("featured_background", $estate->ID); ?>" width="" height="" alt="<?php the_title(); ?>">
             </figure>
           </a>
         </div>
-        <?php
-      } ?>
-
-
+      <?php endwhile; wp_reset_postdata(); } ?>
     </div>
   </article>
   <aside class="promos">
@@ -83,7 +85,7 @@ $featured = get_field("featured_estates");
       foreach ($promos as $promo) { ?>
         <div class="carousel-cell">
           <a href="<?php echo $promo["image"]; ?>" class="gallery-item">
-            <img src="<?php echo $promo["image"]; ?>" width="" height="" alt="Promo Poster">
+            <img src="<?php echo $promo["image_thumbnail"]; ?>" width="" height="" alt="Promo Poster">
           </a>
         </div>
         <?php
@@ -97,7 +99,7 @@ $featured = get_field("featured_estates");
 </section>
 <?php foreach ($featured as $estate) { ?>
   <!-- Project Details -->
-  <div id="projdesc_<?php echo $estate->ID; ?>" class="white-popup mfp-hide projdesc">
+  <!-- <div id="projdesc_<?php echo $estate->ID; ?>" class="white-popup mfp-hide projdesc">
     <h3><?php echo get_the_title($estate->ID); ?></h3>
     <div>
       <figure>
@@ -135,7 +137,7 @@ $featured = get_field("featured_estates");
         </ul>
       </aside>
     </div>
-  </div>
+  </div> -->
   <!-- Project Details -->
 
 <?php } ?>
