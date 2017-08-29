@@ -5,7 +5,8 @@
       <th>Email</th>
       <th>Employer</th>
       <th>Employee Type</th>
-      <th>Project</th>
+      <th>Brand</th>
+      <th>Project Name</th>
       <th>Service Years</th>
       <th>Inquiry Date</th>
     </tr>
@@ -18,7 +19,8 @@
           <td><?php echo $email->email != "" ? $email->email : "N/A"; ?></td>
           <td><?php echo $email->employer != "" ? $email->employer : "N/A"; ?></td>
           <td><?php echo $email->employee_type != "" ? $email->employee_type : "N/A"; ?></td>
-          <td><?php echo $email->project != "" ? $email->project : "N/A"; ?></td>
+          <td><?php echo $email->brand != "" ? $email->brand : "N/A"; ?></td>
+          <td><?php echo $email->project_name != "" ? $email->project_name : "N/A"; ?></td>
           <td><?php echo $email->service_years != "" ? $email->service_years : "N/A"; ?></td>
           <td><?php echo $email->date_sent != "" ? date("m/d/Y H:i:s", strtotime($email->date_sent)) : "N/A"; ?></td>
         </tr>
@@ -35,7 +37,8 @@
       <th>Email</th>
       <th>Employer</th>
       <th>Employee Type</th>
-      <th>Project</th>
+      <th>Brand</th>
+      <th>Project Name</th>
       <th>Service Years</th>
       <th>Inquiry Date</th>
     </tr>

@@ -14,7 +14,8 @@ if(jp_add($item)){
   Name: ".$_POST['name']." \n
   Email: ".$_POST['email']." \n
   Years of service: ".$_POST['service_years']." \n
-  Name of Project: ".$_POST['project']." \n
+  Brand: ".$_POST['brand']." \n
+  Project Name: ".$_POST['project_name']." \n
   Message: ".$_POST['message']." \n
   ";
   $headers = "From: noreply@betaprojex.com \r\n";

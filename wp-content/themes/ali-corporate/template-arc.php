@@ -71,7 +71,7 @@ while(have_posts()): the_post();
       <li>
         <p>
           <input type="checkbox" value="1" id="agree_terms"> I agree to the
-          <a href="<?php echo get_permalink(917) ?>">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>">Terms and Conditions</a>
+          <a href="<?php echo get_permalink(917) ?>" class="linkstyle">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>" class="linkstyle">Terms and Conditions</a>
         </p>
       </li>
       <li>
