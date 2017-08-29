@@ -122,11 +122,9 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
     endwhile;
     ?>
     <p>Please Select Your Employer</p>
-    <?php if($_GET['t'] == 1): ?>
     <div class="select">
       <span class="placeholder">Select your Employer</span>
       <ul>
-        <li data-value="es">España- Español</li>
         <?php
         $employers = get_field("employers_list");
         foreach ($employers as $emp) { ?>
@@ -137,18 +135,19 @@ $p_permalink = array("ayala"=>"886", "outside"=>"891");
       </ul>
       <input type="hidden" name="changeme"/>
     </div>
-  <?php endif; ?>
-    <p class="margbot10">
+    <?php if($_GET['t'] == 1): ?>
+    <!-- <p class="margbot10">
       <select name="employer" id="employer">
         <?php
-        $employers = get_field("employers_list");
-        foreach ($employers as $emp) { ?>
-          <option value="<?php echo $emp["employee_name"]; ?>"><?php echo $emp["employee_name"]; ?></option>
+    #    $employers = get_field("employers_list");
+    #    foreach ($employers as $emp) { ?>
+          <option value="<?php #echo $emp["employee_name"]; ?>"><?php #echo $emp["employee_name"]; ?></option>
           <?php
-        }
+      #  }
         ?>
       </select>
-    </p>
+    </p> -->
+  <?php endif; ?>
 
     <p class="margbot10">
       <a href="<?php echo get_home_url(); ?>">
@@ -170,8 +169,8 @@ $(document).ready(function() {
       type: "POST",
       data: {
         'employer_type': '<?php echo get_field('page_type') ?>',
-        'employer_name': $("#employer option:selected").text()
-        // 'employer_name': $(".placeholder").text() // Value pag gamitin na yung official shit
+        // 'employer_name': $("#employer option:selected").text()
+        'employer_name': $(".placeholder").text() // Value pag gamitin na yung official shit
       },
       success:function(data){
         if(data == 1){
