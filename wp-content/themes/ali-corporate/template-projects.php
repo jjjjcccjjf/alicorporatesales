@@ -175,7 +175,8 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                     <h6>Size:</h6>
                     <p><?php the_field('size'); ?></p>
                   </li>
-                  <li><a href="<?php the_field('external_link'); ?>">View Project</a></li>
+                  <!-- <li ><a href="<?php # the_field('external_link'); ?>">Virtual Tour</a></li> -->
+                  <!-- TODO: !!! -->
                 </ul>
 
               </article>
@@ -196,8 +197,7 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
         <li>
           <div style="height:400px; width: 300px; color:#000;">
-            No results found :( <br>
-            Perhaps try some different search parameters?
+            No active projects at this time.
           </div>
         </li>
 
