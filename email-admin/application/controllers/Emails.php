@@ -172,7 +172,7 @@ class Emails extends CI_Controller {
 	public function accentiveExportCSV()
 	{
 		# Set Column Headers of CSV
-		$column_headers = array("Name", "Email", "Employer", "Employee Type", "Brand", "Project Name", "Service Years", "Inquiry Date");
+		$column_headers = array("Name", "Email", "Employer", "Brand", "Project Name", "Service Years", "Inquiry Date");
 
 		$fp = fopen('php://output', 'w');
 		header('Content-type: application/csv');
@@ -187,7 +187,6 @@ class Emails extends CI_Controller {
 				$export_arr->name,
 				$export_arr->email,
 				$export_arr->employer,
-				$export_arr->employee_type,
 				$export_arr->brand,
 				$export_arr->project_name,
 				$export_arr->service_years,

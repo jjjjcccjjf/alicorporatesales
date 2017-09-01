@@ -33,7 +33,7 @@ while(have_posts()): the_post();
     <form method="post" id="_form">
 
       <div class="forms-main">
-        <p>Fill out the form below:</p>
+        <p>Get in touch with us. Fill up the form to send us your comments and feedback.</p>
         <ul>
           <li>
             <label>Your Employer</label>
@@ -114,10 +114,13 @@ while(have_posts()): the_post();
               </ul>
             </li> -->
             <li>
-              <p>
+              <p style="width:100%;">
                 <input type="checkbox" value="1" id="agree_terms"> I agree to the
                 <a href="<?php echo get_permalink(917) ?>" class="linkstyle">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>" class="linkstyle">Terms and Conditions</a>
               </p>
+            </li>
+            <li>
+              <div class="g-recaptcha" id="recaptcha"></div>
             </li>
 
             <li>
@@ -141,8 +144,8 @@ get_footer();
 $(document).ready(function() {
   $("#_form").on('submit', function(e){
     e.preventDefault();
-    if($('#agree_terms:checked').length > 0){
-
+    if($('#agree_terms:checked').length > 0 && grecaptcha.getResponse() != ""){
+      // console.log(grecaptcha.getResponse());
 
       $.ajax({
         url:"<?php echo get_template_directory_uri(); ?>/ajax/acentives_discount_inquiry.php",
@@ -160,7 +163,7 @@ $(document).ready(function() {
       }); // ajax end
 
     }else{
-      alert('You must agree to the privacy policy and terms and conditions to proceed.');
+      alert('You must agree to the privacy policy and terms and conditions and pass recaptcha to proceed.');
     }
 
   });

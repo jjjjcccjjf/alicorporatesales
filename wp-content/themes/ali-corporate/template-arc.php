@@ -32,7 +32,7 @@ while(have_posts()): the_post();
 </aside> -->
 <form id="_form">
   <div class="forms-main">
-    <p>Fill out the form below:</p>
+    <p>Get in touch with us. Fill up the form to send us your comments and feedback.</p>
     <ul>
       <li>
         <label>Your Name</label>
@@ -69,10 +69,13 @@ while(have_posts()): the_post();
         <input type="text" name="price">
       </li>
       <li>
-        <p>
+        <p style="width:100%">
           <input type="checkbox" value="1" id="agree_terms"> I agree to the
           <a href="<?php echo get_permalink(917) ?>" class="linkstyle">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>" class="linkstyle">Terms and Conditions</a>
         </p>
+      </li>
+      <li>
+        <div class="g-recaptcha" id="recaptcha"></div>
       </li>
       <li>
         <input type="submit">
@@ -97,7 +100,7 @@ $(document).ready(function() {
   $("#_form").on('submit', function(e){
     e.preventDefault();
 
-    if($('#agree_terms:checked').length > 0){
+    if($('#agree_terms:checked').length > 0 && grecaptcha.getResponse() != ""){
       $.ajax({
         url:"<?php echo get_template_directory_uri(); ?>/ajax/arc_inquiry.php",
         type: "POST",

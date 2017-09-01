@@ -4,7 +4,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Employer</th>
-      <th>Employee Type</th>
+      <!-- <th>Employee Type</th> -->
       <th>Brand</th>
       <th>Project Name</th>
       <th>Service Years</th>
@@ -18,7 +18,7 @@
           <td><?php echo $email->name != "" ? $email->name : "N/A"; ?></td>
           <td><?php echo $email->email != "" ? $email->email : "N/A"; ?></td>
           <td><?php echo $email->employer != "" ? $email->employer : "N/A"; ?></td>
-          <td><?php echo $email->employee_type != "" ? $email->employee_type : "N/A"; ?></td>
+          <!-- <td><?php# echo $email->employee_type != "" ? $email->employee_type : "N/A"; ?></td> -->
           <td><?php echo $email->brand != "" ? $email->brand : "N/A"; ?></td>
           <td><?php echo $email->project_name != "" ? $email->project_name : "N/A"; ?></td>
           <td><?php echo $email->service_years != "" ? $email->service_years : "N/A"; ?></td>
@@ -36,7 +36,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Employer</th>
-      <th>Employee Type</th>
+      <!-- <th>Employee Type</th> -->
       <th>Brand</th>
       <th>Project Name</th>
       <th>Service Years</th>
