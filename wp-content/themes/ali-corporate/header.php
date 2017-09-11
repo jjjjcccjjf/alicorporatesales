@@ -156,6 +156,7 @@ function checkPhoto($image_url)
 							<?php
 							$field_key = "field_59914624f4ae2";
 							$field = get_field_object($field_key);
+							sort($field['choices']);
 							if($field){
 								foreach( $field['choices'] as $choice ) {  ?>
 									<option <?php echo (@$_GET['property_type'] == $choice) ? 'selected' : '' ;?> ><?php echo $choice; ?></option>
@@ -178,7 +179,7 @@ function checkPhoto($image_url)
 							<option value="">Location</option>
 							<option value="">Any</option>
 							<?php
-							$args = array('post_type' => 'location', 'posts_per_page' => -1, 'order' => 'ASC');
+							$args = array('post_type' => 'location', 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'title');
 							$the_query = new WP_Query($args);
 							if ( $the_query->have_posts() ) {  while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 								<option <?php echo (@$_GET['property_location'] == get_the_title()) ? 'selected' : '' ;?> ><?php the_title(); ?></option>
