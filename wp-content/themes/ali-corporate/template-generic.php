@@ -13,7 +13,7 @@ while(have_posts()): the_post();
       </section>
     <?php endif; ?>
 
-    <div class="forms-main">
+    <div class="page-content">
       <h3><?php the_title(); ?></h3>
       <?php the_content(); ?>
     </article>
