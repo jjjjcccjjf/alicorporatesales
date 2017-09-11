@@ -184,10 +184,14 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 <?php
                 $project_title = get_the_title();
                 $project_brand = str_replace(" ", "_", get_field("brand"));
+                $virtual_tour = get_field('virtual_tour_link');
                 ?>
                 <ul>
                   <li><a href="<?php echo get_permalink(925) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Inquire Now</a></li>
                   <li><a href="<?php echo get_permalink(996) ?>?t=<?php echo $project_title; ?>&b=<?php echo $project_brand; ?>">Refer Now</a></li>
+                  <?php if($virtual_tour != ""): ?>
+                  <li><a href="<?php echo $virtual_tour; ?>" target="_blank">Virtual Tour</a></li>
+                  <?php endif; ?>
                 </ul>
               </aside>
             </div>
