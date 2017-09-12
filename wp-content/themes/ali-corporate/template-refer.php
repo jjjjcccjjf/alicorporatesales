@@ -2,11 +2,13 @@
 /* Template Name: Refer Now */
 get_header();
 $page_id = 884; # Page ID: Welcome - Ayala Group Employee
-if(isset($_SESSION['employer_type']) && $_SESSION['employer_type'] == "Outside partners")
+if(isset($_SESSION['employer_type']) && $_SESSION['employer_type'] == "Corporate partners")
 {
-  $page_id = 885; # Page ID: Welcome - Outside Partners
+  $page_id = 885; # Page ID: Welcome - Corporate partners
 }
 $employers = get_field("employers_list", $page_id);
+$banner = get_field("banner");
+$aside_banner = get_field("aside_banner");
 $projects_query = new WP_Query(array("post_type" => "project", "posts_per_page" => "-1"));
 $projects = array();
 if ( $projects_query->have_posts() ) {  while ( $projects_query->have_posts() ): $projects_query->the_post();
@@ -20,9 +22,13 @@ while(have_posts()): the_post();
 <section class="projects">
   <div class="pagewrapper2">
     <article class="forms">
-      <section class="banner"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/spot-reap-inner.jpg"></section>
+      <section class="banner">
+        <img src="<?php echo $banner; ?>">
+      </section>
       <aside class="overview">
-        <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/images/reap+rewards+orig.jpg"></figure>
+        <figure>
+          <img src="<?php echo $aside_banner; ?>">
+        </figure>
         <figcaption>
           <?php the_content(); ?>
           <!-- <h4>Refer and Earn: Earn Extra Cash in Exchange of your Referrals</h4>
@@ -33,7 +39,7 @@ while(have_posts()): the_post();
       <form name="referral_form" id="referral_form">
         <div class="forms-main">
           <h3>Refer Now!</h3>
-          <p>Fill out the form below:</p>
+          <p>Get in touch with us. Fill up the form to submit your inquiry.</p>
           <ul>
             <li>
               <label>Your Employer</label>
@@ -84,7 +90,9 @@ while(have_posts()): the_post();
                 </select>
                 <select name="referral_project_1" id="referral_project_1">
                   <option>Select Project</option>
-                  <?php foreach ($projects as $title => $brand) { ?>
+                  <?php
+                  ksort($projects);
+                   foreach ($projects as $title => $brand) { ?>
                     <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
                   <?php } ?>
                 </select>
@@ -113,13 +121,16 @@ while(have_posts()): the_post();
 
             <ul>
               <li>
-                <p>
+                <p class="p100">
                   <input type="checkbox" value="1" id="agree_terms"> I agree to the
-                  <a href="<?php echo get_permalink(917) ?>">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>">Terms and Conditions</a>
+                  <a href="<?php echo get_permalink(917) ?>" class="linkstyle">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>" class="linkstyle">Terms and Conditions</a>
                 </p>
               </li>
               <li>
-                <a id="add_refer_anchor">Refer another and win more</a>
+                <div class="g-recaptcha" id="recaptcha"></div>
+              </li>
+              <li>
+                <a id="add_refer_anchor">Refer another and Earn more</a>
                 <input type="hidden" name="refer_count" id="refer_count" value="1">
                 <input type="submit" name="submit_referral" id="submit_referral">
               </li>
@@ -131,7 +142,7 @@ while(have_posts()): the_post();
     </article>
 
     <div class="other-links">
-      <?php displaySideNav('generic'); # Find this in header.php ?>
+      <?php displaySideNav($_SESSION['employer_type']); # Find this in header.php ?>
     </div>
   </div>
 </section>
@@ -178,7 +189,7 @@ $("#submit_referral").click(function(e) {
 
   e.preventDefault();
 
-  if($('#agree_terms:checked').length > 0){
+  if($('#agree_terms:checked').length > 0 && grecaptcha.getResponse() != ""){
     $.ajax({
       url:"<?php echo get_template_directory_uri(); ?>/ajax/sendReferral.php",
       type: "POST",
