@@ -1,9 +1,5 @@
-############################# function-pagination.php ##########################
-
-
-
 <?php
-
+############################# function-pagination.php ##########################
 /**
 
 * @link: http://callmenick.com/post/custom-wordpress-loop-with-pagination
@@ -12,7 +8,25 @@
 
 */
 
-function custom_pagination($numpages = '', $pagerange = '', $paged='') {
+function custom_pagination($numpages = '', $pagerange = '', $paged='', $custom_page_link='', $is_single='') {
+
+  # VAN - 082517 - Make page url dynamic
+  $permalink = "";
+  if($custom_page_link == "")
+  {
+    $permalink = get_permalink(47) . "%_%";
+  }
+  else
+  {
+    $permalink = $custom_page_link . "%_%";
+  }
+
+  $format = "page/%#%";
+  // if($is_single != "" && $is_single == "1")
+  // {
+  //   $format .= "?";
+  // }
+
 
 
 
@@ -77,9 +91,9 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
   $pagination_args = array(
 
     // 'base'            => get_pagenum_link(4) . '%_%',
-    'base'            => get_permalink(47) . '%_%',
+    'base'            => $permalink,
 
-    'format'          => 'page/%#%',
+    'format'          => $format,
 
     'total'           => $numpages,
 
