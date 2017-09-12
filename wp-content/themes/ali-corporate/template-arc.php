@@ -81,7 +81,7 @@ while(have_posts()): the_post();
       <li>
         <label>Property Purchased *</label>
         <select name="brand" required  onchange="set_projects($(this).val());">
-          <option disabled >Select Brand</option>
+          <option value="">Select Brand</option>
           <?php
           $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
           $field = get_field_object($field_key);
