@@ -4,9 +4,9 @@ get_header();
 
 # Block for brand & project name
 $page_id = 884; # Page ID: Welcome - Ayala Group Employee
-if(isset($_SESSION['employer_type']) && $_SESSION['employer_type'] == "Outside partners")
+if(isset($_SESSION['employer_type']) && $_SESSION['employer_type'] == "Corporate partners")
 {
-  $page_id = 885; # Page ID: Welcome - Outside Partners
+  $page_id = 885; # Page ID: Welcome - Corporate partners
 }
 $employers = get_field("employers_list", $page_id);
 $projects_query = new WP_Query(array("post_type" => "project", "posts_per_page" => "-1", 'order' => 'asc', 'orderby' => 'post_title'));
@@ -33,8 +33,9 @@ while(have_posts()): the_post();
     <form method="post" id="_form">
 
       <div class="forms-main">
-        <p>Get in touch with us. Fill up the form to send us your comments and feedback.</p>
+        <p>Get in touch with us. Fill up the form to submit your inquiry.</p>
         <ul>
+        <?php if($_SESSION['employer_type'] != "BANK/INSTITUTIONAL OFFERS"): ?>
           <li>
             <label>Your Employer</label>
             <select name="employer">
@@ -42,7 +43,7 @@ while(have_posts()): the_post();
               <?php
               if($_SESSION['employer_type'] == 'Ayala Group Employee'){
                 $employers = get_field("employers_list", 884);
-              }else if($_SESSION['employer_type'] == 'Outside partners'){
+              }else if($_SESSION['employer_type'] == 'Corporate partners'){
                 $employers = get_field("employers_list", 885);
               }else{
                 $employers = array_merge(get_field("employers_list", 884), get_field("employers_list", 885));
@@ -63,6 +64,7 @@ while(have_posts()): the_post();
 
               </select>
             </li>
+          <?php endif; ?>
             <li>
               <label>Your Name</label>
               <input type="text" name="name" required>
@@ -72,6 +74,11 @@ while(have_posts()): the_post();
               <input type="email" name="email" required>
             </li>
             <li>
+              <label>Contact Number</label>
+              <input type="text" name="contact_num" required>
+            </li>
+          <?php if($_SESSION['employer_type'] != "BANK/INSTITUTIONAL OFFERS"): ?>
+            <li>
               <label>Years of Service</label>
               <select name="service_years" required>
                 <option disabled >Select years of service</option>
@@ -80,10 +87,11 @@ while(have_posts()): the_post();
                 <option>5 - 6 years</option>
               </select>
             </li>
+          <?php endif; ?>
             <li>
               <label>Brand</label>
               <select name="brand" required  onchange="set_projects($(this).val());">
-                <option disabled >Select Brand</option>
+                <option value="" >Select Brand</option>
                 <?php
                 $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
                 $field = get_field_object($field_key);
@@ -98,7 +106,7 @@ while(have_posts()): the_post();
               <select name="project_name" id="project_name">
                 <option>Select Project</option>
                 <?php foreach ($projects as $title => $brand) { ?>
-                  <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
+                  <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>"><?php echo $title; ?></option>
                 <?php } ?>
               </select>
             </li>
@@ -184,4 +192,11 @@ function set_projects(brand)
     $(".option_project").attr("style", "display:block");
   }
 }
+
+$(document).ready(function() {
+  set_projects('<?php echo @$_GET['b'] ?>');
+  setTimeout(function () {
+    $("select[name=project_name] option[value='"+ '<?php echo @$_GET['t']; ?>' +"']").prop('selected', true);
+  }, 100);
+});
 </script>

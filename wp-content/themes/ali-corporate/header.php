@@ -36,6 +36,33 @@ function formatPrice($n)
 	return 'P' . $f;
 }
 
+/**
+* dynamic homepage based on type
+* @param  [type] $type [description]
+* @return [type]       [description]
+*/
+function getHomePage($type)
+{
+
+	switch ($type) {
+		case 'Corporate partners':
+		$url = get_permalink(891);
+		break;
+		case 'Ayala Group':
+		$url = get_permalink(886);
+		break;
+		case 'BANK/INSTITUTIONAL OFFERS':
+		$url = get_permalink(936);
+		break;
+
+		default:
+		$url = site_url();
+		break;
+	}
+
+	return $url;
+}
+
 $GLOBALS['price_range']['500K - 1M'] = "500000-1000000";
 $GLOBALS['price_range']['1M - 2M'] = "1000000-2000000";
 $GLOBALS['price_range']['2M - 3M'] = "2000000-3000000";
@@ -77,11 +104,20 @@ function displaySideNav($type)
 		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
 		<li><a href="' . get_permalink(1159) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
 		<li><a href="' . get_permalink(1358) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
-		</ul>';
+		<li><a href="' . get_permalink(1563) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/contact.png"></span><label>CONTACT US</label></a></li>
+		</ul>
+		<p>CONTACT US</p>
+		<p>
+		Email Address:<br> <a href="mailto:corporatesales@ayalaland.com.ph">corporatesales@ayalaland.com.ph</a>
+		</p>
+		<p>
+		Contact Number:<br> <a href="tel:+639178727847">+63917 872 7847</a>
+		</p>
+		';
 		break;
 
-		case 'Outside partners':
-		case 'Ayala Group Employee':
+		case 'Corporate partners':
+		case 'Ayala Group':
 		case 'home':
 		echo
 		'<ul>
@@ -90,7 +126,16 @@ function displaySideNav($type)
 		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
 		<li><a href="' . get_permalink(1358) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		<li><a href="' . get_permalink(1167) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
-		</ul>';
+		<li><a href="' . get_permalink(1563) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/contact.png"></span><label>CONTACT US</label></a></li>
+		</ul>
+		<p>CONTACT US</p>
+		<p>
+		Email Address:<br> <a href="mailto:corporatesales@ayalaland.com.ph">corporatesales@ayalaland.com.ph</a>
+		</p>
+		<p>
+		Contact Number:<br> <a href="tel:+639178727847">+63917 872 7847</a>
+		</p>
+		';
 		break;
 
 		default:
@@ -100,10 +145,10 @@ function displaySideNav($type)
 }
 
 /**
- * returns placeholder image when no image is available
- * @param  string    $image_url    link of image to check
- * @return string                  link of placeholder image
- */
+* returns placeholder image when no image is available
+* @param  string    $image_url    link of image to check
+* @return string                  link of placeholder image
+*/
 function checkPhoto($image_url)
 {
 	if ($image_url == '') {
@@ -119,6 +164,7 @@ function checkPhoto($image_url)
 	<meta charset="utf-8">
 	<title>Ayala Land Residential Business Group</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/ayalafavicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/themes.css">
@@ -132,13 +178,37 @@ function checkPhoto($image_url)
 	<!--[if lt IE 9]>
 	<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
+	<script src="https://use.fontawesome.com/703572066a.js"></script>
+
+	<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('recaptcha', {
+          'sitekey' : '6Lefui4UAAAAAIuDBYno9PcthEKobYFJ5xVtK0kf'
+        });
+      };
+    </script>
 
 	<?php wp_head(); ?>
+
+	<!-- Start Google Recaptcha -->
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105701106-1', 'auto');
+  ga('send', 'pageview');
+
+	</script>
 </head>
 
 <body>
 	<header class="inside">
-		<a href="<?php echo site_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ayalaland-logo.jpg" width="240" height="80" alt="Ayala Land logo"></a>
+		<a href="<?php echo getHomePage($_SESSION['employer_type']); # Find this just above ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ayalaland-logo.jpg" width="240" height="80" alt="Ayala Land logo"></a>
 		<aside>
 			<h1><?php echo @$_SESSION['employer_type'] ?></h1>
 		</aside>

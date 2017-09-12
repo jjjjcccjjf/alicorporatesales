@@ -93,7 +93,7 @@ while(have_posts()): the_post();
                   <?php
                   ksort($projects);
                   foreach ($projects as $title => $brand) { ?>
-                    <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
+                    <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" ><?php echo $title; ?></option>
                   <?php } ?>
                 </select>
 
@@ -233,6 +233,6 @@ $(document).ready(function() {
   // And default project
   setTimeout(function () {
     $("select[name=referral_project_1] option[value='"+ '<?php echo @$_GET['t']; ?>' +"']").prop('selected', true);
-  }, 900);
+  }, 400);
 });
 </script>
