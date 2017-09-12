@@ -44,20 +44,20 @@
   width: 83.33333%;
   margin: 0 auto; }
 
-.fleft, header, header img, .search-main, .search-main .property-finder, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li, .search-main aside label, .search-main aside ul, .search-main aside ul li, .welcome, .welcome section, .welcome section ul li, .welcome section ul li a, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featleft aside h2, .featured .employee, .featured .featright, .featured .featright div, .featured .featright aside, .featured .featright aside h2, .featured .reap, .featured-offers, .featured-offers article, .featured-offers aside, .bank-partners, .projects-promos, .projects-promos article.estates, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a span, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .overview figure, .projects .properties, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties div ul li figcaption .price, .projects .properties section, .projects article.forms, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms aside.tab ul li a, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects article.forms .forms-main ul li ul li, .projects article.forms .forms-main ul li label, .projects article.forms .forms-main ul li input[type="radio"], .projects article.forms .forms-main ul li p input[type="checkbox"], .projects article.forms .forms-main ul li a, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a span, .projects .other-links ul li a label, footer, footer article, footer article ul, footer article span, .rslides img, .projdesc ul li a, .projdesc div figure, .projdesc div aside, .projdesc div aside ul {
+.fleft, header, header img, .search-main, .search-main .property-finder, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li, .search-main aside label, .search-main aside ul, .search-main aside ul li, .welcome, .welcome section, .welcome section ul li, .welcome section ul li a, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featleft aside h2, .featured .employee, .featured .featright, .featured .featright div, .featured .featright aside, .featured .featright aside h2, .featured .reap, .featured-offers, .featured-offers article, .featured-offers aside, .bank-partners, .projects-promos, .projects-promos article.estates, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a span, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .overview figure, .projects .properties, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties div ul li figcaption .price, .projects .properties section, .projects article.forms, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms aside.tab ul li a, .projects article.forms .page-content, .projects article.forms .page-content ul.downloadform li, .projects article.forms .page-content ul.downloadform li label, .projects article.forms .page-content ul.downloadform li span, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects article.forms .forms-main ul li ul li, .projects article.forms .forms-main ul li label, .projects article.forms .forms-main ul li input[type="radio"], .projects article.forms .forms-main ul li p input[type="checkbox"], .projects article.forms .forms-main ul li a, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a span, .projects .other-links ul li a label, footer, footer article, footer article ul, footer article span, .rslides img, .projdesc ul li a, .projdesc div figure, .projdesc div aside, .projdesc div aside ul {
   float: left; }
 
-.fright, header aside, .search-main aside, .projects-promos .other-links, .projects .overview figcaption, .projects .properties div ul li figcaption .type-location, .projects article.forms .forms-main ul li ul, .projects article.forms .forms-main ul li input[type="text"], .projects article.forms .forms-main ul li input[type="email"], .projects article.forms .forms-main ul li textarea, .projects article.forms .forms-main ul li select, .projects article.forms .forms-main ul li input[type="submit"], .projects article.forms .forms-main ul li p, .projects .other-links, footer aside, .projdesc div article {
+.fright, header aside, .search-main aside, .projects-promos article.estates span a, .projects-promos .other-links, .projects .overview figcaption, .projects .properties div ul li figcaption .type-location, .projects article.forms .forms-main ul li ul, .projects article.forms .forms-main ul li input[type="text"], .projects article.forms .forms-main ul li input[type="email"], .projects article.forms .forms-main ul li textarea, .projects article.forms .forms-main ul li select, .projects article.forms .forms-main ul li input[type="submit"], .projects article.forms .forms-main ul li p, .projects .other-links, footer aside, .projdesc div article {
   float: right; }
 
 .w100 {
   width: 100%;
   float: left; }
 
-.wid100, header, .search-main, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li select, .search-main aside label, .search-main aside ul, .search-main aside ul li input[type="text"], .welcome, .welcome section, .welcome section select, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featright div, .featured .featright aside, .featured-offers, .featured-offers article, .bank-partners, .bank-partners .carousel, .projects-promos, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties section, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a label, footer, .projdesc ul li a, .projdesc div aside, .projdesc div aside ul {
+.wid100, header, .search-main, .search-main .property-finder label, .search-main .property-finder ul, .search-main .property-finder ul li select, .search-main aside label, .search-main aside ul, .search-main aside ul li input[type="text"], .welcome, .welcome section, .welcome section select, .featured, .featured ul, .featured .featleft div, .featured .featleft aside, .featured .featright div, .featured .featright aside, .featured-offers, .featured-offers article, .bank-partners, .bank-partners .carousel, .projects-promos, .projects-promos article.estates .rslides, .projects-promos article.estates .rslides .carousel-cell, .projects-promos aside.promos .carousel, .projects-promos aside.promos .carousel .carousel-cell, .projects-promos .other-links ul, .projects-promos .other-links ul li, .projects-promos .other-links ul li a, .projects-promos .other-links ul li a label, .projects, .projects .banner, .projects .overview, .projects .properties aside, .projects .properties aside ul, .projects .properties div, .projects .properties div ul, .projects .properties div ul li figure, .projects .properties div ul li figcaption, .projects .properties section, .projects article.forms aside.tab, .projects article.forms aside.tab ul, .projects article.forms .page-content, .projects article.forms .page-content ul.downloadform li, .projects article.forms .forms-main, .projects article.forms .forms-main p, .projects article.forms .forms-main ul li, .projects .referralsec, .projects .refer, .projects .other-links ul, .projects .other-links ul li, .projects .other-links ul li a, .projects .other-links ul li a label, footer, .projdesc ul li a, .projdesc div aside, .projdesc div aside ul, .aside-estates {
   width: 100%; }
 
-.defimg, .projects .banner img, .projects .overview figure img {
+.defimg, .featured-offers article img, .projects .banner img, .projects .overview figure img {
   width: 100%;
   height: auto; }
 
@@ -65,12 +65,12 @@
   width: auto;
   height: 100%; }
 
-.coverimg, .featured .featleft div img, .featured .featright div img, .featured-offers article img, .projects-promos article.estates .rslides .carousel-cell img, .projects .properties div ul li figure img, .projdesc div figure img {
+.coverimg, .featured .featleft div img, .featured .featright div img, .projects-promos article.estates .rslides .carousel-cell img, .projects .properties div ul li figure img, .projdesc div figure img {
   width: 100%;
   height: 100%;
   object-fit: cover; }
 
-.containimg, .bank-partners .carousel .carousel-cell img, .projects-promos article.estates .rslides .carousel-cell aside img, .projects-promos aside.promos .carousel .carousel-cell img, .projects-promos .other-links ul li a span img, .projects .other-links ul li a span img, .rslides img {
+.containimg, .bank-partners .carousel .carousel-cell img, .projects-promos article.estates .rslides .carousel-cell aside img, .projects-promos aside.promos .carousel .carousel-cell img, .projects-promos .other-links ul li a span img, .projects .properties div ul li.bank-list figure img, .projects .other-links ul li a span img, .rslides img, .aside-estates img {
   width: 100%;
   height: 100%;
   object-fit: contain; }
@@ -110,7 +110,7 @@
   position: absolute;
   top: 13px;
   right: 20px;
-  background: #919296 url(../images/searchbtn.png) no-repeat center center;
+  background: #919296 url(../images/searchbtn2.png) no-repeat center center;
   width: 32px;
   height: 32px;
   display: none; }
@@ -171,7 +171,7 @@ header {
     background-size: auto 100%;
     box-sizing: border-box; }
     header aside h1 {
-      font: 24px/30px "ralewaybold";
+      font: 24px/30px "ralewayregular";
       text-transform: uppercase; }
 
 .search-main {
@@ -191,7 +191,8 @@ header {
       font: 20px/26px "rajdhanisemibold";
       color: #009e66;
       padding: 0 30px 0;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      display: none; }
     .search-main .property-finder ul {
       list-style: none;
       padding-left: 30px;
@@ -201,7 +202,7 @@ header {
       height: 100%; }
       .search-main .property-finder ul li {
         width: 33%;
-        padding-right: 30px;
+        padding-right: 20px;
         box-sizing: border-box; }
         .search-main .property-finder ul li select {
           padding: 0 10px 0;
@@ -219,16 +220,16 @@ header {
         right: 0;
         padding-right: 0; }
         .search-main .property-finder ul li:last-child input {
-          width: 32px;
+          width: 75px;
           height: 32px;
           cursor: pointer;
-          background: #007149 url(../images/search.png) no-repeat center center;
+          background: #007149 url(../images/searchbtn.png) no-repeat center center;
           color: #fff;
           padding-top: 5px;
           font: 18px/24px "rajdhanisemibold";
-          border-radius: 50%; }
+          border-radius: 10px; }
         .search-main .property-finder ul li:last-child input:hover {
-          background: #00502f url(../images/search.png) no-repeat center center; }
+          background: #00502f url(../images/searchbtn.png) no-repeat center center; }
   .search-main aside {
     width: 33%;
     max-width: 450px;
@@ -241,7 +242,8 @@ header {
       font: 20px/26px "rajdhanisemibold";
       color: #009e66;
       padding: 0 30px 0;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      display: none; }
     .search-main aside ul {
       list-style: none;
       padding-left: 30px;
@@ -251,7 +253,7 @@ header {
       height: 100%; }
       .search-main aside ul li {
         width: 100%;
-        padding-right: 30px;
+        padding-right: 55px;
         box-sizing: border-box; }
         .search-main aside ul li input[type="text"] {
           padding: 0 10px 0;
@@ -264,7 +266,7 @@ header {
           border: 0;
           border-radius: 5px; }
       .search-main aside ul li:last-child {
-        width: 32px;
+        width: 75px;
         height: 32px;
         padding-right: 0;
         position: absolute;
@@ -272,19 +274,18 @@ header {
         .search-main aside ul li:last-child input {
           width: 100%;
           cursor: pointer;
-          background: #007149 url(../images/search.png) no-repeat center center;
+          background: #007149 url(../images/searchbtn.png) no-repeat center center;
           color: #fff;
           padding-top: 5px;
           font: 18px/24px "rajdhanisemibold";
-          border-radius: 50%; }
+          border-radius: 10px; }
         .search-main aside ul li:last-child input:hover {
-          background: #00502f url(../images/search.png) no-repeat center center; }
+          background: #00502f url(../images/searchbtn.png) no-repeat center center; }
 
 .welcome {
   position: fixed;
   height: 100%;
-  background: url(../images/welcomebg.jpg) no-repeat center center;
-  background-size: cover; }
+  /*background: url(../images/welcomebg.jpg) no-repeat center center; background-size: cover;*/ }
   .welcome div {
     position: absolute;
     z-index: 10;
@@ -296,15 +297,17 @@ header {
   .welcome section {
     z-index: 50;
     height: 100%;
-    padding: 20% 0 0;
+    padding: 15% 0 0;
     box-sizing: border-box;
     text-align: center; }
     .welcome section h2 {
-      font: 32px/38px "ralewaymedium";
-      margin-bottom: 15px; }
+      font: 32px/38px "ralewayregular";
+      margin-bottom: 15px;
+      text-transform: uppercase; }
     .welcome section h1 {
-      font: 44px/50px "ralewaymedium";
-      margin-bottom: 35px; }
+      font: 56px/62px "ralewayregular";
+      margin-bottom: 35px;
+      text-transform: uppercase; }
     .welcome section p {
       font: 20px/26px "robotoregular";
       margin-bottom: 10px; }
@@ -342,6 +345,8 @@ header {
       font: 16px/22px "rajdhanisemibold";
       color: #fff;
       padding: 10px 15px;
+      width: 130px;
+      box-sizing: border-box;
       background: #007149;
       margin: 0 15px;
       text-transform: uppercase; }
@@ -353,11 +358,12 @@ header {
   height: 49.44444%;
   background: #007149; }
   .featured h3 {
-    font: 40px/46px "ralewaysemibold";
+    font: 38px/44px "ralewayregular";
+    text-transform: uppercase;
     margin-bottom: 15px; }
   .featured p {
     font: 18px/30px "robotoregular";
-    margin-bottom: 60px; }
+    margin-bottom: 35px; }
   .featured ul {
     list-style: none; }
     .featured ul li {
@@ -402,10 +408,10 @@ header {
       padding: 10px 14% 10px 20px;
       box-sizing: border-box; }
       .featured .featleft aside h2 {
-        font: 24px/36px "ralewaysemibold";
+        font: 24px/36px "ralewayregular";
         padding-right: 40px;
         background: url(../images/arrow.png) no-repeat right center;
-        letter-spacing: 2px; }
+        text-transform: uppercase; }
       .featured .featleft aside img {
         height: 100%;
         width: auto;
@@ -451,10 +457,10 @@ header {
       padding: 10px 20px 10px 90px;
       box-sizing: border-box; }
       .featured .featright aside h2 {
-        font: 24px/36px "ralewaysemibold";
+        font: 24px/36px "ralewayregular";
         padding-right: 40px;
         background: url(../images/arrow.png) no-repeat right center;
-        letter-spacing: 2px; }
+        text-transform: uppercase; }
       .featured .featright aside img {
         height: 100%;
         width: auto;
@@ -480,11 +486,11 @@ header {
     background: rgba(0, 0, 0, 0.5); }
 
 .featured-offers {
-  height: 40%;
+  height: auto;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
   z-index: 90; }
   .featured-offers article {
-    height: 100%; }
+    height: auto; }
     .featured-offers article div.overlay {
       position: absolute;
       z-index: 15;
@@ -494,12 +500,12 @@ header {
       bottom: 0;
       background: rgba(0, 0, 0, 0.3); }
     .featured-offers article img {
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0; }
     .featured-offers article div {
       width: 100%;
-      padding: 5% 60px 0 33%;
+      padding: 0;
       box-sizing: border-box;
       z-index: 50; }
       .featured-offers article div h2 {
@@ -542,8 +548,8 @@ header {
       width: 10%; }
 
 .projects-promos {
-  height: 28.889%;
-  padding: 8px 0;
+  height: 258px;
+  padding: 50px 0 8px;
   box-sizing: border-box;
   position: relative; }
   .projects-promos article.estates {
@@ -557,13 +563,24 @@ header {
         position: relative; }
         .projects-promos article.estates .rslides .carousel-cell aside {
           position: absolute;
-          top: 50px;
+          top: 20px;
           right: 0;
           z-index: 100;
           width: 180px;
           height: 65px;
           text-align: right;
           background: #fff; }
+    .projects-promos article.estates span a {
+      position: absolute;
+      right: 0;
+      padding: 10px;
+      bottom: 0;
+      background: #007149;
+      color: #fff;
+      font: 14px/20px "rajdhanisemibold";
+      z-index: 1000; }
+    .projects-promos article.estates span a:hover {
+      background: #00502f; }
     .projects-promos article.estates .flickity-page-dots {
       bottom: 5px !important; }
   .projects-promos aside.promos {
@@ -581,14 +598,11 @@ header {
         position: relative; }
   .projects-promos h3 {
     position: absolute;
-    top: 10px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    top: -43px;
     left: 0;
-    border-left: solid 13px #007149;
     background: #fff;
     z-index: 100;
-    font: 20px/26px "rajdhanisemibold";
+    font: 20px/26px "ralewayregular";
     color: #000;
     padding: 5px 40px 3px 10px;
     text-transform: uppercase; }
@@ -629,13 +643,14 @@ header {
             top: 0;
             z-index: 15;
             left: 0;
-            padding: 10px 10px 0 90px;
+            padding: 6px 10px 0 90px;
             box-sizing: border-box; }
         .projects-promos .other-links ul li a:hover {
           background: #dadada;
           cursor: pointer; }
       .projects-promos .other-links ul li:last-child {
-        margin: 0; }
+        margin: 0;
+        display: none; }
   .projects-promos .banklist li {
     height: 22% !important; }
     .projects-promos .banklist li label {
@@ -750,6 +765,14 @@ header {
         border: solid 3px #007149; }
         .projects .properties div ul li:hover figure img {
           opacity: 0.8; }
+      .projects .properties div ul li.bank-list {
+        margin-bottom: 20px; }
+        .projects .properties div ul li.bank-list figure {
+          height: 150px; }
+      .projects .properties div ul li.bank-list:hover figure {
+        border: 0; }
+        .projects .properties div ul li.bank-list:hover figure img {
+          opacity: 1; }
     .projects .properties section {
       padding: 15px;
       box-sizing: border-box;
@@ -768,7 +791,7 @@ header {
   .projects article.forms {
     width: 65%; }
     .projects article.forms h3 {
-      font: 30px/36px "ralewaysemibold";
+      font: 30px/36px "ralewaymedium";
       color: #fff;
       margin: 20px; }
     .projects article.forms aside.tab {
@@ -794,6 +817,103 @@ header {
           background: #5c931d;
           color: #fff;
           border-color: #5c931d; }
+    .projects article.forms .page-content {
+      padding: 0;
+      box-sizing: border-box;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+      padding-bottom: 40px; }
+      .projects article.forms .page-content img {
+        width: auto;
+        height: auto;
+        max-width: 100%; }
+      .projects article.forms .page-content p, .projects article.forms .page-content ul, .projects article.forms .page-content ol {
+        font: 14px/20px "robotoregular";
+        color: #000 !important;
+        margin-bottom: 20px;
+        padding: 0 30px; }
+        .projects article.forms .page-content p a, .projects article.forms .page-content ul a, .projects article.forms .page-content ol a {
+          color: #007149; }
+        .projects article.forms .page-content p a:hover, .projects article.forms .page-content ul a:hover, .projects article.forms .page-content ol a:hover {
+          color: #000; }
+      .projects article.forms .page-content ul, .projects article.forms .page-content ol {
+        margin-left: 25px; }
+        .projects article.forms .page-content ul li, .projects article.forms .page-content ol li {
+          margin-bottom: 5px; }
+      .projects article.forms .page-content h3 {
+        font: 30px/36px "ralewayregular";
+        color: #fff;
+        padding: 20px;
+        background: #007149;
+        margin: 0 0 20px; }
+      .projects article.forms .page-content h4 {
+        font: 20px/26px "ralewayregular";
+        color: #000;
+        padding: 0 30px;
+        margin-bottom: 10px; }
+      .projects article.forms .page-content h5 {
+        font: 16px/22px "ralewayregular";
+        color: #00502f;
+        padding: 0 30px;
+        margin-bottom: 10px; }
+      .projects article.forms .page-content table {
+        margin: 0 30px 30px;
+        max-width: 100%; }
+        .projects article.forms .page-content table tr:nth-child(even) td {
+          background: #f4f4f4; }
+        .projects article.forms .page-content table td {
+          padding: 10px;
+          color: #000;
+          font: 14px/20px "robotoregular";
+          color: #000 !important; }
+      .projects article.forms .page-content ul.downloadform {
+        width: 90% !important;
+        max-width: 800px;
+        margin: 0 auto !important;
+        float: none !important;
+        list-style: none !important;
+        /*li:first-child {background: $green; color: $white; }*/ }
+        .projects article.forms .page-content ul.downloadform li {
+          border-bottom: solid 1px #007149;
+          background: #f1f9e3; }
+          .projects article.forms .page-content ul.downloadform li label {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: "ralewaybold";
+            font-size: 18px;
+            line-height: 24px; }
+            .projects article.forms .page-content ul.downloadform li label span {
+              display: block;
+              clear: both;
+              font-size: 13px;
+              float: left !important;
+              padding: 5px 0;
+              width: 100%;
+              text-align: left !important; }
+            .projects article.forms .page-content ul.downloadform li label i {
+              float: left;
+              margin-right: 10px;
+              font-size: 30px; }
+          .projects article.forms .page-content ul.downloadform li span {
+            widht: 100%;
+            text-align: center !important;
+            padding: 10px 0 0 35px;
+            box-sizing: border-box; }
+            .projects article.forms .page-content ul.downloadform li span a {
+              background: #00502f;
+              color: #fff;
+              padding: 10px;
+              border-radius: 10px; }
+            .projects article.forms .page-content ul.downloadform li span a:hover {
+              background: #007149; }
+          .projects article.forms .page-content ul.downloadform li span.dl {
+            text-align: right !important;
+            float: right;
+            font-size: 14px;
+            line-height: 20px;
+            margin-top: 10px; }
+        .projects article.forms .page-content ul.downloadform li:nth-child(even) {
+          background: #e7f5d0; }
     .projects article.forms .forms-main {
       padding: 0;
       box-sizing: border-box;
@@ -853,7 +973,7 @@ header {
             text-transform: uppercase;
             cursor: pointer; }
           .projects article.forms .forms-main ul li textarea {
-            height: 250px;
+            height: 125px;
             margin-bottom: 15px; }
           .projects article.forms .forms-main ul li p {
             width: 68%;
@@ -952,12 +1072,12 @@ header {
 
 footer {
   position: relative;
-  height: 6.444%;
+  height: auto;
   border-top: solid 1px #dadada;
   background: #f4f4f4;
   position: relative;
   z-index: 100;
-  padding: 0 30px;
+  padding: 5px 30px;
   box-sizing: border-box;
   text-align: right; }
   footer a {
@@ -978,6 +1098,7 @@ footer {
     footer article span {
       width: 150px;
       padding-right: 15px;
+      padding-top: 10px;
       font: 16px/22px "rajdhanisemibold";
       color: #000; }
   footer aside {
@@ -1023,6 +1144,8 @@ footer {
 
 .rslides img {
   display: block;
+  position: absolute;
+  top: 0;
   border: 0; }
 
 .white-popup {
@@ -1049,7 +1172,8 @@ footer {
   .projdesc ul {
     list-style: none;
     margin: 0 0 20px;
-    padding: 0; }
+    padding: 0;
+    /*li:last-child {border-bottom: 0; padding: 20px 0;}*/ }
     .projdesc ul li {
       border-bottom: solid 1px #dadada;
       margin-bottom: 5px; }
@@ -1063,9 +1187,6 @@ footer {
         box-sizing: border-box; }
       .projdesc ul li a:hover {
         background: #00502f; }
-    .projdesc ul li:last-child {
-      border-bottom: 0;
-      padding: 20px 0; }
   .projdesc div {
     width: 100%;
     float: left; }
@@ -1102,5 +1223,251 @@ footer {
         .projdesc div aside ul li:last-child {
           margin: 0 !important;
           padding: 0; }
+
+/* Dropdown */
+.select {
+  position: relative !important;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 325px;
+  color: #cccccc;
+  vertical-align: middle;
+  text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none; }
+
+.select .placeholder {
+  position: relative;
+  display: block;
+  background: #2d2d2d url(../images/droparrow.png) no-repeat 97% center;
+  z-index: 1;
+  padding: 1em;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font: 14px/20px "robotoregular"; }
+
+.select .placeholder:hover {
+  background: #34383c url(../images/droparrow.png) no-repeat 97% center; }
+
+/*.select .placeholder:after {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'FontAwesome';
+  content: '\f078';
+  z-index: 10;
+}
+.select.is-open .placeholder:after {
+  content: '\f077';
+}*/
+.select.is-open ul {
+  display: block; }
+
+.select.select--white .placeholder {
+  background: #fff;
+  color: #919296; }
+
+.select.select--white .placeholder:hover {
+  background: #fafafa; }
+
+.select ul {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 100;
+  max-height: 120px;
+  text-align: left !important; }
+
+.select ul li {
+  display: block;
+  text-align: left !important;
+  padding: 5px 15px 5px 15px !important;
+  color: #919296 !important;
+  cursor: pointer;
+  font: 14px/20px "robotoregular";
+  width: 100% !important;
+  float: left;
+  clear: both; }
+
+.select ul li:hover {
+  background: #00502f;
+  color: #fff; }
+
+/* Responsive Youtube */
+.arc-video {
+  width: 60%;
+  margin: 10px auto 25px;
+  position: relative; }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  z-index: 200; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200; }
+
+.linkstyle {
+  padding: 0 !important;
+  background: none !important;
+  font: 16px/22px "robotoregular" !important;
+  text-decoration: underline !important;
+  float: none !important; }
+
+.buttongreen {
+  padding: 10px 20px;
+  background: #007149;
+  color: #fff !important;
+  text-decoration: none;
+  font: 16px/22px "ralewaymedium";
+  border-radius: 30px; }
+
+.buttongreen:hover {
+  background: #00502f;
+  color: #fff !important; }
+
+.aside-estates {
+  min-height: 125px; }
+
+.aside-estates span {
+  min-height: 125px;
+  width: 180px;
+  position: absolute;
+  left: 0;
+  background: #fff;
+  float: left;
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: green;
+  border-bottom-style: solid; }
+
+.aside-estates p {
+  padding: 25px 25px 0 200px;
+  color: black;
+  float: right;
+  font: 14px/20px "robotoregular";
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 122px; }
+
+.p100 {
+  width: auto !important;
+  background: transparent !important;
+  padding: 5px 0 !important; }
+
+.g-recaptcha {
+  height: 100px;
+  position: relative; }
+
+.g-recaptcha div {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0; }
+
+/* Accordion */
+.accordion {
+  margin: 2em;
+  font-family: "ralewaysemibold"; }
+
+.toggle {
+  display: none; }
+
+.option {
+  position: relative;
+  margin-bottom: 1em; }
+
+.title,
+.content {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.title {
+  background: #fff;
+  padding: 10px 30px 15px 10px;
+  display: block;
+  color: #007149;
+  font-weight: bold;
+  line-height: 24px;
+  border-bottom: solid 1px #007149; }
+
+.title:after, .title:before {
+  content: '';
+  position: absolute;
+  right: 1.25em;
+  top: 1.25em;
+  width: 2px;
+  height: 0.75em;
+  background-color: #7A7572;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.title:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff; }
+
+.content p {
+  margin: 15px 15px 20px;
+  padding: 0 !important;
+  font-size: 14px;
+  line-height: 20px; }
+
+.toggle:checked + .title, .toggle:checked + .title + .content {
+  box-shadow: 3px 3px 6px #ddd, -3px 3px 6px #ddd; }
+
+.toggle:checked + .title + .content {
+  max-height: 2000px; }
+
+.toggle:checked + .title:before {
+  -webkit-transform: rotate(90deg) !important;
+  transform: rotate(90deg) !important; }
+
+#bgvid {
+  /*  making the video fullscreen  */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; }
 
 /*# sourceMappingURL=styles.css.map */
