@@ -22,9 +22,9 @@ while(have_posts()): the_post();
 <section class="projects">
   <div class="pagewrapper2">
     <article class="forms">
-      <section class="banner">
-        <img src="<?php echo $banner; ?>">
-      </section>
+      <!-- <section class="banner"> -->
+        <!-- <img src="<?php# echo $banner; ?>"> -->
+      <!-- </section> -->
       <aside class="overview">
         <figure>
           <img src="<?php echo $aside_banner; ?>">
@@ -92,7 +92,7 @@ while(have_posts()): the_post();
                   <option>Select Project</option>
                   <?php
                   ksort($projects);
-                   foreach ($projects as $title => $brand) { ?>
+                  foreach ($projects as $title => $brand) { ?>
                     <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>" <?php echo isset($_GET['t']) && $_GET['t'] == $title ? "selected" : ""; ?>><?php echo $title; ?></option>
                   <?php } ?>
                 </select>
@@ -106,6 +106,7 @@ while(have_posts()): the_post();
                   <option>3M - 4M</option>
                   <option>5M - 6M</option>
                   <option>7M - 8M</option>
+                  <option>10M - ABOVE</option>
                 </select>
 
               </li>
@@ -226,5 +227,12 @@ function set_projects(brand, project_id)
     $(".option_project").attr("style", "display:block");
   }
 }
-
+$(document).ready(function() {
+  // This is for setting the default brand
+  set_projects('<?php echo @$_GET['b'] ?>', 'referral_project_1');
+  // And default project
+  setTimeout(function () {
+    $("select[name=referral_project_1] option[value='"+ '<?php echo @$_GET['t']; ?>' +"']").prop('selected', true);
+  }, 900);
+});
 </script>
