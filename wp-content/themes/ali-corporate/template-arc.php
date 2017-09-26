@@ -32,15 +32,15 @@ while(have_posts()): the_post();
 </aside> -->
 <form id="_form">
   <div class="forms-main">
-    <p>Get in touch with us. Fill up the form to submit your inquiry.</p>
+    <?php the_content(); ?>
     <ul>
       <li>
         <label>First Name *</label>
         <input type="text" name="first_name" required>
       </li>
       <li>
-        <label>Middle Name</label>
-        <input type="text" name="middle_name">
+        <label>Middle Name *</label>
+        <input type="text" name="middle_name" required>
       </li>
       <li>
         <label>Last Name *</label>
@@ -55,28 +55,28 @@ while(have_posts()): the_post();
         <input type="text" name="mobile" required>
       </li>
       <li>
-        <label>Birthday</label>
-        <input type="text" name="birthday" placeholder="MM/DD/YYYY">
+        <label>Birthday *</label>
+        <input type="text" name="birthday" placeholder="MM/DD/YYYY" required>
       </li>
       <li>
-        <label>House Unit Number/Building/Floor</label>
-        <input type="text" name="house_num">
+        <label>House Unit Number/Building/Floor *</label>
+        <input type="text" name="house_num" required>
       </li>
       <li>
-        <label>Street Name</label>
-        <input type="text" name="street_name">
+        <label>Street Name *</label>
+        <input type="text" name="street_name" required>
       </li>
       <li>
-        <label>Subdivision/Barangay</label>
-        <input type="text" name="subdivision">
+        <label>Subdivision/Barangay *</label>
+        <input type="text" name="subdivision" required>
       </li>
       <li>
-        <label>Province</label>
-        <input type="text" name="province">
+        <label>Province *</label>
+        <input type="text" name="province" required>
       </li>
       <li>
         <label>City</label>
-        <input type="text" name="city">
+        <input type="text" name="city" required>
       </li>
       <li>
         <label>Property Purchased *</label>
@@ -101,17 +101,26 @@ while(have_posts()): the_post();
         </select>
       </li>
       <li>
-        <label>Year Purchased</label>
-        <input type="text" name="year_purchased">
+        <label>Year Purchased *</label>
+        <input type="text" name="year_purchased" required>
       </li>
       <li>
-        <label>Amount</label>
-        <input type="text" name="price">
+        <label>Amount *</label>
+        <input type="text" name="price" required>
       </li>
       <li>
         <p class="p100">
-          <input type="checkbox" value="1" id="agree_terms"> I agree to the
+          <input type="checkbox" value="1" id="agree_terms" required> I agree to the
           <a href="<?php echo get_permalink(917) ?>" class="linkstyle" target="_blank">Privacy Policy</a> and <a href="<?php echo get_permalink(907) ?>" class="linkstyle" target="_blank">Terms and Conditions</a>
+        </p>
+      </li>
+      <li>
+        <p class="p100">
+          <input type="checkbox" value="1" id="agree_terms_arc" required>
+          I accept
+          <a href="<?php echo get_permalink(1775) ?>" class="linkstyle" target="_blank">
+            Ayala Rewards Terms and Conditions
+          </a>
         </p>
       </li>
       <li>
@@ -140,7 +149,7 @@ $(document).ready(function() {
   $("#_form").on('submit', function(e){
     e.preventDefault();
 
-    if($('#agree_terms:checked').length > 0 && grecaptcha.getResponse() != ""){
+    if($('#agree_terms:checked').length > 0 && grecaptcha.getResponse() != "" && $('#agree_terms_arc:checked').length > 0){
       $.ajax({
         url:"<?php echo get_template_directory_uri(); ?>/ajax/arc_inquiry.php",
         type: "POST",
@@ -148,7 +157,7 @@ $(document).ready(function() {
         success:function(data){
 
           if(data == 1){
-            window.location.href = '<?php echo get_permalink(1141); ?>?type=arc_inquiry';
+            window.location.href = '<?php echo get_permalink(1789); ?>?type=arc_inquiry';
           }
         }, // success end
         error: function(e){
@@ -156,7 +165,7 @@ $(document).ready(function() {
         }
       }); // ajax end
     }else{
-      alert('You must agree to the privacy policy and terms and conditions to proceed.');
+      alert('You must agree to all terms and prove you are not a robot to proceed.');
     }
 
   });

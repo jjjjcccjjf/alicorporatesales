@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Ayala Land Residential Business Group</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/ayalafavicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
 
@@ -14,7 +15,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-	<?php wp_head(); ?>
+	<?php #wp_head(); ?>
 
 </head>
 
@@ -28,37 +29,61 @@
 			<h1>Residential Business Group</h1>
 			<p>Please Select Your Employer</p>
 			<ul>
-				<li><a href="<?php echo get_permalink(884); ?>">Ayala Group Employee</a></li>
-				<li><a href="<?php echo get_permalink(885); ?>">Outside Partners</a></li>
+				<li><a href="<?php echo get_permalink(884); ?>">Ayala Group</a></li>
+				<li><a href="<?php echo get_permalink(885); ?>">Corporate Partners</a></li>
 				<li><a href="javascript:void(0)" id="_bank">Bank/Institutional Offers</a></li>
 			</ul>
 		</section>
 		<div class="overlay"></div>
 	</article>
-	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
-	<script>
-	$(document).ready(function() {
-		$("#_bank").on('click', function(e){
-			$.ajax({
-				url:"<?php echo get_template_directory_uri(); ?>/ajax/set_session.php",
-				type: "POST",
-				data: {
-					'employer_type': 'bank',
-				},
-				success:function(data){
-					if(data == 1){
-						window.location.href = '<?php echo get_permalink(936); ?>';
+
+	<video poster="<?php echo get_field('video_poster'); ?>" id="bgvid" controls loop playsinline autoplay>
+		<source src="<?php echo get_field('video'); ?>" type="video/mp4">
+		</video>
+
+
+		<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
+		<script>
+		$(document).ready(function() {
+			$("#_bank").on('click', function(e){
+				$.ajax({
+					url:"<?php echo get_template_directory_uri(); ?>/ajax/set_session.php",
+					type: "POST",
+					data: {
+						'employer_type': 'bank',
+					},
+					success:function(data){
+						if(data == 1){
+							window.location.href = '<?php echo get_permalink(936); ?>';
+						}
+					}, // success end
+					error: function(e){
+						console.log(e);
 					}
-				}, // success end
-				error: function(e){
-					console.log(e);
-				}
-			}); // ajax end
+				}); // ajax end
+			});
 		});
-	});
-	</script>
+		</script>
 
-	<?php wp_footer(); ?>
 
-</body>
-</html>
+
+
+		<?php #wp_footer(); ?>
+		<script>
+		var myVideo = document.getElementById('bgvid').addEventListener('ended',endVidHandler,false);
+		// function endVidHandler(e)
+		// {
+		// 	alert("hey");
+		// 	// $("#bgvid").get(0).play();
+		// }
+
+		// $(document).ready(function() {
+		// 	$('video').on('ended', function () {
+		// 		this.load();
+		// 		this.play();
+		// 	});
+		// });
+		</script>
+
+	</body>
+	</html>

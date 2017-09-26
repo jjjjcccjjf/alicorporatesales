@@ -9,7 +9,9 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 <section class="projects">
   <article class="properties">
     <aside class="aside-estates">
+      <span>
       <img src="<?php echo get_field("page_logo"); ?>">
+      </span>
       <?php the_content(); ?>
 
     </aside>
@@ -34,8 +36,13 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 <h4><?php the_title();?></h4>
                 <span class="price">
                   <h6>Price range</h6>
-                  <h5><?php echo formatPrice(get_field('min_price')); ?> -
-                    <?php echo formatPrice(get_field('max_price')); ?></h5>
+                  <h5><?php
+                  if(!get_field('is_sold_out')){
+                    echo formatPrice(get_field('min_price')) . ' - ' . formatPrice(get_field('max_price'));
+                  }else{
+                    echo 'SOLD OUT';
+                  } ?>
+                  </h5>
                   </span>
                   <span class="type-location">
                     <p><?php echo implode(", ", get_field('project_type')); ?></p>
@@ -56,8 +63,13 @@ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                   <ul>
                     <li>
                       <h6>Price:</h6>
-                      <p><?php echo formatPrice(get_field('min_price')); ?> -
-                        <?php echo formatPrice(get_field('max_price')); ?></p>
+                      <p><?php
+                      if(!get_field('is_sold_out')){
+                        echo formatPrice(get_field('min_price')) . ' - ' . formatPrice(get_field('max_price'));
+                      }else{
+                        echo 'SOLD OUT';
+                      }
+                       ?></p>
                       </li>
                       <li>
                         <h6>Location:</h6>

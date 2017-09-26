@@ -100,19 +100,12 @@ function displaySideNav($type)
 		case 'generic':
 		echo
 		'<ul>
-		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1824) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
+		<li><a href="' . get_permalink(1812) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS / GUIDE</label></a></li>
 		<li><a href="' . get_permalink(1159) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
 		<li><a href="' . get_permalink(1358) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		<li><a href="' . get_permalink(1563) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/contact.png"></span><label>CONTACT US</label></a></li>
 		</ul>
-		<p>CONTACT US</p>
-		<p>
-		Email Address:<br> <a href="mailto:corporatesales@ayalaland.com.ph">corporatesales@ayalaland.com.ph</a>
-		</p>
-		<p>
-		Contact Number:<br> <a href="tel:+639178727847">+63917 872 7847</a>
-		</p>
 		';
 		break;
 
@@ -122,19 +115,12 @@ function displaySideNav($type)
 		echo
 		'<ul>
 		<li><a href="' . get_permalink(925) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
-		<li><a href="' . get_permalink(1161) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS</label></a></li>
-		<li><a href="' . get_permalink(919) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/purchase.png"></span><label>PROPERTY PURCHASE GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1812) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS / GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1816) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/country-club.png"></span><label>COUNTRY CLUB SHARE</label></a></li>
 		<li><a href="' . get_permalink(1358) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		<li><a href="' . get_permalink(1167) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bank.png"></span><label>BANK PARTNERS</label></a></li>
 		<li><a href="' . get_permalink(1563) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/contact.png"></span><label>CONTACT US</label></a></li>
 		</ul>
-		<p>CONTACT US</p>
-		<p>
-		Email Address:<br> <a href="mailto:corporatesales@ayalaland.com.ph">corporatesales@ayalaland.com.ph</a>
-		</p>
-		<p>
-		Contact Number:<br> <a href="tel:+639178727847">+63917 872 7847</a>
-		</p>
 		';
 		break;
 
@@ -180,18 +166,42 @@ function checkPhoto($image_url)
 	<![endif]-->
 	<script src="https://use.fontawesome.com/703572066a.js"></script>
 
-	<script type="text/javascript">
-      var onloadCallback = function() {
-        grecaptcha.render('recaptcha', {
-          'sitekey' : '6Lefui4UAAAAAIuDBYno9PcthEKobYFJ5xVtK0kf'
-        });
-      };
-    </script>
-
 	<?php wp_head(); ?>
 
 	<!-- Start Google Recaptcha -->
 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+	<script type="text/javascript">
+      var onloadCallback = function() {
+				var el = document.getElementById('recaptcha');
+				var el1 = document.getElementById('recaptcha_new_seller');
+				var el2 = document.getElementById('recaptcha_existing_seller');
+				if(typeof(el) != 'undefined' && el != null)
+				{
+					grecaptcha.render('recaptcha', {
+						'sitekey' : '6Lefui4UAAAAAIuDBYno9PcthEKobYFJ5xVtK0kf'
+					});
+				}
+
+				if(typeof(el1) != 'undefined' && el1 != null)
+				{
+					grecaptcha.render('recaptcha_new_seller', {
+						'sitekey' : '6Lefui4UAAAAAIuDBYno9PcthEKobYFJ5xVtK0kf',
+						'callback' : enableNewSeller,
+						'expired-callback' : disableNewSeller
+					});
+				}
+
+				if(typeof(el2) != 'undefined' && el2 != null)
+				{
+					grecaptcha.render('recaptcha_existing_seller', {
+						'sitekey' : '6Lefui4UAAAAAIuDBYno9PcthEKobYFJ5xVtK0kf',
+						'callback' : enableExistingSeller,
+						'expired-callback' : disableExistingSeller
+					});
+				}
+
+      };
+    </script>
 
 
 	<script>

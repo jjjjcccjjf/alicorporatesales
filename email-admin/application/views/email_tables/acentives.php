@@ -3,12 +3,14 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Contact #</th>
       <th>Employer</th>
       <!-- <th>Employee Type</th> -->
       <th>Brand</th>
       <th>Project Name</th>
       <th>Service Years</th>
       <th>Inquiry Date</th>
+      <th>Message</th>
     </tr>
   </thead>
   <tbody>
@@ -17,12 +19,14 @@
         <tr>
           <td><?php echo $email->name != "" ? $email->name : "N/A"; ?></td>
           <td><?php echo $email->email != "" ? $email->email : "N/A"; ?></td>
+          <td><?php echo $email->contact_num != "" ? $email->contact_num : "N/A"; ?></td>
           <td><?php echo $email->employer != "" ? $email->employer : "N/A"; ?></td>
           <!-- <td><?php# echo $email->employee_type != "" ? $email->employee_type : "N/A"; ?></td> -->
           <td><?php echo $email->brand != "" ? $email->brand : "N/A"; ?></td>
           <td><?php echo $email->project_name != "" ? $email->project_name : "N/A"; ?></td>
           <td><?php echo $email->service_years != "" ? $email->service_years : "N/A"; ?></td>
           <td><?php echo $email->date_sent != "" ? date("m/d/Y H:i:s", strtotime($email->date_sent)) : "N/A"; ?></td>
+          <td><?php echo $email->message != "" ? $email->message : "N/A"; ?></td>
         </tr>
       <?php } ?>
     <?php else:?>
@@ -35,12 +39,14 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>Contact #</th>
       <th>Employer</th>
       <!-- <th>Employee Type</th> -->
       <th>Brand</th>
       <th>Project Name</th>
       <th>Service Years</th>
       <th>Inquiry Date</th>
+      <th>Message</th>
     </tr>
   </tfoot>
 </table>
