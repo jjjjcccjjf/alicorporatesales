@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Inquire now */
+/* Template Name: Country Club Share Inquire Now */
 get_header();
 
 # Block for brand & project name
@@ -35,36 +35,6 @@ while(have_posts()): the_post();
       <div class="forms-main">
         <p>Get in touch with us. Please fill up the form to submit your inquiry.</p>
         <ul>
-        <?php if($_SESSION['employer_type'] != "BANK/INSTITUTIONAL OFFERS"): ?>
-          <li>
-            <label>Your Employer</label>
-            <select name="employer">
-
-              <?php
-              if($_SESSION['employer_type'] == 'Ayala Group Employee'){
-                $employers = get_field("employers_list", 884);
-              }else if($_SESSION['employer_type'] == 'Corporate partners'){
-                $employers = get_field("employers_list", 885);
-              }else{
-                $employers = array_merge(get_field("employers_list", 884), get_field("employers_list", 885));
-              }
-
-              $emp_formatted = [];
-              foreach ($employers as $emp) {
-                $emp_formatted[] = $emp['employee_name'];
-              }
-              sort($emp_formatted);
-
-              foreach ($emp_formatted as $emp) { ?>
-                <option <?php echo ($emp == $_SESSION['employer_name']) ? 'selected' :'' ; ?>>
-                  <?php echo $emp ?></option>
-                  <?php
-                }
-                ?>
-
-              </select>
-            </li>
-          <?php endif; ?>
             <li>
               <label>Your Name</label>
               <input type="text" name="name" required>
@@ -77,37 +47,12 @@ while(have_posts()): the_post();
               <label>Contact Number</label>
               <input type="text" name="contact_num" required>
             </li>
-          <?php if($_SESSION['employer_type'] != "BANK/INSTITUTIONAL OFFERS"): ?>
             <li>
-              <label>Years of Service</label>
-              <select name="service_years" required>
-                <option disabled >Select years of service</option>
-                <option>1 - 2 years</option>
-                <option>3 - 4 years</option>
-                <option>5 - 6 years</option>
-              </select>
-            </li>
-          <?php endif; ?>
-            <li>
-              <label>Brand</label>
-              <select name="brand" required  onchange="set_projects($(this).val());">
-                <option value="" >Select Brand</option>
-                <?php
-                $field_key = "field_59914863f7455"; # Find this in ACF itself under `Screen Options`
-                $field = get_field_object($field_key);
-                if($field){
-                  foreach( $field['choices'] as $choice ) { ?>
-                    <option <?php echo isset($_GET['b']) && $_GET['b'] == $choice ? "selected" : ""; ?>><?php echo $choice; ?></option>
-                    <?php
-                  }
-                }
-                ?>
-              </select>
-              <select name="project_name" id="project_name">
-                <option>Select Project</option>
-                <?php foreach ($projects as $title => $brand) { ?>
-                  <option class="option_project <?php echo $brand ?>" value="<?php echo $title; ?>"><?php echo $title; ?></option>
-                <?php } ?>
+              <label>Type of share</label>
+              <select name="type_of_share" required>
+                <option disabled >Type of share</option>
+                <option>Individual Share</option>
+                <option>Corporate Share</option>
               </select>
             </li>
             <li>
@@ -156,13 +101,13 @@ $(document).ready(function() {
       // console.log(grecaptcha.getResponse());
 
       $.ajax({
-        url:"<?php echo get_template_directory_uri(); ?>/ajax/acentives_discount_inquiry.php",
+        url:"<?php echo get_template_directory_uri(); ?>/ajax/country_club_share_inquiry.php",
         type: "POST",
         data: $(this).serialize(),
         success:function(data){
 
           if(data == 1){
-            window.location.href = '<?php echo get_permalink(1141); ?>?type=acentives_discount_inquiry';
+            window.location.href = '<?php echo get_permalink(1141); ?>?type=country_club_share_inquiry';
           }
         }, // success end
         error: function(e){
