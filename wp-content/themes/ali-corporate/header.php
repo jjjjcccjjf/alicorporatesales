@@ -102,6 +102,7 @@ function displaySideNav($type)
 		'<ul>
 		<li><a href="' . get_permalink(1824) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/inquire.png"></span><label>INQUIRE NOW</label></a></li>
 		<li><a href="' . get_permalink(1812) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/download.png"></span><label>DOWNLOAD FORMS / GUIDE</label></a></li>
+		<li><a href="' . get_permalink(1816) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/country-club.png"></span><label>COUNTRY CLUB SHARE</label></a></li>
 		<li><a href="' . get_permalink(1159) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/bond.png"></span><img src="' .  get_template_directory_uri() . '/assets/images/homestarterbond.png" class="bonds"></a></li>
 		<li><a href="' . get_permalink(1358) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/arc.png"></span><label>AYALA REWARDS CIRCLE</label></a></li>
 		<li><a href="' . get_permalink(1563) . '"><span><img src="' .  get_template_directory_uri() . '/assets/images/contact.png"></span><label>CONTACT US</label></a></li>

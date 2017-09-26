@@ -76,6 +76,30 @@ class Emails extends CI_Controller {
 		$this->wrapper("email_management", $page_data);
 	}
 
+	public function CountryClubShare()
+	{
+		# Ready css/js
+		$this->include["responsive_table"] = true;
+		# Set Export links
+		$page_data["csv_export_link"] = base_url("Emails/countryClubShareExportCSV").concat_existing_get();
+		# Get Pagination
+		$pag_conf['base_url'] = base_url("Emails/CountryClubShare");
+		$pag_conf['reuse_query_string'] = TRUE;	# maintain get varibles if any
+		$pag_conf['total_rows'] = $this->email_model->getTotalEmails("emails_country_club_share");
+		$pag_conf['per_page'] = TABLE_DATA_PER_PAGE;
+		$this->pagination->initialize($pag_conf);
+		$page_data['pagination'] = $this->pagination->create_links();
+		# Set Table name in email_tables
+		$page_data["table_name"] = "country_club_share.php";
+		# Set if super admin
+		$page_data['td_colspan'] = 6; # TODO:
+		# Set link for clearing page
+		$page_data['clear_url'] = "Emails/CountryClubShare";
+		# Get All Emails for Inquiry
+		$page_data["all_emails"] = $this->email_model->getAllEmails("emails_country_club_share");
+		$this->wrapper("email_management", $page_data);
+	}
+
 	public function Acentives()
 	{
 		# Ready css/js
@@ -262,6 +286,29 @@ class Emails extends CI_Controller {
 				$export_arr->message,
 				$export_arr->referral_from != "Other Banks" ? $export_arr->referral_from : "Other Bank: ".$export_arr->other_referral,
 				$export_arr->bank_officer,
+				date("m/d/Y H:i:s", strtotime($export_arr->date_sent))
+			);
+			fputcsv($fp, $final_row);
+		}
+	}
+
+	public function countryClubShareExportCSV()
+	{
+		# Set Column Headers of CSV
+		$column_headers = array("Name", "Email", "Contact Number", "Type of share", "Message", "Inquiry Date");
+		$fp = fopen('php://output', 'w');
+		header('Content-type: application/csv');
+		header('Content-Disposition: attachment; filename=email_country_club_share.csv'); # Don't forget to change filename!
+		fputcsv($fp, $column_headers);
+		# Get All Emails
+		$export_data = $this->email_model->getAllEmails("emails_country_club_share", true);
+		foreach ($export_data as $export_arr) {
+			$final_row = array(
+				$export_arr->name,
+				$export_arr->email,
+				$export_arr->contact_num,
+				$export_arr->message,
+				$export_arr->type_of_share,
 				date("m/d/Y H:i:s", strtotime($export_arr->date_sent))
 			);
 			fputcsv($fp, $final_row);

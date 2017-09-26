@@ -32,6 +32,7 @@ if(jp_add($item)){
   $to = "corporatesales@ayalaland.com.ph";
   // $to = "svboquiren@myoptimind.com";
   mail("cvalerio@myoptimind.com",$subject,$message,"From: noreply@betaprojex.com \r\n");
+  mail("lsalamante@myoptimind.com",$subject,$message,"From: noreply@betaprojex.com \r\n");
 
   echo (mail($to,$subject,$message,implode("\r\n", $headers))) ? 1 : 0 ;
 
